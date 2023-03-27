@@ -1,4 +1,10 @@
+import MainTemplate from "../templates/MainTemplate";
+
 const Club = () => {
-  return <div></div>;
+  return (
+    <div>
+      <MainTemplate></MainTemplate>
+    </div>
+  );
 };
 export default Club;

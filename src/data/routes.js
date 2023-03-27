@@ -8,3 +8,5 @@ const routes = {
   employee: "/employee",
   coach: "/coach",
 };
+
+export default routes;

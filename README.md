@@ -25,6 +25,10 @@ Similarly to the above, it does exactly what the name indicates, if you are chan
 
 Provides new types of comments which makes comments more readable.
 
+### `Path Intellisense`
+
+It autocompletes filenames, you don't need to write by hand whole path to the file you want to import.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

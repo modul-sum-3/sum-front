@@ -1,3 +1,30 @@
+# Project for TUL subject called "Summation module"
+
+Our goal is to create web application for a fitness club chain.
+After loging in, there will be three types of users: Client, Employee and Coach and we will provide functionalities for all of them.
+
+## Suggested VSCode Extentions
+
+### `Prettier`
+
+Code formatter which enforces a consistent style by parsing your code and re-printing it with its own rule.
+
+### `ESLint`
+
+ESLint statically analyzes your code to quickly find problems.
+
+### `Auto Close Tag`
+
+As the name suggests it automaticaly close HTML tags.
+
+### `Auto Rename Tag`
+
+Similarly to the above, it does exactly what the name indicates, if you are changing one html tag, the other one is changing in parallel.
+
+### `Better Comments`
+
+Provides new types of comments which makes comments more readable.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

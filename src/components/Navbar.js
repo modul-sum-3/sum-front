@@ -22,9 +22,9 @@ const Navbar = () => {
         <Nav.Link href="/employee">Employee</Nav.Link>
         <Nav.Link href="/coach">Coach</Nav.Link>
       </Nav.Collapse>
-      <div className="flex md:order-2 list-none">
+      <Nav.Collapse>
         <Nav.Link href="/login">Login</Nav.Link>
-      </div>
+      </Nav.Collapse>
     </Nav>
   );
 };

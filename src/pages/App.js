@@ -5,10 +5,11 @@ import Home from "./Home";
 import Club from "./Club";
 import Pass from "./Pass";
 import Contact from "./Contact";
-import Login from "./Contact";
+import Login from "./Login";
 import Employee from "./Employee";
 import Coach from "./Coach";
 import Client from "./Client";
+import Register from "./Register";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path={routes.pass} element={<Pass />} />
             <Route path={routes.contact} element={<Contact />} />
             <Route path={routes.login} element={<Login />} />
+            <Route path={routes.register} element={<Register />} />
             {/* //* Those routes will be moved but for now we need to have access to them */}
             <Route path={routes.client} element={<Client />} />
             <Route path={routes.employee} element={<Employee />} />

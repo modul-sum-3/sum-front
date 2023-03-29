@@ -4,9 +4,10 @@ const routes = {
   pass: "/pass",
   contact: "/contact",
   client: "/client",
-  login: "/login",
   employee: "/employee",
   coach: "/coach",
+  login: "/login",
+  register: "/register",
 };
 
 export default routes;

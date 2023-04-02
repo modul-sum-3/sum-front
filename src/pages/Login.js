@@ -55,33 +55,31 @@ const Login = () => {
       </div>
       <div class="flex justify-center">
         <form className="flex flex-col gap-4 w-1/5 " onSubmit={handleLogin}>
-          <div>
-            <input
-              placeholder="Your email"
-              id="email1"
-              type="email"
-              required={true}
-              onChange={(event) => setEmail(event.target.value)}
-              class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
-            />
-          </div>
-          <div>
-            <input
-              placeholder="Your password"
-              id="password1"
-              type="password"
-              required={true}
-              onChange={(event) => setPassword(event.target.value)}
-              class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
-            />
-          </div>
+          <input
+            placeholder="Your email"
+            id="email1"
+            type="email"
+            required={true}
+            onChange={(event) => setEmail(event.target.value)}
+            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+          />
+
+          <input
+            placeholder="Your password"
+            id="password1"
+            type="password"
+            required={true}
+            onChange={(event) => setPassword(event.target.value)}
+            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+          />
+
           <button
             type="submit"
             class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Log in
           </button>
-          <div className="flex items-center gap-2 list-none">
+          <p className="flex items-center gap-2 list-none">
             <a
               href="/register"
               class="block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0 hover:text-green-600"
@@ -89,7 +87,7 @@ const Login = () => {
             >
               Don't have an account? Register
             </a>
-          </div>
+          </p>
         </form>
       </div>
     </div>

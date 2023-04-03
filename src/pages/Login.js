@@ -31,10 +31,10 @@ const Login = () => {
     axios
       .post("URL", newLogin)
       .then((res) => {
-        alert("Udane logowanie");
+        alert("Login successful");
       })
       .catch((err) => {
-        alert("Logowanie nieudane");
+        alert("Login unsuccessful");
       });
 
     e.target.reset();

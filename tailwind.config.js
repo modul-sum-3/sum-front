@@ -11,7 +11,8 @@ module.exports = {
       },
       colors: {
         primary: "#85D300",
-        hover: "#468A15",
+        "green-100": "#468A15",
+        "green-200": "##1b4a04",
       },
       gradientColorStops: {
         green: ["#31C48D", "#0E9F6E", "#057A55"],

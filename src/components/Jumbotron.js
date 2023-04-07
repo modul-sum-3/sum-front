@@ -1,7 +1,13 @@
 const Jumbotron = () => {
   return (
-    <section className="bg-center bg-no-repeat bg-jumbo-bg bg-gray-700 bg-blend-multiply ">
-      <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+    <section
+      className="bg-center bg-no-repeat bg-jumbo-bg bg-gray-500 bg-blend-multiply max-h-screen 
+    "
+    >
+      <div
+        className="px-4 mx-auto my-auto max-w-screen-xl text-center py-24 lg:py-56 h-full
+      "
+      >
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
           Join us!
         </h1>
@@ -11,7 +17,7 @@ const Jumbotron = () => {
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <a
             href="/pass"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-hover focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-green-100 focus:ring-4"
           >
             Check out our offer
             <svg

@@ -1,4 +1,10 @@
+import MainTemplate from "../templates/MainTemplate";
+
 const Coach = () => {
-  return <div></div>;
+  return (
+    <div>
+      <MainTemplate></MainTemplate>
+    </div>
+  );
 };
 export default Coach;

@@ -6,11 +6,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "jumbo-bg": "url('/public/jumbo_bg.jpg')",
-      },
       colors: {
-        primary: "#85D300",
+        primary: "#7BD100",
         "green-100": "#468A15",
         "green-200": "##1b4a04",
       },

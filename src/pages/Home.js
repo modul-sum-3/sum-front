@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col bg-gray-200">
       <Navbar />
       <Jumbotron />
     </div>

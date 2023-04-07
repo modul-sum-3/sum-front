@@ -173,7 +173,7 @@ const Register = () => {
           </div>
           <button
             type="submit"
-            class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            class="text-white bg-gradient-to-r from-green-0 via-green-1 to-green-2 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Register
           </button>

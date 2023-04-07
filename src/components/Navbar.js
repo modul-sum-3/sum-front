@@ -9,21 +9,37 @@ const Navbar = () => {
       </Nav.Brand>
 
       <Nav.Collapse>
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/club">Club</Nav.Link>
-        <Nav.Link href="/pass">Pass</Nav.Link>
-        <Nav.Link href="/contact">Contact</Nav.Link>
-        <Nav.Link href="/client">Client</Nav.Link>
-        <Nav.Link href="/employee">Employee</Nav.Link>
-        <Nav.Link href="/coach">Coach</Nav.Link>
+        <Nav.Link href="/" class="hover:text-green-100">
+          Home
+        </Nav.Link>
+        <Nav.Link href="/club" class="hover:text-green-100">
+          Club
+        </Nav.Link>
+        <Nav.Link href="/pass" class="hover:text-green-100">
+          Pass
+        </Nav.Link>
+        <Nav.Link href="/contact" class="hover:text-green-100">
+          Contact
+        </Nav.Link>
+        <Nav.Link href="/client" class="hover:text-green-100">
+          Client
+        </Nav.Link>
+        <Nav.Link href="/employee" class="hover:text-green-100">
+          Employee
+        </Nav.Link>
+        <Nav.Link href="/coach" class="hover:text-green-100">
+          Coach
+        </Nav.Link>
       </Nav.Collapse>
 
       <div className="flex gap-6 place-items-center">
         <Nav.Collapse>
-          <Nav.Link href="/login">Login</Nav.Link>
+          <Nav.Link href="/login" class="hover:text-green-100">
+            Login
+          </Nav.Link>
         </Nav.Collapse>
         <div className="flex">
-          <Button href="/register" className="bg-primary md">
+          <Button href="/register" className="bg-primary md hover:bg-green-100">
             Register
           </Button>
           <Nav.Toggle />

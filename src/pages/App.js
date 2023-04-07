@@ -1,14 +1,14 @@
 import { Flowbite } from "flowbite-react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import routes from "../data/routes";
-import Home from "./Home";
-import Club from "./Club";
-import Pass from "./Pass";
-import Contact from "./Contact";
-import Login from "./Login";
-import Employee from "./Employee";
-import Coach from "./Coach";
 import Client from "./Client";
+import Club from "./Club";
+import Coach from "./Coach";
+import Contact from "./Contact";
+import Employee from "./Employee";
+import Home from "./Home";
+import Login from "./Login";
+import Pass from "./Pass";
 import Register from "./Register";
 
 function App() {

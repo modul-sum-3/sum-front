@@ -1,9 +1,11 @@
-import MainTemplate from "../templates/MainTemplate";
+import Jumbotron from "../components/Jumbotron";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <div>
-      <MainTemplate></MainTemplate>
+      <Navbar />
+      <Jumbotron />
     </div>
   );
 };

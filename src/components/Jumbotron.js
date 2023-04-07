@@ -1,7 +1,7 @@
 const Jumbotron = () => {
   return (
     <section
-      className="bg-center bg-no-repeat bg-[url('assets/jumbo_bg.jpg')] bg-gray-500 bg-blend-multiply max-h-screen
+      className="bg-center bg-no-repeat bg-[url('assets/jumbo_bg.jpg')] bg-gray-500 bg-blend-multiply h-full
     "
     >
       <div

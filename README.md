@@ -13,21 +13,9 @@ Code formatter which enforces a consistent style by parsing your code and re-pri
 
 ESLint statically analyzes your code to quickly find problems.
 
-### `Auto Close Tag`
-
-As the name suggests it automaticaly close HTML tags.
-
-### `Auto Rename Tag`
-
-Similarly to the above, it does exactly what the name indicates, if you are changing one html tag, the other one is changing in parallel.
-
 ### `Better Comments`
 
 Provides new types of comments which makes comments more readable.
-
-### `Path Intellisense`
-
-It autocompletes filenames, you don't need to write by hand whole path to the file you want to import.
 
 # Getting Started with Create React App
 

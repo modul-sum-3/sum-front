@@ -43,7 +43,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div class="flex justify-center">
+    <div class="flex justify-center backdrop-blur-sm">
       <form className="flex flex-col gap-4 w-1/5 " onSubmit={handleLogin}>
         <input
           placeholder="Your email"
@@ -72,7 +72,7 @@ const LoginForm = () => {
         <p className="flex items-center gap-2 list-none">
           <a
             href="/register"
-            class="block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0 hover:text-green-600"
+            class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 hover:text-green-600"
             aria-current="page"
           >
             Don't have an account? Register

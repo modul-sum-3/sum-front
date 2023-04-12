@@ -2,8 +2,8 @@ import RegisterForm from "../components/RegisterForm";
 
 const Register = () => {
   return (
-    <div class="grid bg-gray-200 h-screen">
-      <div class="">
+    <div class="grid bg-center bg-no-repeat bg-cover bg-[url('assets/gym1.jpg')] bg-gray-500 bg-blend-multiply h-screen">
+      <div class="backdrop-blur-sm">
         <a href="/" class="" aria-current="page">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Grey_close_x.svg/1200px-Grey_close_x.svg.png"

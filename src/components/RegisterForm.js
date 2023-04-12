@@ -83,7 +83,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div class="flex justify-center">
+    <div class="flex justify-center  backdrop-blur-sm">
       <form class="flex flex-col gap-3 w-1/4" onSubmit={handleRegister}>
         <div class="flex flex-row gap-2">
           <input
@@ -148,7 +148,7 @@ const RegisterForm = () => {
             src="https://static.thenounproject.com/png/718767-200.png"
             id="showpassword"
             onClick={showPassword}
-            class="w-6 h-6"
+            class="w-6 h-6 invert"
             alt="eye"
           />
           <input
@@ -170,7 +170,7 @@ const RegisterForm = () => {
         <p className="flex items-center gap-2 list-none">
           <a
             href="/login"
-            class="block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0 hover:text-green-600"
+            class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 hover:text-green-600"
             aria-current="page"
           >
             Already have an account? Log in

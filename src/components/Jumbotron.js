@@ -4,9 +4,10 @@ const Jumbotron = () => {
       className="bg-center bg-no-repeat bg-[url('assets/jumbo_bg.jpg')] bg-gray-500 bg-blend-multiply h-full
     "
     >
+      {" "}
       <div
         className="px-4 mx-auto my-auto max-w-screen-xl text-center py-24 lg:py-56 h-full
-      "
+        "
       >
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
           Join us!

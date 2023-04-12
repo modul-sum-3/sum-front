@@ -92,7 +92,7 @@ const RegisterForm = () => {
             type="text"
             required={true}
             onChange={(event) => setName(event.target.value)}
-            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
           />
 
           <input
@@ -101,7 +101,7 @@ const RegisterForm = () => {
             type="text"
             required={true}
             onChange={(event) => setSurname(event.target.value)}
-            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
           />
         </div>
         <div class="flex flex-row gap-2">
@@ -113,7 +113,7 @@ const RegisterForm = () => {
             onBlur={(e) => (e.target.type = "text")}
             required={true}
             onChange={(event) => setBirthday(event.target.value)}
-            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
           />
           <input
             placeholder="Your phone number"
@@ -121,7 +121,7 @@ const RegisterForm = () => {
             type="tel"
             onChange={handlePhone}
             required={true}
-            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
           />
         </div>
         <div class="flex justify-center">
@@ -131,7 +131,7 @@ const RegisterForm = () => {
             type="email"
             required={true}
             onChange={(event) => setEmail(event.target.value)}
-            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
           />
         </div>
         <div class="flex flex-row gap-2 items-center">
@@ -142,7 +142,7 @@ const RegisterForm = () => {
             minLength={8}
             required={true}
             onChange={(event) => setPassword1(event.target.value)}
-            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
           />
           <img
             src="https://static.thenounproject.com/png/718767-200.png"
@@ -158,19 +158,19 @@ const RegisterForm = () => {
             minLength={8}
             required={true}
             onChange={(event) => setPassword2(event.target.value)}
-            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-green-400 focus:ring-green-400 rounded-lg p-2.5 text-sm"
+            class="w-full block border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
           />
         </div>
         <button
           type="submit"
-          class="text-white bg-gradient-to-r from-green-0 via-green-1 to-green-2 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          class="text-white bg-gradient-to-r from-primary to-green-100 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         >
           Register
         </button>
         <p className="flex items-center gap-2 list-none">
           <a
             href="/login"
-            class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 hover:text-green-600"
+            class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 hover:text-primary"
             aria-current="page"
           >
             Already have an account? Log in

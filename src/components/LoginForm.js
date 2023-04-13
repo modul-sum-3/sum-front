@@ -44,14 +44,14 @@ const LoginForm = () => {
 
   return (
     <div class="flex justify-center backdrop-blur-sm">
-      <form className="flex flex-col gap-4 w-1/5 " onSubmit={handleLogin}>
+      <form className="flex w-1/5 flex-col gap-4 " onSubmit={handleLogin}>
         <input
           placeholder="Your email"
           id="email1"
           type="email"
           required={true}
           onChange={(event) => setEmail(event.target.value)}
-          class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
+          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
         />
 
         <input
@@ -60,19 +60,19 @@ const LoginForm = () => {
           type="password"
           required={true}
           onChange={(event) => setPassword(event.target.value)}
-          class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-primary focus:ring-primary rounded-lg p-2.5 text-sm"
+          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
         />
 
         <button
           type="submit"
-          class="text-white bg-gradient-to-r from-primary to-green-100 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+          class="rounded-lg bg-gradient-to-r from-primary to-green-100 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-green-300 "
         >
           Log in
         </button>
-        <p className="flex items-center gap-2 list-none">
+        <p className="flex list-none items-center gap-2">
           <a
             href="/register"
-            class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 hover:text-primary"
+            class="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
             aria-current="page"
           >
             Don't have an account? Register

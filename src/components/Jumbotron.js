@@ -1,29 +1,29 @@
 const Jumbotron = () => {
   return (
     <section
-      className="bg-center bg-no-repeat bg-[url('assets/jumbo_bg.jpg')] bg-gray-500 bg-blend-multiply h-full
+      className="h-full bg-gray-500 bg-[url('assets/jumbo_bg.jpg')] bg-center bg-no-repeat bg-blend-multiply
     "
     >
       {" "}
       <div
-        className="px-4 mx-auto my-auto max-w-screen-xl text-center py-24 lg:py-56 h-full
+        className="mx-auto my-auto h-full max-w-screen-xl px-4 py-24 text-center lg:py-56
         "
       >
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
           Join us!
         </h1>
-        <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+        <p className="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
           Check out our offer and find something you enjoy.
         </p>
-        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
           <a
             href="/pass"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-green-100 focus:ring-4"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-center text-base font-medium text-white hover:bg-green-100 focus:ring-4"
           >
             Check out our offer
             <svg
               aria-hidden="true"
-              className="ml-2 -mr-1 w-4 h-4"
+              className="-mr-1 ml-2 h-4 w-4"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Jumbotron = () => {
           </a>
           <a
             href="/club"
-            className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
+            className="inline-flex items-center justify-center rounded-lg border border-white px-5 py-3 text-center text-base font-medium text-white hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-400"
           >
             Our clubs
           </a>

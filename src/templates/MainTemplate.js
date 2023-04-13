@@ -2,9 +2,9 @@ import Navbar from "../components/Navbar";
 
 const MainTemplate = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-200">
+    <div className="flex min-h-screen flex-col bg-gray-200">
       <Navbar />
-      <div className="flex-grow max-w-screen-xl self-center w-full px-2 sm:px-4">
+      <div className="w-full max-w-screen-xl flex-grow self-center px-2 sm:px-4">
         {children}
       </div>
     </div>

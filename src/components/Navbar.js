@@ -32,14 +32,14 @@ const Navbar = () => {
         </Nav.Link>
       </Nav.Collapse>
 
-      <div className="flex gap-6 place-items-center">
+      <div className="flex place-items-center gap-6">
         <Nav.Collapse>
           <Nav.Link href="/login" class="hover:text-green-100">
             Login
           </Nav.Link>
         </Nav.Collapse>
         <div className="flex">
-          <Button href="/register" className="bg-primary md hover:bg-green-100">
+          <Button href="/register" className="md bg-primary hover:bg-green-100">
             Register
           </Button>
           <Nav.Toggle />

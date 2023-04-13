@@ -26,7 +26,7 @@ const StaffSidebar = ({ children }) => {
 
       <aside
         id="default-sidebar"
-        className="fixed left-0 top-0 z-40 h-full w-64 -translate-x-full shadow-lg transition-transform sm:translate-x-0"
+        className="absolute h-full w-64 -translate-x-full shadow-lg transition-transform sm:translate-x-0"
         aria-label="Sidebar"
       >
         <div className="h-full overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800">
@@ -178,9 +178,9 @@ const StaffSidebar = ({ children }) => {
         </div>
       </aside>
 
-      <div className="h-screen sm:ml-64">
+      <div className="h-screen w-full sm:ml-64">
         {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"> */}
-        <div class="mb-4 flex h-full max-w-screen-md rounded bg-gray-50 p-6 dark:bg-gray-800">
+        <div class="mb-4 flex h-full w-[1000px] bg-gray-50 p-6 shadow-xl dark:bg-gray-800">
           <p class="text-2xl text-gray-400 dark:text-gray-500">{children}</p>
         </div>
       </div>

@@ -3,7 +3,7 @@ import StaffTemplate from "../templates/StaffTemplate";
 const Coach = () => {
   return (
     <div>
-      <StaffTemplate></StaffTemplate>
+      <StaffTemplate>Bajo jajo</StaffTemplate>
     </div>
   );
 };

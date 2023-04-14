@@ -15,8 +15,8 @@ const Navbar = () => {
         <Nav.Link href="/club" class="hover:text-green-100">
           Club
         </Nav.Link>
-        <Nav.Link href="/pass" class="hover:text-green-100">
-          Pass
+        <Nav.Link href="/membership" class="hover:text-green-100">
+          Membership
         </Nav.Link>
         <Nav.Link href="/contact" class="hover:text-green-100">
           Contact

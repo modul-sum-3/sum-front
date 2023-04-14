@@ -1,10 +1,12 @@
 import clsx from 'clsx';
 import { ReactComponent as CheckIcon } from '../assets/check-icon.svg';
 
-const PassCard = ({ title, price, benefits }) => (
+const MembershipCard = ({ title, price, benefits }) => (
   <div>
-    <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow dark:border-gray-700 dark:bg-gray-800 sm:p-8">
-      <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{title}</h5>
+    <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-8">
+      <h5 className="mb-4 text-xl font-medium uppercase text-gray-500 dark:text-gray-400">
+        {title}
+      </h5>
       <div className="flex items-baseline text-gray-900 dark:text-white">
         <span className="text-3xl font-semibold">$</span>
         <span className="text-5xl font-extrabold tracking-tight">{price}</span>
@@ -14,7 +16,7 @@ const PassCard = ({ title, price, benefits }) => (
         {benefits.map(({ text, crossed }) => (
           <li className="flex space-x-3">
             <CheckIcon
-              className={clsx('h-5 w-5 shrink-0', crossed ? 'text-primary' : 'text-gray-500')}
+              className={clsx('h-5 w-5 shrink-0', crossed ? 'text-gray-500' : 'text-primary')}
             />
             <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
               {text}
@@ -32,4 +34,4 @@ const PassCard = ({ title, price, benefits }) => (
   </div>
 );
 
-export default PassCard;
+export default MembershipCard;

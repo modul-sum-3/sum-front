@@ -8,7 +8,7 @@ import Contact from './Contact';
 import Employee from './Employee';
 import Home from './Home';
 import Login from './Login';
-import Pass from './Pass';
+import Membership from './Membership';
 import Register from './Register';
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
           <Routes>
             <Route path={routes.home} element={<Home />} />
             <Route path={routes.club} element={<Club />} />
-            <Route path={routes.pass} element={<Pass />} />
+            <Route path={routes.membership} element={<Membership />} />
             <Route path={routes.contact} element={<Contact />} />
             <Route path={routes.login} element={<Login />} />
             <Route path={routes.register} element={<Register />} />

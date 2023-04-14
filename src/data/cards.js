@@ -1,73 +1,73 @@
 export const cards = [
   {
-    title: 'Tytuł 1',
+    title: 'Fit classic',
     price: 10,
     benefits: [
       {
         crossed: false,
-        text: 'benefit 1',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: false,
-        text: 'benefit 2',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: true,
-        text: 'benefit 3',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
     ],
   },
   {
-    title: 'Tytuł 2',
+    title: 'Fit permanent',
     price: 20,
     benefits: [
       {
         crossed: false,
-        text: 'benefit 1',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: false,
-        text: 'benefit 2',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: true,
-        text: 'benefit 3',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
     ],
   },
   {
-    title: 'Tytuł 3',
+    title: 'Student classic',
     price: 30,
     benefits: [
       {
         crossed: false,
-        text: 'benefit 1',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: false,
-        text: 'benefit 2',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: true,
-        text: 'benefit 3',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
     ],
   },
   {
-    title: 'Tytuł 4',
+    title: 'Student permanent',
     price: 40,
     benefits: [
       {
         crossed: false,
-        text: 'benefit 1',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: false,
-        text: 'benefit 2',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
       {
         crossed: true,
-        text: 'benefit 3',
+        text: 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
       },
     ],
   },

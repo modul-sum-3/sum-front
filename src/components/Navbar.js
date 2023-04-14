@@ -1,9 +1,9 @@
-import { Button, Navbar as Nav } from "flowbite-react";
-import logo from "../assets/logo_fit.svg";
+import { Button, Navbar as Nav } from 'flowbite-react';
+import logo from '../assets/logo_fit.svg';
 
 const Navbar = () => {
   return (
-    <Nav fluid={true} rounded={true}>
+    <Nav fluid rounded>
       <Nav.Brand href="/">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="FitNest Logo" />
       </Nav.Brand>

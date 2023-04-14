@@ -1,4 +1,4 @@
-import StaffTemplate from "../templates/StaffTemplate";
+import StaffTemplate from '../templates/StaffTemplate';
 
 const Coach = () => {
   return (

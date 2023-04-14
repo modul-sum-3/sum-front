@@ -1,14 +1,9 @@
 const Jumbotron = () => {
   return (
-    <section
-      className="h-full bg-gray-500 bg-[url('assets/jumbo_bg.jpg')] bg-center bg-no-repeat bg-blend-multiply
-    "
-    >
-      {" "}
-      <div
-        className="mx-auto my-auto h-full max-w-screen-xl px-4 py-24 text-center lg:py-56
-        "
-      >
+    // eslint-disable-next-line tailwindcss/no-contradicting-classname
+    <section className="h-full bg-gray-500 bg-[url('assets/jumbo_bg.jpg')] bg-center bg-no-repeat bg-blend-multiply">
+      {' '}
+      <div className="m-auto h-full max-w-screen-xl px-4 py-24 text-center lg:py-56">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
           Join us!
         </h1>
@@ -32,7 +27,7 @@ const Jumbotron = () => {
                 fillRule="evenodd"
                 d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
                 clipRule="evenodd"
-              ></path>
+              />
             </svg>
           </a>
           <a

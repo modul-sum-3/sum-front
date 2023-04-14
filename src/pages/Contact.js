@@ -1,9 +1,9 @@
-import MainTemplate from "../templates/MainTemplate";
+import MainTemplate from '../templates/MainTemplate';
 
 const Contact = () => {
   return (
     <div>
-      <MainTemplate></MainTemplate>
+      <MainTemplate />
     </div>
   );
 };

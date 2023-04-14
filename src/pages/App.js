@@ -1,17 +1,17 @@
-import { Flowbite } from "flowbite-react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import routes from "../data/routes";
-import Client from "./Client";
-import Club from "./Club";
-import Coach from "./Coach";
-import Contact from "./Contact";
-import Employee from "./Employee";
-import Home from "./Home";
-import Login from "./Login";
-import Pass from "./Pass";
-import Register from "./Register";
+import { Flowbite } from 'flowbite-react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import routes from '../data/routes';
+import Client from './Client';
+import Club from './Club';
+import Coach from './Coach';
+import Contact from './Contact';
+import Employee from './Employee';
+import Home from './Home';
+import Login from './Login';
+import Pass from './Pass';
+import Register from './Register';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       {/* //* There will be authorization and role condition */}
@@ -33,6 +33,6 @@ function App() {
       </Flowbite>
     </div>
   );
-}
+};
 
 export default App;

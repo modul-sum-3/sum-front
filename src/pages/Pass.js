@@ -11,10 +11,18 @@ const Pass = () => {
           <p>Choose the plan that suits you</p>
         </div>
         <div className="my-6 flex gap-4">
-          <PassCard />
-          <PassCard />
-          <PassCard />
-          <PassCard />
+          <PassCard title="Karta" price="20">
+            content
+          </PassCard>
+          <PassCard title="Karta" price="20">
+            content
+          </PassCard>
+          <PassCard title="Karta" price="20">
+            content
+          </PassCard>
+          <PassCard title="Karta" price="20">
+            content
+          </PassCard>
         </div>
       </MainTemplate>
     </div>

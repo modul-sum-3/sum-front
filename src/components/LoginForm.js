@@ -1,19 +1,19 @@
-import axios from "axios";
-import { useState } from "react";
+import axios from 'axios';
+import { useState } from 'react';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
+  function isValidEmail(newEmail) {
+    return /\S+@\S+\.\S+/.test(newEmail);
   }
 
   const handleLogin = (e) => {
     e.preventDefault();
 
     if (!isValidEmail(email)) {
-      alert("Invalid email");
+      alert('Invalid email');
       return;
     }
     // There should be a function which hash password
@@ -21,20 +21,20 @@ const LoginForm = () => {
       return;
     }
 
-    //Creating object to pass to databse
+    // Creating object to pass to databse
     const newLogin = {
       login: email,
       hashed: password,
-      hash: "",
+      hash: '',
     };
 
     axios
-      .post("URL", newLogin)
-      .then((res) => {
-        alert("Login successful");
+      .post('URL', newLogin)
+      .then(() => {
+        alert('Login successful');
       })
-      .catch((err) => {
-        alert("Login unsuccessful");
+      .catch(() => {
+        alert('Login unsuccessful');
       });
 
     e.target.reset();
@@ -43,36 +43,36 @@ const LoginForm = () => {
   };
 
   return (
-    <div class="flex justify-center backdrop-blur-sm">
+    <div className="flex justify-center backdrop-blur-sm">
       <form className="flex w-1/5 flex-col gap-4 " onSubmit={handleLogin}>
         <input
           placeholder="Your email"
           id="email1"
           type="email"
-          required={true}
+          required
           onChange={(event) => setEmail(event.target.value)}
-          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
         />
 
         <input
           placeholder="Your password"
           id="password1"
           type="password"
-          required={true}
+          required
           onChange={(event) => setPassword(event.target.value)}
-          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
         />
 
         <button
           type="submit"
-          class="rounded-lg bg-gradient-to-r from-primary to-green-100 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-green-300 "
+          className="rounded-lg bg-gradient-to-r from-primary to-green-100 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-green-300 "
         >
           Log in
         </button>
         <p className="flex list-none items-center gap-2">
           <a
             href="/register"
-            class="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
+            className="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
             aria-current="page"
           >
             Don't have an account? Register

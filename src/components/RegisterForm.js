@@ -1,54 +1,54 @@
-import IMask from "imask";
-import { useState } from "react";
-import axios from "axios";
+import axios from 'axios';
+import IMask from 'imask';
+import { useState } from 'react';
 
 const RegisterForm = () => {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [password1, setPassword1] = useState("");
-  const [password2, setPassword2] = useState("");
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [birthday, setBirthday] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [password1, setPassword1] = useState('');
+  const [password2, setPassword2] = useState('');
 
   function handlePhone() {
-    const phone = document.querySelector("#phonenumber");
+    const phone = document.querySelector('#phonenumber');
 
     IMask(phone, {
-      mask: "000-000-000",
+      mask: '000-000-000',
     });
 
-    phone.addEventListener("change", (event) => {
+    phone.addEventListener('change', () => {
       setPhoneNumber(phone.value);
     });
   }
 
   function showPassword() {
-    const passwordInput1 = document.querySelector("#password1");
-    const passwordInput2 = document.querySelector("#password2");
-    if (passwordInput1.type === "password") {
-      passwordInput1.type = "text";
-      passwordInput2.type = "text";
+    const passwordInput1 = document.querySelector('#password1');
+    const passwordInput2 = document.querySelector('#password2');
+    if (passwordInput1.type === 'password') {
+      passwordInput1.type = 'text';
+      passwordInput2.type = 'text';
     } else {
-      passwordInput1.type = "password";
-      passwordInput2.type = "password";
+      passwordInput1.type = 'password';
+      passwordInput2.type = 'password';
     }
   }
 
-  function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
+  function isValidEmail(newEmail) {
+    return /\S+@\S+\.\S+/.test(newEmail);
   }
 
   const handleRegister = (e) => {
     e.preventDefault();
 
     if (!isValidEmail(email)) {
-      alert("Invaild email!");
+      alert('Invaild email!');
       return;
     }
 
     if (password1 !== password2) {
-      alert("Passwords are not the same!");
+      alert('Passwords are not the same!');
       console.log(password1);
       console.log(password2);
       return;
@@ -64,12 +64,12 @@ const RegisterForm = () => {
     };
 
     axios
-      .post("", newUser)
-      .then((res) => {
-        alert("Register successful");
+      .post('', newUser)
+      .then(() => {
+        alert('Register successful');
       })
-      .catch((err) => {
-        alert("Register unsuccessful");
+      .catch(() => {
+        alert('Register unsuccessful');
       });
 
     e.target.reset();
@@ -83,72 +83,76 @@ const RegisterForm = () => {
   };
 
   return (
-    <div class="flex justify-center  backdrop-blur-sm">
-      <form class="flex w-1/4 flex-col gap-3" onSubmit={handleRegister}>
-        <div class="flex flex-row gap-2">
+    <div className="flex justify-center  backdrop-blur-sm">
+      <form className="flex w-1/4 flex-col gap-3" onSubmit={handleRegister}>
+        <div className="flex flex-row gap-2">
           <input
             placeholder="Your name"
             id="name"
             type="text"
-            required={true}
+            required
             onChange={(event) => setName(event.target.value)}
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
 
           <input
             placeholder="Your surname"
             id="surname"
             type="text"
-            required={true}
+            required
             onChange={(event) => setSurname(event.target.value)}
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
         </div>
-        <div class="flex flex-row gap-2">
+        <div className="flex flex-row gap-2">
           <input
             placeholder="Your birthday"
             id="birthdate"
             type="text"
-            onFocus={(e) => (e.target.type = "date")}
-            onBlur={(e) => (e.target.type = "text")}
-            required={true}
+            onFocus={(e) => {
+              e.target.type = 'date';
+            }}
+            onBlur={(e) => {
+              e.target.type = 'text';
+            }}
+            required
             onChange={(event) => setBirthday(event.target.value)}
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
           <input
             placeholder="Your phone number"
             id="phonenumber"
             type="tel"
             onChange={handlePhone}
-            required={true}
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            required
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
         </div>
-        <div class="flex justify-center">
+        <div className="flex justify-center">
           <input
             placeholder="Your email"
             id="email"
             type="email"
-            required={true}
+            required
             onChange={(event) => setEmail(event.target.value)}
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
         </div>
-        <div class="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center gap-2">
           <input
             placeholder="Your password"
             id="password1"
             type="password"
             minLength={8}
-            required={true}
+            required
             onChange={(event) => setPassword1(event.target.value)}
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
           <img
             src="https://static.thenounproject.com/png/718767-200.png"
             id="showpassword"
             onClick={showPassword}
-            class="h-6 w-6 invert"
+            className="h-6 w-6 invert"
             alt="eye"
           />
           <input
@@ -156,21 +160,21 @@ const RegisterForm = () => {
             id="password2"
             type="password"
             minLength={8}
-            required={true}
+            required
             onChange={(event) => setPassword2(event.target.value)}
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
         </div>
         <button
           type="submit"
-          class="rounded-lg bg-gradient-to-r from-primary to-green-100 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-primary"
+          className="rounded-lg bg-gradient-to-r from-primary to-green-100 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-primary"
         >
           Register
         </button>
         <p className="flex list-none items-center gap-2">
           <a
             href="/login"
-            class="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
+            className="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
             aria-current="page"
           >
             Already have an account? Log in

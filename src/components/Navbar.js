@@ -1,9 +1,9 @@
-import { Button, Navbar as Nav } from "flowbite-react";
-import logo from "../assets/logo_fit.svg";
+import { Button, Navbar as Nav } from 'flowbite-react';
+import logo from '../assets/logo_fit.svg';
 
 const Navbar = () => {
   return (
-    <Nav fluid={true} rounded={true}>
+    <Nav fluid rounded>
       <Nav.Brand href="/">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="FitNest Logo" />
       </Nav.Brand>
@@ -15,8 +15,8 @@ const Navbar = () => {
         <Nav.Link href="/club" class="hover:text-green-100">
           Club
         </Nav.Link>
-        <Nav.Link href="/pass" class="hover:text-green-100">
-          Pass
+        <Nav.Link href="/membership" class="hover:text-green-100">
+          Membership
         </Nav.Link>
         <Nav.Link href="/contact" class="hover:text-green-100">
           Contact

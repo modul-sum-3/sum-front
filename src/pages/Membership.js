@@ -7,7 +7,9 @@ const Membership = () => (
     <MainTemplate>
       <div className="flex flex-col items-center">
         <h3>Our pricing</h3>
-        <h1 className="font-bold text-primary">Choose Your Best Plan</h1>
+        <h1 className="font-bold text-primary shadow-green-100 drop-shadow-md">
+          Choose Your Best Plan
+        </h1>
         <p>Choose the plan that suits you</p>
       </div>
       <div className="my-6 flex gap-4">

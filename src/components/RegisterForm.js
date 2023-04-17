@@ -148,13 +148,19 @@ const RegisterForm = () => {
             onChange={(event) => setPassword1(event.target.value)}
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
-          <img
-            src="https://static.thenounproject.com/png/718767-200.png"
-            id="showpassword"
+          <button
+            type="button"
+            className=" cursor-pointer appearance-none border-none bg-inherit"
+            onKeyDown={showPassword}
             onClick={showPassword}
-            className="h-6 w-6 invert"
-            alt="eye"
-          />
+          >
+            <img
+              src="https://static.thenounproject.com/png/718767-200.png"
+              id="showpassword"
+              className="h-6 w-10 invert"
+              alt="eye"
+            />
+          </button>
           <input
             placeholder="Confirm password"
             id="password2"

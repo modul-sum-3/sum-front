@@ -1,3 +1,4 @@
+import { NotificationContainer } from 'react-notifications';
 import RegisterForm from '../components/RegisterForm';
 
 const Register = () => {
@@ -12,6 +13,7 @@ const Register = () => {
             alt="cross"
           />
         </a>
+        <NotificationContainer />
       </div>
       <RegisterForm />
     </div>

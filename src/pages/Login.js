@@ -1,3 +1,4 @@
+import { NotificationContainer } from 'react-notifications';
 import LoginForm from '../components/LoginForm';
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
             alt="cross"
           />
         </a>
+        <NotificationContainer />
       </div>
       <LoginForm />
     </div>

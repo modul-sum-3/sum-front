@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +15,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     if (!isValidEmail(email)) {
-      alert('Invalid email');
+      NotificationManager.error('Invalid email');
       return;
     }
     // There should be a function which hash password
@@ -31,10 +33,10 @@ const LoginForm = () => {
     axios
       .post('URL', newLogin)
       .then(() => {
-        alert('Login successful');
+        NotificationManager.success('Login successful');
       })
       .catch(() => {
-        alert('Login unsuccessful');
+        NotificationManager.error('Login unsuccessful');
       });
 
     e.target.reset();

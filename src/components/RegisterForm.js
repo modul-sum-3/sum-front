@@ -1,6 +1,8 @@
 import axios from 'axios';
 import IMask from 'imask';
 import { useState } from 'react';
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -43,14 +45,12 @@ const RegisterForm = () => {
     e.preventDefault();
 
     if (!isValidEmail(email)) {
-      alert('Invaild email!');
+      NotificationManager.error('Invaild email!');
       return;
     }
 
     if (password1 !== password2) {
-      alert('Passwords are not the same!');
-      console.log(password1);
-      console.log(password2);
+      NotificationManager.error('Passwords are not the same!');
       return;
     }
 
@@ -66,10 +66,10 @@ const RegisterForm = () => {
     axios
       .post('', newUser)
       .then(() => {
-        alert('Register successful');
+        NotificationManager.success('Register successful');
       })
       .catch(() => {
-        alert('Register unsuccessful');
+        NotificationManager.error('Register unsuccessful');
       });
 
     e.target.reset();

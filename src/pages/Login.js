@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm';
 const Login = () => {
   return (
     // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <div className="grid h-screen gap-0 bg-gray-500 bg-[url('assets/gym.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply">
+    <div className="grid h-screen gap-0 bg-gray-500 bg-[url('assets/gym.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply ">
       <div className="backdrop-blur-sm">
         <a href="/" className="" aria-current="page">
           <img

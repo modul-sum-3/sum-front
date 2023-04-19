@@ -84,7 +84,10 @@ const RegisterForm = () => {
 
   return (
     <div className="flex justify-center  backdrop-blur-sm">
-      <form className="flex w-1/4 flex-col gap-3" onSubmit={handleRegister}>
+      <form
+        className="flex w-1/4 flex-col gap-3 max-lg:w-1/2 max-md:w-2/3"
+        onSubmit={handleRegister}
+      >
         <div className="flex flex-row gap-2">
           <input
             placeholder="Your name"

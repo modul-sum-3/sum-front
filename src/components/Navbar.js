@@ -12,8 +12,8 @@ const Navbar = () => {
         <Nav.Link href="/" class="hover:text-green-100">
           Home
         </Nav.Link>
-        <Nav.Link href="/club" class="hover:text-green-100">
-          Club
+        <Nav.Link href="/clubs" class="hover:text-green-100">
+          Clubs
         </Nav.Link>
         <Nav.Link href="/membership" class="hover:text-green-100">
           Membership

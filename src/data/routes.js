@@ -1,6 +1,6 @@
 const routes = {
   home: '/',
-  club: '/club',
+  clubs: '/clubs',
   membership: '/membership',
   contact: '/contact',
   client: '/client',

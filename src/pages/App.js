@@ -2,7 +2,7 @@ import { Flowbite } from 'flowbite-react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import routes from '../data/routes';
 import Client from './Client';
-import Club from './Club';
+import Clubs from './Clubs';
 import Coach from './Coach';
 import Contact from './Contact';
 import Employee from './Employee';
@@ -19,7 +19,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path={routes.home} element={<Home />} />
-            <Route path={routes.club} element={<Club />} />
+            <Route path={routes.clubs} element={<Clubs />} />
             <Route path={routes.membership} element={<Membership />} />
             <Route path={routes.contact} element={<Contact />} />
             <Route path={routes.login} element={<Login />} />

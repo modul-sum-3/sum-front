@@ -1,10 +1,10 @@
 import MainTemplate from '../templates/MainTemplate';
 
-const Club = () => {
+const Clubs = () => {
   return (
     <div>
       <MainTemplate />
     </div>
   );
 };
-export default Club;
+export default Clubs;

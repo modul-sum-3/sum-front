@@ -32,7 +32,7 @@ const Jumbotron = () => {
           </a>
           <a
             href="/clubs"
-            className="inline-flex items-center justify-center rounded-lg border border-white px-5 py-3 text-center text-base font-medium text-white hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-400"
+            className="inline-flex items-center justify-center rounded-lg   bg-gray-100 px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-400 hover:text-gray-900  "
           >
             Our clubs
           </a>

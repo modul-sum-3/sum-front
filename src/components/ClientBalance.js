@@ -29,7 +29,7 @@ const ClientBalance = ({ balance }) => {
     <div className="flex flex-col ">
       <div className="flex justify-center">Current Balance: {balance}</div>
       <div className="mt-8 flex justify-center ">
-        <form className="flex w-1/2 flex-col gap-2" onSubmit={handleBalanceChange} id="userBalance">
+        <form className="flex w-2/3 flex-col gap-2" onSubmit={handleBalanceChange} id="userBalance">
           <label htmlFor="balance">
             <input
               type="number"

@@ -53,7 +53,7 @@ const ClientInfoForm = () => {
 
   return (
     <div className="flex  justify-center text-black">
-      <form className="flex w-1/2 flex-col gap-2" onSubmit={handleSubmit} id="userSettings">
+      <form className="flex w-2/3 flex-col gap-2" onSubmit={handleSubmit} id="userSettings">
         <label htmlFor="name">
           Name
           <input

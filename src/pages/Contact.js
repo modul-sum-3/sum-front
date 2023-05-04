@@ -1,15 +1,14 @@
 import MainTemplate from '../templates/MainTemplate';
-import '../styles/contact.css';
 
 const Contact = () => {
   return (
     <div>
       <MainTemplate>
-        <div className="contact-container">
+        <div className="contact-container mx-10 flex flex-wrap">
           <div>
-            <a
+            <span
               href="#"
-              className="block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              className="grow-1 shrink-1 block max-w-sm basis-0 rounded-lg border border-gray-200 bg-white p-6 text-center shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <p className="ml-1 text-xl font-bold text-primary dark:text-gray-400">
                 Customer Service Department
@@ -21,8 +20,8 @@ const Contact = () => {
               <p className="ml-1 mt-4 text-base font-normal text-gray-900 dark:text-gray-400">
                 Pracujemy od poniedziałku do niedzieli, <br /> w godzinach 8:00 - 20:00.
               </p>
-            </a>
-            <a
+            </span>
+            <span
               href="#"
               className="mt-4 block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
@@ -33,13 +32,10 @@ const Contact = () => {
                 Interested companies can send offers to the following e-mail address: <br />
                 <span className="font-bold">companies@fitNest.bestrong.pl</span>
               </p>
-            </a>
+            </span>
           </div>
-          <div className="form-container">
-            <p
-              id="text"
-              className="contact-form ml-1 mt-4 text-base font-normal text-gray-900 dark:text-gray-400"
-            >
+          <div className="form-container shrink-1 grow-1 mx-14 mt-14 w-1/2 flex-1">
+            <p className="contact-form mb-8 mt-4 w-3/5 rounded-lg bg-primary text-center text-sm text-white shadow-lg shadow-lime-600 dark:text-gray-400">
               Leave your personal details and we will contact you
             </p>
             <form className="form">
@@ -113,7 +109,7 @@ const Contact = () => {
                     htmlFor="floating_phone"
                     className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium  dark:text-gray-400 peer-focus:dark:text-blue-500"
                   >
-                    Phone number (123-456-789)
+                    Phone number
                   </label>
                 </div>
                 <div className="group relative z-0 mb-6 w-full">

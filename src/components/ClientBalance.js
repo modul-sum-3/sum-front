@@ -2,11 +2,16 @@ import axios from 'axios';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 
-const ClientBalance = () => {
-  const [balance, setBalance] = useState();
+const ClientBalance = ({ balance }) => {
+  const [newBalance, setNewBalance] = useState();
 
   const handleBalanceChange = (e) => {
     e.preventDefault();
+
+    if (newBalance <= 0) {
+      NotificationManager.error('U cannot add zero or minus to your balance');
+      return;
+    }
 
     axios
       .put('', {
@@ -21,14 +26,14 @@ const ClientBalance = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col ">
       <div className="flex justify-center">Current Balance: {balance}</div>
-      <div className="mt-8 flex justify-center">
+      <div className="mt-8 flex justify-center ">
         <form className="flex w-1/2 flex-col gap-2" onSubmit={handleBalanceChange} id="userBalance">
-          <label htmlFor="email">
+          <label htmlFor="balance">
             <input
-              type="email"
-              onChange={(e) => setBalance(e.target.value)}
+              type="number"
+              onChange={(e) => setNewBalance(e.target.value)}
               className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
             />
           </label>

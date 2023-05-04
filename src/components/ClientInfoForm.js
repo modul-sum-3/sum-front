@@ -9,17 +9,17 @@ const ClientInfoForm = () => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
-  axios
-    .get('')
-    .then((res) => {
-      setClient(res.data);
-      //! Have to change client. values to match database names
-      setName(client.name);
-      setSurname(client.surname);
-      setPhone(client.phone);
-      setEmail(client.email);
-    })
-    .catch(() => NotificationManager.error('Couldnt get data'));
+  //   axios
+  //     .get('')
+  //     .then((res) => {
+  //       setClient(res.data);
+  //       //! Have to change client. values to match database names
+  //       setName(client.name);
+  //       setSurname(client.surname);
+  //       setPhone(client.phone);
+  //       setEmail(client.email);
+  //     })
+  //     .catch(() => NotificationManager.error('Couldnt get data'));
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);

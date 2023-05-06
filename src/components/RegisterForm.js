@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 
-const RegisterForm = () => {
+const RegisterForm = ({ width, invert, display }) => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [birthday, setBirthday] = useState('');
@@ -83,9 +83,9 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="flex justify-center  backdrop-blur-sm">
+    <div className="flex justify-center backdrop-blur-sm ">
       <form
-        className="flex w-1/4 flex-col gap-3 max-lg:w-1/2 max-md:w-2/3"
+        className={`flex ${width} flex-col gap-3 max-lg:w-1/2 max-md:w-2/3`}
         onSubmit={handleRegister}
       >
         <div className="flex flex-row gap-2">
@@ -160,7 +160,7 @@ const RegisterForm = () => {
             <img
               src="https://static.thenounproject.com/png/718767-200.png"
               id="showpassword"
-              className="h-6 w-10 invert"
+              className={`h-6 w-10 ${invert}`}
               alt="eye"
             />
           </button>
@@ -183,7 +183,7 @@ const RegisterForm = () => {
         <p className="flex list-none items-center gap-2">
           <a
             href="/login"
-            className="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
+            className={`rounded py-2 pl-3 pr-4 ${display} text-white hover:text-primary md:bg-transparent md:p-0`}
             aria-current="page"
           >
             Already have an account? Log in

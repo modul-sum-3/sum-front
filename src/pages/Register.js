@@ -15,7 +15,7 @@ const Register = () => {
         </a>
         <NotificationContainer />
       </div>
-      <RegisterForm />
+      <RegisterForm width="w-1/3" invert="invert" display="block" />
     </div>
   );
 };

@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import Homepage from '../components/Homepage';
 import Timetable from '../components/Timetable';
-import RegisterClient from '../components/RegisterClient';
 import ConfirmTraninings from '../components/ConfirmTrainings';
+import RegisterForm from '../components/RegisterForm';
 
 const StaffTemplate = () => {
   const [page, setPage] = useState('homepage');
+
+  const [isCenter, setIsCenter] = useState('');
 
   const componentSwitch = (com) => {
     let component;
@@ -19,7 +21,7 @@ const StaffTemplate = () => {
       component = <ConfirmTraninings />;
     }
     if (com === 'registerClient') {
-      component = <RegisterClient />;
+      component = <RegisterForm width="w-2/3" display="none" />;
     }
     return <div>{component}</div>;
   };
@@ -40,6 +42,7 @@ const StaffTemplate = () => {
                   id="homepage"
                   onClick={() => {
                     setPage('homepage');
+                    setIsCenter('');
                   }}
                   className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
@@ -62,6 +65,7 @@ const StaffTemplate = () => {
                   id="timetable"
                   onClick={() => {
                     setPage('timetable');
+                    setIsCenter('');
                   }}
                   className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
@@ -81,7 +85,10 @@ const StaffTemplate = () => {
                 <button
                   type="button"
                   id="registerClient"
-                  onClick={() => setPage('registerClient')}
+                  onClick={() => {
+                    setPage('registerClient');
+                    setIsCenter('items-center');
+                  }}
                   className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
@@ -104,7 +111,10 @@ const StaffTemplate = () => {
                 <button
                   type="button"
                   id="confirmTraninings"
-                  onClick={() => setPage('confirmTraninings')}
+                  onClick={() => {
+                    setPage('confirmTraninings');
+                    setIsCenter('');
+                  }}
                   className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
@@ -173,7 +183,9 @@ const StaffTemplate = () => {
         </aside>
 
         <div className="h-screen w-full sm:ml-64">
-          <div className="mb-4 flex h-full w-[1000px] bg-gray-50 p-6 shadow-xl dark:bg-gray-800">
+          <div
+            className={`mb-4 grid h-full w-[1000px] ${isCenter} bg-gray-50 p-6 shadow-xl dark:bg-gray-800`}
+          >
             {componentSwitch(page)}
           </div>
         </div>

@@ -13,7 +13,7 @@ const Clubs = () => {
             offer you will find a wide range of workouts tailored to your personal preferences.
           </p>
         </div>
-        <div className="clubs__list flex max-w-full flex-col">
+        <div className="clubs__list mt-10 flex max-w-full flex-col gap-6">
           {clubsList.map(({ city, location }) => (
             <ClubRow city={city} location={location} />
           ))}

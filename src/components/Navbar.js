@@ -9,37 +9,37 @@ const Navbar = () => {
       </Nav.Brand>
 
       <Nav.Collapse>
-        <Nav.Link href="/" class="hover:text-green-100">
+        <Nav.Link href="/" class="hover:text-hover">
           Home
         </Nav.Link>
-        <Nav.Link href="/clubs" class="hover:text-green-100">
+        <Nav.Link href="/clubs" class="hover:text-hover">
           Clubs
         </Nav.Link>
-        <Nav.Link href="/membership" class="hover:text-green-100">
+        <Nav.Link href="/membership" class="hover:text-hover">
           Membership
         </Nav.Link>
-        <Nav.Link href="/contact" class="hover:text-green-100">
+        <Nav.Link href="/contact" class="hover:text-hover">
           Contact
         </Nav.Link>
-        <Nav.Link href="/client" class="hover:text-green-100">
+        <Nav.Link href="/client" class="hover:text-hover">
           Client
         </Nav.Link>
-        <Nav.Link href="/employee" class="hover:text-green-100">
+        <Nav.Link href="/employee" class="hover:text-hover">
           Employee
         </Nav.Link>
-        <Nav.Link href="/coach" class="hover:text-green-100">
+        <Nav.Link href="/coach" class="hover:text-hover">
           Coach
         </Nav.Link>
       </Nav.Collapse>
 
       <div className="flex place-items-center gap-6">
         <Nav.Collapse>
-          <Nav.Link href="/login" class="hover:text-green-100">
+          <Nav.Link href="/login" class="hover:text-hover">
             Login
           </Nav.Link>
         </Nav.Collapse>
         <div className="flex">
-          <Button href="/register" className="md bg-primary hover:bg-green-100">
+          <Button href="/register" className="md bg-primary hover:bg-hover">
             Register
           </Button>
           <Nav.Toggle />

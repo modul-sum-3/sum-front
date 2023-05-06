@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { NotificationManager } from 'react-notifications';
 import { useState } from 'react';
+import { NotificationManager } from 'react-notifications';
 
 const ClientTrainings = ({ clientId }) => {
   const [trainings, setTrainings] = useState({});
@@ -117,7 +117,7 @@ const ClientTrainings = ({ clientId }) => {
               <div>Room: {training.room_id}</div>
               <button
                 type="button"
-                className="mt-3 w-full rounded-lg bg-gradient-to-r from-red-500 to-red-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-red-500"
+                className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-600"
               >
                 Sign off
               </button>

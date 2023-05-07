@@ -1,13 +1,15 @@
-import MainTemplate from '../templates/MainTemplate';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
-    <MainTemplate>
-      <div className="mx-10 flex h-full items-center justify-center gap-10">
-        <div className="flex flex-col justify-center gap-3">
+    <div className="flex h-max min-h-screen flex-col bg-gray-200">
+      <Navbar />
+      <div className="mx-10 mt-16 flex h-full  items-center justify-center">
+        <div className="mb-16 flex flex-col justify-center gap-3">
           <span
             href="#"
-            className=" mt-4 block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            className="mt-4 block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
           >
             <h2 className="font-semibold text-primary">Customer Service Department</h2>
             <p className="my-4 ml-1 text-base font-normal text-gray-900">12 345 67 89 </p>
@@ -31,10 +33,10 @@ const Contact = () => {
             </p>
           </span>
         </div>
-        <div className="mx-14 mt-14 w-1/2">
-          <h3 className="mb-8 h-10 w-full self-center rounded-lg bg-primary p-2 text-center text-white shadow">
+        <div className=" shrink-1 grow-1 mx-20 mt-[-5%] w-1/2 ">
+          <p className="mb-8 mt-4  h-10 w-full rounded-lg bg-primary p-2 text-center text-sm text-white shadow-lg shadow-lime-600 dark:text-gray-400">
             Leave your personal details and we will contact you
-          </h3>
+          </p>
           <form className="">
             <div className=" relative z-0 mb-6 w-full">
               <input
@@ -137,7 +139,8 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </MainTemplate>
+      <Footer />
+    </div>
   );
 };
 

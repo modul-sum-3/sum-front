@@ -1,13 +1,17 @@
-const ModalLogin = ({ isVisible }) => {
+import { useState } from 'react';
+
+const ModalLogin = ({ isVisible, onClose }) => {
+  const [showModal, setShowModal] = useState(true);
   if (!isVisible) return null;
   return (
     <div>
       <div aria-hidden="true" className="fixed inset-0 flex items-center justify-center">
         <div className="relative max-h-full w-full max-w-2xl">
-          <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
-            <div className="flex items-start justify-between rounded-t border-b p-4 dark:border-gray-600">
+          <div className="relative rounded-lg bg-white shadow">
+            <div className="flex items-start justify-between rounded-t border-b p-4">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Static modal</h3>
               <button
+                onClick={() => onClose()}
                 type="button"
                 className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
               >
@@ -42,13 +46,13 @@ const ModalLogin = ({ isVisible }) => {
             <div className="flex items-center space-x-2 rounded-b border-t border-gray-200 p-6 dark:border-gray-600">
               <button
                 type="button"
-                className="rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-blue-300"
               >
                 I accept
               </button>
               <button
                 type="button"
-                className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-600"
+                className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-blue-300"
               >
                 Decline
               </button>

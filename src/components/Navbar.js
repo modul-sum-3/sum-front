@@ -9,7 +9,7 @@ const Navbar = () => {
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="FitNest Logo" />
         </Nav.Brand>
 
-        <Nav.Collapse>
+        <Nav.Collapse className="uppercase">
           <Nav.Link href="/" class="font-semibold hover:text-hover">
             Home
           </Nav.Link>
@@ -35,12 +35,12 @@ const Navbar = () => {
 
         <div className="flex place-items-center gap-6">
           <Nav.Collapse>
-            <Nav.Link href="/login" class="hover:text-hover">
+            <Nav.Link href="/login" class="font-semibold hover:text-hover">
               Login
             </Nav.Link>
           </Nav.Collapse>
           <div className="flex">
-            <Button href="/register" className="md bg-primary hover:bg-hover">
+            <Button href="/register" className="bg-primary font-semibold hover:bg-hover">
               Register
             </Button>
             <Nav.Toggle />

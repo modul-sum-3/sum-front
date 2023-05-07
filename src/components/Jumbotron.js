@@ -1,19 +1,19 @@
 const Jumbotron = () => {
   return (
     // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <section className="h-full bg-gray-500 bg-[url('assets/jumbo_bg.jpg')] bg-center bg-no-repeat bg-blend-multiply">
+    <section className="flex h-full bg-gray-500 bg-[url('assets/jumbo_bg.jpg')] bg-center bg-no-repeat bg-blend-multiply">
       {' '}
-      <div className="m-auto h-full max-w-screen-xl px-4 py-24 text-center lg:py-56">
+      <div className="m-auto max-w-screen-xl px-4 py-24 text-center lg:py-56 ">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
           Join us!
         </h1>
-        <p className="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
+        <h2 className="mb-8 font-semibold text-gray-300 sm:px-16 lg:px-48">
           Check out our offer and find something you enjoy.
-        </p>
+        </h2>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
           <a
             href="/membership"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-center text-base font-medium text-white hover:bg-green-100 focus:ring-4"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-center text-lg font-semibold text-white hover:bg-green-100 focus:ring-4"
           >
             Check out our offer
             <svg
@@ -32,7 +32,7 @@ const Jumbotron = () => {
           </a>
           <a
             href="/clubs"
-            className="inline-flex items-center justify-center rounded-lg   bg-gray-100 px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-400 hover:text-gray-900  "
+            className="inline-flex items-center justify-center rounded-lg bg-gray-100 px-5 py-3 text-center text-lg font-semibold text-gray-900 hover:bg-gray-400 hover:text-gray-900  "
           >
             Our clubs
           </a>

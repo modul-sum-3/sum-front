@@ -6,6 +6,7 @@ import ModalLogin from './ModalLogin';
 // import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 const MembershipCard = ({ title, price, benefits }) => {
+  const isAunth = false;
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -36,7 +37,10 @@ const MembershipCard = ({ title, price, benefits }) => {
           Choose plan
         </button>
       </div>
-      <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} title={title} />
+      <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} title={title}>
+        {isAunth && <p>Zalogowano</p>}
+        {!isAunth && <p>Niezalogowano</p>}
+      </ModalLogin>
     </div>
   );
 };

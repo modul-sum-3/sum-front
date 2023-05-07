@@ -36,7 +36,7 @@ const MembershipCard = ({ title, price, benefits }) => {
           Choose plan
         </button>
       </div>
-      <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} />
+      <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} title={title} />
     </div>
   );
 };

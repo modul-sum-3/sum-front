@@ -1,15 +1,13 @@
-import { useState } from 'react';
-
-const ModalLogin = ({ isVisible, onClose }) => {
-  const [showModal, setShowModal] = useState(true);
+const ModalLogin = ({ isVisible, onClose, title }) => {
   if (!isVisible) return null;
   return (
     <div>
+      <div className="fixed left-0 top-0 h-[100vh] w-[100vw] bg-black bg-opacity-20 backdrop-blur-md" />
       <div aria-hidden="true" className="fixed inset-0 flex items-center justify-center">
         <div className="relative max-h-full w-full max-w-2xl">
-          <div className="relative rounded-lg bg-white shadow">
+          <div className="relative rounded-lg bg-gray-100 shadow">
             <div className="flex items-start justify-between rounded-t border-b p-4">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Static modal</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
               <button
                 onClick={() => onClose()}
                 type="button"

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 
 const ClientInfoForm = () => {
@@ -93,7 +93,7 @@ const ClientInfoForm = () => {
         </label>
         <button
           type="submit"
-          className="rounded-lg bg-gradient-to-r from-primary to-green-100 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-primary"
+          className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-primary"
         >
           Save
         </button>

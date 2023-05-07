@@ -1,9 +1,11 @@
+import { NotificationContainer } from 'react-notifications';
 import StaffTemplate from '../templates/StaffTemplate';
 
 const Employee = () => {
   return (
     <div>
-      <StaffTemplate>wqfqwffqe</StaffTemplate>
+      <StaffTemplate />
+      <NotificationContainer />
     </div>
   );
 };

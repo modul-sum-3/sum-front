@@ -1,6 +1,5 @@
-import axios from 'axios';
 import { useState } from 'react';
-import { NotificationManager, NotificationContainer } from 'react-notifications';
+import { NotificationContainer } from 'react-notifications';
 import MembershipCard from '../components/MembershipCard';
 import { cards } from '../data/cards';
 import MainTemplate from '../templates/MainTemplate';
@@ -21,11 +20,6 @@ const Membership = () => {
           <h1 className="font-bold text-primary ">Choose Your Best Plan</h1>
           <p>Choose the plan that suits you</p>
         </div>
-        {/* <div className="my-6 flex gap-4">
-          {membership.map(({ title, price, benefits }) => (
-            <MembershipCard title={title} price={price} benefits={benefits} />
-          ))}
-        </div> */}
         <div className="my-6 flex gap-4">
           {cards.map(({ title, price, benefits }) => (
             <MembershipCard title={title} price={price} benefits={benefits} />

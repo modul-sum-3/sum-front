@@ -1,9 +1,12 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { ReactComponent as CheckIcon } from '../assets/check-icon.svg';
+import ModalLogin from './ModalLogin';
+// import axios from 'axios';
+// import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 const MembershipCard = ({ title, price, benefits }) => {
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
@@ -26,12 +29,14 @@ const MembershipCard = ({ title, price, benefits }) => {
         </ul>
 
         <button
+          onClick={() => setShowModal(true)}
           type="button"
           className="inline-flex w-full justify-center rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-green-100 focus:outline-none focus:ring-4 focus:ring-gray-300"
         >
           Choose plan
         </button>
       </div>
+      <ModalLogin isVisible={showModal} />
     </div>
   );
 };

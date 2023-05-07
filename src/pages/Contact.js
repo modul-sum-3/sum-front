@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="flex h-max min-h-screen flex-col bg-gray-200">
       <Navbar />
-      <div className="mx-10 mt-16 flex h-full  items-center justify-center">
+      <div className="mx-10  flex h-screen  items-center justify-center">
         <div className="mb-16 flex flex-col justify-center gap-3">
           <span
             href="#"

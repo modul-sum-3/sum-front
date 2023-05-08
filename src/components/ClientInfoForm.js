@@ -7,7 +7,7 @@ const ClientInfoForm = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   //   axios
   //     .get('')
@@ -28,19 +28,14 @@ const ClientInfoForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!isValidEmail(email)) {
-      NotificationManager.error('Invaild email!');
-      return;
-    }
-
-    if (client.email === email && client.phone === phone) {
+    if (client.password === password && client.phone === phone) {
       NotificationManager.error('U havent changed anything');
       return;
     }
 
     axios
       .put('', {
-        email,
+        password,
         phone,
       })
       .then(() => {
@@ -83,11 +78,11 @@ const ClientInfoForm = () => {
           />
         </label>
         <label htmlFor="email">
-          Email
+          Password
           <input
-            value={email}
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
+            value={password}
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
         </label>

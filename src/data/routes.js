@@ -8,6 +8,7 @@ const routes = {
   coach: '/coach',
   login: '/login',
   register: '/register',
+  club: '/:ean',
 };
 
 export default routes;

@@ -3,6 +3,8 @@ import IMask from 'imask';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import { Link } from 'react-router-dom';
+import routes from '../data/routes';
 
 const EmployeeRegisterForm = ({ param }) => {
   const [name, setName] = useState('');
@@ -181,13 +183,13 @@ const EmployeeRegisterForm = ({ param }) => {
           Register
         </button>
         <p className="flex list-none items-center gap-2">
-          <a
-            href="/login"
+          <Link
+            to={routes.login}
             className="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
             aria-current="page"
           >
             Already have an account? Log in
-          </a>
+          </Link>
         </p>
       </form>
     </div>

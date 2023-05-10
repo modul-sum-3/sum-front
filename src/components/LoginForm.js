@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import { Link } from 'react-router-dom';
+import routes from '../data/routes';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -72,13 +74,13 @@ const LoginForm = () => {
           Log in
         </button>
         <p className="flex list-none items-center gap-2">
-          <a
-            href="/register"
+          <Link
+            to={routes.register}
             className="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
             aria-current="page"
           >
             Don't have an account? Register
-          </a>
+          </Link>
         </p>
       </form>
     </div>

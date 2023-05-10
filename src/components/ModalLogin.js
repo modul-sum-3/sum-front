@@ -2,7 +2,7 @@ const ModalLogin = ({ isVisible, onClose, title, children }) => {
   if (!isVisible) return null;
   return (
     <div>
-      <div className="fixed left-0 top-0 h-[100vh] w-[100vw] bg-black/20 backdrop-blur-lg" />
+      <div className="fixed left-0 top-0 h-[100vh] w-[100vw] bg-gray-600/20 backdrop-blur-lg" />
       <div aria-hidden="true" className="fixed inset-0 flex items-center justify-center">
         <div className="relative max-h-full w-full max-w-2xl">
           <div className="relative rounded-lg bg-white shadow">

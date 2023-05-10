@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import Homepage from '../components/Homepage';
-import Timetable from '../components/Timetable';
+import { Link } from 'react-router-dom';
 import ConfirmTraninings from '../components/ConfirmTrainings';
+import Homepage from '../components/Homepage';
 import RegisterForm from '../components/RegisterForm';
+import Timetable from '../components/Timetable';
+import routes from '../data/routes';
 
 const StaffTemplate = () => {
   const [page, setPage] = useState('homepage');
@@ -156,9 +158,8 @@ const StaffTemplate = () => {
                 </button>
               </li>
               <li>
-                <a
-                  type="button"
-                  href="/"
+                <Link
+                  to={routes.home}
                   id="logout"
                   className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
@@ -176,7 +177,7 @@ const StaffTemplate = () => {
                     />
                   </svg>
                   <span className="ml-3 flex-1 whitespace-nowrap">Tymczasowy</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

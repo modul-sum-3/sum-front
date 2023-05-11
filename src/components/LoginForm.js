@@ -2,12 +2,18 @@ import axios from 'axios';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import routes from '../data/routes';
+import user from '../data/store';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [login, setEmail] = useState('');
+  const [password1, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const setRole = user((state) => state.setRole);
+  const token = user((state) => state.token);
+  const setToken = user((state) => state.setToken);
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);
@@ -16,31 +22,37 @@ const LoginForm = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(login)) {
       NotificationManager.error('Invalid email');
-      return;
-    }
-    // There should be a function which hash password
-    if (password === null) {
       return;
     }
 
     // Creating object to pass to databse
     const newLogin = {
-      login: email,
-      hashed: password,
-      hash: '',
+      email: login,
+      password: password1,
     };
 
     axios
-      .post('URL', newLogin)
-      .then(() => {
-        NotificationManager.success('Login successful');
+      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', newLogin)
+      .then((res) => {
+        setToken(res.token);
       })
       .catch(() => {
         NotificationManager.error('Login unsuccessful');
       });
 
+    axios
+      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken', token)
+      .then((res) => {
+        setRole(res.data.role);
+      })
+      .catch(() => {
+        NotificationManager.error('Login unsuccessful');
+      });
+
+    NotificationManager.success('Login successful');
+    navigate('/');
     e.target.reset();
     setEmail(null);
     setPassword(null);

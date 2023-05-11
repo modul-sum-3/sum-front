@@ -14,8 +14,8 @@ const Clubs = () => {
           </p>
         </div>
         <div className="clubs__list mt-12 flex max-w-full flex-col gap-6">
-          {clubsList.map(({ id, city, location }) => (
-            <ClubRow id={id} city={city} location={location} />
+          {clubsList.map(({ id, city, location, street, zip }) => (
+            <ClubRow id={id} city={city} location={location} street={street} zip={zip} />
           ))}
         </div>
       </MainTemplate>

@@ -11,6 +11,7 @@ const LoginForm = () => {
   const [password1, setPassword] = useState('');
   const navigate = useNavigate();
 
+  const role = user((state) => state.role);
   const setRole = user((state) => state.setRole);
   const token = user((state) => state.token);
   const setToken = user((state) => state.setToken);
@@ -34,31 +35,32 @@ const LoginForm = () => {
     };
 
     axios
-      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', {
-        email: login,
-        password: password1,
-      })
+      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', newLogin)
       .then((res) => {
-        const result = res.json();
-        console.log(result.token);
+        const result = res.data;
         setToken(result.token);
       })
       .catch(() => {
-        NotificationManager.error('Login unsuccessful');
+        NotificationManager.error('Login unsuccessful - token');
       });
 
     axios
-      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken', token)
+      .post(
+        'https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken',
+        {},
+        { headers: { Authorization: `Bearer ${token}` } },
+      )
       .then((res) => {
-        const result = res.json();
+        const result = res.data;
         setRole(result.role);
+        if (role) {
+          NotificationManager.success('Login successful');
+          navigate('/');
+        }
       })
       .catch(() => {
-        NotificationManager.error('Login unsuccessful');
+        NotificationManager.error('Login unsuccessful - role');
       });
-
-    NotificationManager.success('Login successful');
-    navigate('/');
   };
 
   return (

@@ -34,9 +34,14 @@ const LoginForm = () => {
     };
 
     axios
-      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', newLogin)
+      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', {
+        email: login,
+        password: password1,
+      })
       .then((res) => {
-        setToken(res.token);
+        const result = res.json();
+        console.log(result.token);
+        setToken(result.token);
       })
       .catch(() => {
         NotificationManager.error('Login unsuccessful');
@@ -45,7 +50,8 @@ const LoginForm = () => {
     axios
       .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken', token)
       .then((res) => {
-        setRole(res.data.role);
+        const result = res.json();
+        setRole(result.role);
       })
       .catch(() => {
         NotificationManager.error('Login unsuccessful');
@@ -53,9 +59,6 @@ const LoginForm = () => {
 
     NotificationManager.success('Login successful');
     navigate('/');
-    e.target.reset();
-    setEmail(null);
-    setPassword(null);
   };
 
   return (

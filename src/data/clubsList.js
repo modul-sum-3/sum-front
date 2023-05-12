@@ -5,6 +5,8 @@ export const clubsList = [
     location: 'Skorosze',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 2,
@@ -12,6 +14,8 @@ export const clubsList = [
     location: 'Górna',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 3,
@@ -19,6 +23,8 @@ export const clubsList = [
     location: 'Stare Miasto',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 4,
@@ -26,6 +32,8 @@ export const clubsList = [
     location: 'Skorosze',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 5,
@@ -33,6 +41,8 @@ export const clubsList = [
     location: 'Górna',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 6,
@@ -40,6 +50,8 @@ export const clubsList = [
     location: 'Stare Miasto',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 7,
@@ -47,6 +59,8 @@ export const clubsList = [
     location: 'Skorosze',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 8,
@@ -54,6 +68,8 @@ export const clubsList = [
     location: 'Górna',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
   {
     id: 9,
@@ -61,5 +77,7 @@ export const clubsList = [
     location: 'Stare Miasto',
     street: 'Polna 12',
     zip: '90-400',
+    opens: '8:00',
+    closes: '23:45',
   },
 ];

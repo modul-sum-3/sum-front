@@ -1,12 +1,15 @@
+import clsx from 'clsx';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
-const MainTemplate = ({ children }) => {
+const MainTemplate = ({ children, bg = '' }) => {
   return (
     <div className="flex min-h-screen flex-col bg-gray-200">
       <Navbar />
 
-      <div className="w-full max-w-screen-xl grow self-center px-2 py-16 sm:px-4">{children}</div>
+      <div className={clsx('w-full max-w-screen-xl grow self-center px-2 py-16 sm:px-4', bg)}>
+        {children}
+      </div>
       <Footer />
     </div>
   );

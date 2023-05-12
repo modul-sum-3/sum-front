@@ -10,14 +10,42 @@ const LoginForm = () => {
   const [login, setEmail] = useState('');
   const [password1, setPassword] = useState('');
   const navigate = useNavigate();
-
-  const role = user((state) => state.role);
   const setRole = user((state) => state.setRole);
-  const token = user((state) => state.token);
-  const setToken = user((state) => state.setToken);
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);
+  }
+
+  async function postLogin(newLogin) {
+    await axios
+      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', newLogin)
+      .then((res) => {
+        const result = res.data;
+        axios
+          .post(
+            'https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken',
+            {},
+            { headers: { Authorization: `Bearer ${result.token}` } },
+          )
+          .then((res1) => {
+            const result1 = res1.data;
+            setRole(result1.role);
+            NotificationManager.success('Login successful');
+            if (result1.role === 'CLIENT') {
+              navigate('/');
+            } else if (result1.role === 'EMPLOYEE') {
+              navigate('/employee');
+            } else if (result1.role === 'COACH') {
+              navigate('/coach');
+            }
+          })
+          .catch(() => {
+            NotificationManager.error('Login unsuccessful - role');
+          });
+      })
+      .catch(() => {
+        NotificationManager.error('Login unsuccessful - token');
+      });
   }
 
   const handleLogin = (e) => {
@@ -34,33 +62,7 @@ const LoginForm = () => {
       password: password1,
     };
 
-    axios
-      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', newLogin)
-      .then((res) => {
-        const result = res.data;
-        setToken(result.token);
-      })
-      .catch(() => {
-        NotificationManager.error('Login unsuccessful - token');
-      });
-
-    axios
-      .post(
-        'https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken',
-        {},
-        { headers: { Authorization: `Bearer ${token}` } },
-      )
-      .then((res) => {
-        const result = res.data;
-        setRole(result.role);
-        if (role) {
-          NotificationManager.success('Login successful');
-          navigate('/');
-        }
-      })
-      .catch(() => {
-        NotificationManager.error('Login unsuccessful - role');
-      });
+    postLogin(newLogin);
   };
 
   return (

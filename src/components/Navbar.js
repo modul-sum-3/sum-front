@@ -1,9 +1,12 @@
 import { Button, Navbar as Nav } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import user from '../data/store';
 import logo from '../assets/logo_fit.svg';
 import routes from '../data/routes';
 
 const Navbar = () => {
+  const role = user((state) => state.role);
+
   return (
     <div className="flex w-full items-center justify-center bg-white">
       <Nav fluid rounded className="w-[90vw] max-w-screen-xl bg-white/0">
@@ -25,30 +28,36 @@ const Navbar = () => {
           <Link to={routes.contact}>
             <Nav.Link class="font-semibold hover:text-hover ">Contact</Nav.Link>
           </Link>
-          <Link to={routes.client}>
-            <Nav.Link class="hover:text-hover ">Client</Nav.Link>
-          </Link>
-          <Link to={routes.employee}>
+          {role === 'CLIENT' ? (
+            <Link to={routes.client}>
+              <Nav.Link class="hover:text-hover ">Client</Nav.Link>
+            </Link>
+          ) : null}
+          {/* <Link to={routes.employee}>
             <Nav.Link class="hover:text-hover ">Employee</Nav.Link>
           </Link>
           <Link to={routes.coach}>
             <Nav.Link class="hover:text-hover">Coach</Nav.Link>
-          </Link>
+          </Link> */}
         </Nav.Collapse>
 
-        <div className="flex place-items-center gap-6">
-          <Nav.Collapse>
-            <Link to={routes.login}>
-              <Nav.Link class="font-semibold hover:text-hover">Login</Nav.Link>
-            </Link>
-          </Nav.Collapse>
-          <div className="flex">
-            <Link to={routes.register}>
-              <Button className="bg-primary font-semibold hover:bg-hover">Register</Button>
-            </Link>
-            <Nav.Toggle />
+        {role === '' ? (
+          <div className="flex place-items-center gap-6">
+            <Nav.Collapse>
+              <Link to={routes.login}>
+                <Nav.Link class="font-semibold hover:text-hover">Login</Nav.Link>
+              </Link>
+            </Nav.Collapse>
+            <div className="flex">
+              <Link to={routes.register}>
+                <Button className="bg-primary font-semibold hover:bg-hover">Register</Button>
+              </Link>
+              <Nav.Toggle />
+            </div>
           </div>
-        </div>
+        ) : (
+          <Button className="bg-primary font-semibold hover:bg-hover">Wyloguj</Button>
+        )}
       </Nav>
     </div>
   );

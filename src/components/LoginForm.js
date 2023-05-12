@@ -2,48 +2,67 @@ import axios from 'axios';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import routes from '../data/routes';
+import user from '../data/store';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [login, setEmail] = useState('');
+  const [password1, setPassword] = useState('');
+  const navigate = useNavigate();
+  const setRole = user((state) => state.setRole);
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);
   }
 
+  async function postLogin(newLogin) {
+    await axios
+      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', newLogin)
+      .then((res) => {
+        const result = res.data;
+        axios
+          .post(
+            'https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken',
+            {},
+            { headers: { Authorization: `Bearer ${result.token}` } },
+          )
+          .then((res1) => {
+            const result1 = res1.data;
+            setRole(result1.role);
+            NotificationManager.success('Login successful');
+            if (result1.role === 'CLIENT') {
+              navigate('/');
+            } else if (result1.role === 'EMPLOYEE') {
+              navigate('/employee');
+            } else if (result1.role === 'COACH') {
+              navigate('/coach');
+            }
+          })
+          .catch(() => {
+            NotificationManager.error('Login unsuccessful - role');
+          });
+      })
+      .catch(() => {
+        NotificationManager.error('Login unsuccessful - token');
+      });
+  }
+
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(login)) {
       NotificationManager.error('Invalid email');
-      return;
-    }
-    // There should be a function which hash password
-    if (password === null) {
       return;
     }
 
     // Creating object to pass to databse
     const newLogin = {
-      login: email,
-      hashed: password,
-      hash: '',
+      email: login,
+      password: password1,
     };
 
-    axios
-      .post('URL', newLogin)
-      .then(() => {
-        NotificationManager.success('Login successful');
-      })
-      .catch(() => {
-        NotificationManager.error('Login unsuccessful');
-      });
-
-    e.target.reset();
-    setEmail(null);
-    setPassword(null);
+    postLogin(newLogin);
   };
 
   return (

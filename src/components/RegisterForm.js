@@ -10,8 +10,8 @@ const RegisterForm = ({ width, invert, display }) => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [birthday, setBirthday] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
+  const [phoneNumber1, setPhoneNumber] = useState('');
+  const [email1, setEmail] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
 
@@ -46,7 +46,7 @@ const RegisterForm = ({ width, invert, display }) => {
   const handleRegister = (e) => {
     e.preventDefault();
 
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(email1)) {
       NotificationManager.error('Invaild email!');
       return;
     }
@@ -57,21 +57,25 @@ const RegisterForm = ({ width, invert, display }) => {
     }
 
     const newUser = {
-      newName: name,
-      newSurname: surname,
-      newBirthday: birthday,
-      newPhone: phoneNumber,
-      newEmail: email,
-      newPassword: password1,
+      client: {
+        first_name: name,
+        last_name: surname,
+        gender: 'OTHER',
+        date_of_birth: birthday,
+        // phoneNumber: phoneNumber1,
+        email: email1,
+        balance: 0,
+      },
+      password: password1,
     };
 
     axios
-      .post('', newUser)
+      .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/register', newUser)
       .then(() => {
         NotificationManager.success('Register successful');
       })
-      .catch(() => {
-        NotificationManager.error('Register unsuccessful');
+      .catch((err) => {
+        NotificationManager.error(`Register unsuccessful ${err}`);
       });
 
     e.target.reset();

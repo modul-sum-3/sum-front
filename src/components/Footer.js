@@ -1,6 +1,6 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+// eslint-disable-next-line import/no-extraneous-dependencies
 
 const Footer = () => {
   return (

@@ -19,6 +19,7 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+
     "import/prefer-default-export": "off",
     "tailwindcss/no-custom-classname": "off",
     "react/jsx-filename-extension": "off",

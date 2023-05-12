@@ -1,3 +1,4 @@
+import 'kalend/dist/styles/index.css'; // import styles
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

@@ -11,6 +11,7 @@ const LoginForm = () => {
   const [password1, setPassword] = useState('');
   const navigate = useNavigate();
   const setRole = user((state) => state.setRole);
+  const setToken = user((state) => state.setToken);
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);
@@ -21,6 +22,7 @@ const LoginForm = () => {
       .post('https://springboot-385918.oa.r.appspot.com/api/v1/auth/login', newLogin)
       .then((res) => {
         const result = res.data;
+        setToken(result.token);
         axios
           .post(
             'https://springboot-385918.oa.r.appspot.com/api/v1/auth/checktoken',

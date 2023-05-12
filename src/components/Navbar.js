@@ -6,6 +6,13 @@ import routes from '../data/routes';
 
 const Navbar = () => {
   const role = user((state) => state.role);
+  const setRole = user((state) => state.setRole);
+  const setToken = user((state) => state.setToken);
+
+  const handleLogout = () => {
+    setRole('');
+    setToken('');
+  };
 
   return (
     <div className="flex w-full items-center justify-center bg-white">
@@ -33,12 +40,6 @@ const Navbar = () => {
               <Nav.Link class="hover:text-hover ">Client</Nav.Link>
             </Link>
           ) : null}
-          {/* <Link to={routes.employee}>
-            <Nav.Link class="hover:text-hover ">Employee</Nav.Link>
-          </Link>
-          <Link to={routes.coach}>
-            <Nav.Link class="hover:text-hover">Coach</Nav.Link>
-          </Link> */}
         </Nav.Collapse>
 
         {role === '' ? (
@@ -56,7 +57,9 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <Button className="bg-primary font-semibold hover:bg-hover">Wyloguj</Button>
+          <Button className="bg-primary font-semibold hover:bg-hover" onClick={handleLogout}>
+            Wyloguj
+          </Button>
         )}
       </Nav>
     </div>

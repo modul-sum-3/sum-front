@@ -7,18 +7,13 @@ const ClubRow = ({ id, city, location, street, zip }) => {
   const [show, setShow] = useState(false);
 
   const accordionToggle = () => {
-    if (show) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    setShow((prev) => !prev);
   };
   return (
     <div className="gap-0">
       <div className="flex w-full justify-between rounded-t-lg border-gray-200 bg-white shadow hover:bg-gray-50">
         {/* <Link
           to={`/${id}`}
-          
         > */}
         <button
           type="button"
@@ -40,7 +35,8 @@ const ClubRow = ({ id, city, location, street, zip }) => {
 
           {/* <p className="self-center text-gray-600">Click to expand</p> */}
           <div className="self-center p-6">
-            <ArrowIcon className={clsx('h-5 w-5 shrink-0 fill-primary')} />
+            {!show && <ArrowIcon className={clsx('h-5 w-5 shrink-0 rotate-90 fill-primary')} />}
+            {show && <ArrowIcon className={clsx('h-5 w-5 shrink-0 -rotate-90 fill-primary')} />}
           </div>
         </button>
         {/* </Link> */}

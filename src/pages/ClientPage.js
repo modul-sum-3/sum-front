@@ -1,23 +1,13 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { NotificationManager, NotificationContainer } from 'react-notifications';
+import { NotificationContainer } from 'react-notifications';
 import Navbar from '../components/Navbar';
 import ClientInfoForm from '../components/ClientInfoForm';
 import ClientBalance from '../components/ClientBalance';
 import ClientTrainings from '../components/ClientTrainings';
 import Footer from '../components/Footer';
+import user from '../data/store';
 
 const Client = () => {
-  const [client, setClient] = useState({});
-  const [balance, setBalance] = useState();
-
-  // axios
-  //   .get('')
-  //   .then((res) => {
-  //     setClient(res.data);
-  //     setBalance(client.balance);
-  //   })
-  //   .catch(() => NotificationManager.error('Couldnt get data'));
+  const userData = user((state) => state.userData);
 
   return (
     <div className="flex h-full min-h-screen flex-col bg-gray-200">
@@ -27,7 +17,7 @@ const Client = () => {
           <ClientTrainings className="row-span-2" />
         </div>
         <div className="mt-16">
-          <ClientBalance balance={balance} className="" />
+          <ClientBalance balance={userData.balance} className="" />
         </div>
         <div className="mb-16 mt-[-10%]">
           <ClientInfoForm className="" />

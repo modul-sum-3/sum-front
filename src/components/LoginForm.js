@@ -12,6 +12,8 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const setRole = user((state) => state.setRole);
   const setToken = user((state) => state.setToken);
+  const setUser = user((state) => state.setUser);
+  const setId = user((state) => state.setId);
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);
@@ -31,14 +33,35 @@ const LoginForm = () => {
           )
           .then((res1) => {
             const result1 = res1.data;
-            setRole(result1.role);
-            NotificationManager.success('Login successful');
+
             if (result1.role === 'CLIENT') {
-              navigate('/');
-            } else if (result1.role === 'EMPLOYEE') {
-              navigate('/employee');
-            } else if (result1.role === 'COACH') {
-              navigate('/coach');
+              axios
+                .get(`https://springboot-385918.oa.r.appspot.com/api/client/${result1.id}`)
+                .then((res2) => {
+                  setUser(res2.data);
+                  setRole(result1.role);
+                  setId(result1.id);
+                  if (result1.role === 'CLIENT') {
+                    navigate('/');
+                  } else if (result1.role === 'EMPLOYEE') {
+                    navigate('/employee');
+                  } else if (result1.role === 'COACH') {
+                    navigate('/coach');
+                  }
+                })
+                .catch((e) => {
+                  NotificationManager.error(`Cannot get user - ${e}`);
+                });
+            } else {
+              setRole(result1.role);
+              setId(result1.id);
+              if (result1.role === 'CLIENT') {
+                navigate('/');
+              } else if (result1.role === 'EMPLOYEE') {
+                navigate('/employee');
+              } else if (result1.role === 'COACH') {
+                navigate('/coach');
+              }
             }
           })
           .catch(() => {

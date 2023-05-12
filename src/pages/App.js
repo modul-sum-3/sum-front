@@ -1,16 +1,16 @@
 import { Flowbite } from 'flowbite-react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import routes from '../data/routes';
-import Client from './Client';
+import Client from './ClientPage';
 import ClubPage from './ClubPage';
-import Clubs from './Clubs';
-import Coach from './Coach';
-import Contact from './Contact';
-import Employee from './Employee';
-import Home from './Home';
-import Login from './Login';
-import Membership from './Membership';
-import Register from './Register';
+import Clubs from './ClubsPage';
+import Coach from './CoachPage';
+import Contact from './ContactPage';
+import Employee from './EmployeePage';
+import Home from './HomePage';
+import Login from './LoginPage';
+import Membership from './MembershipPage';
+import Register from './RegisterPage';
 
 const App = () => {
   return (

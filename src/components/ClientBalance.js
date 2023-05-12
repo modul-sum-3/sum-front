@@ -1,10 +1,15 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
+// import user from '../data/store';
 
 const ClientBalance = ({ balance }) => {
   const [newBalance, setNewBalance] = useState();
+  // const id = user((state) => state.id);
+  // const userData = user((state) => state.userData);
+  // const setUser = user((state) => state.setUser);
 
+  //! Tu trzeba dorobic puta i bedzie banglalo
   const handleBalanceChange = (e) => {
     e.preventDefault();
 
@@ -15,7 +20,7 @@ const ClientBalance = ({ balance }) => {
 
     axios
       .put('', {
-        balance,
+        balance: newBalance,
       })
       .then(() => {
         NotificationManager.success('Successfuly added');
@@ -39,6 +44,7 @@ const ClientBalance = ({ balance }) => {
           </label>
           <button
             type="submit"
+            id="button-add"
             className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-primary"
           >
             Add

@@ -1,25 +1,13 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
+import user from '../data/store';
 
 const ClientInfoForm = () => {
-  const [client, setClient] = useState({});
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
   const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
+  const [date, setDate] = useState('');
 
-  //   axios
-  //     .get('')
-  //     .then((res) => {
-  //       setClient(res.data);
-  //       //! Have to change client. values to match database names
-  //       setName(client.name);
-  //       setSurname(client.surname);
-  //       setPhone(client.phone);
-  //       setEmail(client.email);
-  //     })
-  //     .catch(() => NotificationManager.error('Couldnt get data'));
+  const userData = user((state) => state.userData);
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);
@@ -28,16 +16,13 @@ const ClientInfoForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (client.password === password && client.phone === phone) {
+    if (userData.date_of_birth === date && userData.phoneNumber === phone) {
       NotificationManager.error('U havent changed anything');
       return;
     }
 
     axios
-      .put('', {
-        password,
-        phone,
-      })
+      .put('', {})
       .then(() => {
         NotificationManager.success('Successfuly changed');
       })
@@ -53,7 +38,7 @@ const ClientInfoForm = () => {
           Name
           <input
             type="text"
-            value={name}
+            value={userData.first_name}
             disabled
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
@@ -62,7 +47,7 @@ const ClientInfoForm = () => {
           Surname
           <input
             type="text"
-            value={surname}
+            value={userData.last_name}
             disabled
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
@@ -70,19 +55,19 @@ const ClientInfoForm = () => {
         <label htmlFor="phoneNumber">
           Phone
           <input
-            value={phone}
+            value={userData.phoneNumber}
             id="phone-input"
             type="tel"
             onChange={(e) => setPhone(e.target.value)}
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
         </label>
-        <label htmlFor="email">
-          Password
+        <label htmlFor="birthdate">
+          Birthday
           <input
-            value={password}
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
+            value={userData.date_of_birth}
+            type="date"
+            onChange={(e) => setDate(e.target.value)}
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
           />
         </label>

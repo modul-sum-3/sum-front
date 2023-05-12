@@ -1,15 +1,25 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { NotificationContainer } from 'react-notifications';
 import ConfirmTraninings from '../components/ConfirmTrainings';
 import Homepage from '../components/Homepage';
 import RegisterForm from '../components/RegisterForm';
+import user from '../data/store';
 import Timetable from '../components/Timetable';
-import routes from '../data/routes';
 
 const StaffTemplate = () => {
   const [page, setPage] = useState('homepage');
-
   const [isCenter, setIsCenter] = useState('');
+  const setRole = user((state) => state.setRole);
+  const setToken = user((state) => state.setToken);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setRole('');
+    setToken('');
+    navigate('/');
+  };
 
   const componentSwitch = (com) => {
     let component;
@@ -139,6 +149,7 @@ const StaffTemplate = () => {
                 <button
                   type="button"
                   id="logout"
+                  onClick={handleLogout}
                   className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
@@ -157,32 +168,9 @@ const StaffTemplate = () => {
                   <span className="ml-3 flex-1 whitespace-nowrap">Log out</span>
                 </button>
               </li>
-              <li>
-                <Link
-                  to={routes.home}
-                  id="logout"
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="h-6 w-6 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">Tymczasowy</span>
-                </Link>
-              </li>
             </ul>
           </div>
         </aside>
-
         <div className="h-screen w-full sm:ml-64">
           <div
             className={`mb-4 grid h-full w-[1000px] ${isCenter} bg-gray-50 p-6 shadow-xl dark:bg-gray-800`}
@@ -191,6 +179,7 @@ const StaffTemplate = () => {
           </div>
         </div>
       </div>
+      <NotificationContainer />
     </div>
   );
 };

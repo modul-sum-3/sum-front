@@ -21,10 +21,13 @@ const user = create(
     (set) => ({
       role: '',
       token: '',
+      id: '',
       userData: {},
 
       setRole: (role) => set(() => ({ role })),
       setToken: (token) => set(() => ({ token })),
+      setId: (id) => set(() => ({ id })),
+      setUser: (userData) => set(() => ({ userData })),
     }),
     {
       name: 'user-storage',

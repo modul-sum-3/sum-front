@@ -35,8 +35,12 @@ const ClubRow = ({ id, city, location, street, zip }) => {
 
           {/* <p className="self-center text-gray-600">Click to expand</p> */}
           <div className="self-center p-6">
-            {!show && <ArrowIcon className={clsx('h-5 w-5 shrink-0 rotate-90 fill-primary')} />}
-            {show && <ArrowIcon className={clsx('h-5 w-5 shrink-0 -rotate-90 fill-primary')} />}
+            <ArrowIcon
+              className={clsx(
+                'h-5 w-5 shrink-0 rotate-90 fill-primary',
+                show ? '-rotate-90' : 'rotate-90',
+              )}
+            />
           </div>
         </button>
         {/* </Link> */}

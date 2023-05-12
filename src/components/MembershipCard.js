@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as CheckIcon } from '../assets/check-icon.svg';
+import routes from '../data/routes';
 import ModalLogin from './ModalLogin';
 // import axios from 'axios';
 // import { NotificationManager, NotificationContainer } from 'react-notifications';
@@ -38,8 +40,25 @@ const MembershipCard = ({ title, price, benefits }) => {
         </button>
       </div>
       <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} title={title}>
+        {!isAunth && (
+          <div className="flex flex-col items-center gap-4">
+            <h3 className="font-semibold">It looks like you're not logged in!</h3>
+            <Link
+              to={routes.login}
+              className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+            >
+              Login
+            </Link>
+            <p>or</p>
+            <Link
+              to={routes.register}
+              className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+            >
+              Register
+            </Link>
+          </div>
+        )}
         {isAunth && <p>Zalogowano</p>}
-        {!isAunth && <p>Niezalogowano</p>}
       </ModalLogin>
     </div>
   );

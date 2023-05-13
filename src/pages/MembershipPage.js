@@ -1,11 +1,11 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { NotificationContainer } from 'react-notifications';
-import MembershipCard from '../components/MembershipCard';
+import MembershipCard from '../components/Site/MembershipCard';
 import { cards } from '../data/cards';
 import MainTemplate from '../templates/MainTemplate';
 
 const Membership = () => {
-  const [membership, setMembership] = useState({});
+  // const [membership, setMembership] = useState({});
 
   // axios
   //   .get('')

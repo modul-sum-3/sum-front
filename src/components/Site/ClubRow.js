@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as ArrowIcon } from '../assets/arrow-icon.svg';
-import { ReactComponent as TrainFour } from '../assets/trainings/4.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/arrow-icon.svg';
+import { ReactComponent as TrainFour } from '../../assets/trainings/4.svg';
 
 const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
   const [show, setShow] = useState(false);

@@ -1,6 +1,6 @@
-import Footer from '../components/Footer';
-import Jumbotron from '../components/Jumbotron';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Site/Footer';
+import Jumbotron from '../components/Site/Jumbotron';
+import Navbar from '../components/Site/Navbar';
 
 const Home = () => {
   return (

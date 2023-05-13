@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Site/Footer';
+import Navbar from '../components/Site/Navbar';
 
 const MainTemplate = ({ children, bg = '' }) => {
   return (

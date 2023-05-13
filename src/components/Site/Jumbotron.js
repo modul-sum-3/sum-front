@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import routes from '../data/routes';
+import routes from '../../data/routes';
 
 const Jumbotron = () => {
   return (

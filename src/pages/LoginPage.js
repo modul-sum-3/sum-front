@@ -1,6 +1,6 @@
 import { NotificationContainer } from 'react-notifications';
 import { Link } from 'react-router-dom';
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/Site/LoginForm';
 import routes from '../data/routes';
 
 const Login = () => {

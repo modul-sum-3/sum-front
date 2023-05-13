@@ -1,4 +1,4 @@
-import ClubRow from '../components/ClubRow';
+import ClubRow from '../components/Site/ClubRow';
 import { clubsList } from '../data/clubsList';
 import MainTemplate from '../templates/MainTemplate';
 

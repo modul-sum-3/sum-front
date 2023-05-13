@@ -1,8 +1,8 @@
 import { Button, Navbar as Nav } from 'flowbite-react';
 import { Link, useNavigate } from 'react-router-dom';
-import user from '../data/store';
-import logo from '../assets/logo_fit.svg';
-import routes from '../data/routes';
+import user from '../../data/store';
+import logo from '../../assets/logo_fit.svg';
+import routes from '../../data/routes';
 
 const Navbar = () => {
   const role = user((state) => state.role);

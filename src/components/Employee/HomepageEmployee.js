@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 
-const Homepage = () => {
+const HomepageEmployee = () => {
   const [clientId, setClientId] = useState('');
   const [user, setUser] = useState({});
   const [display, setDisplay] = useState('');
@@ -64,4 +64,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomepageEmployee;

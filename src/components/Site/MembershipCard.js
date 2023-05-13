@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as CheckIcon } from '../assets/check-icon.svg';
-import routes from '../data/routes';
+import { ReactComponent as CheckIcon } from '../../assets/check-icon.svg';
+import routes from '../../data/routes';
 import ModalLogin from './ModalLogin';
 // import axios from 'axios';
 // import { NotificationManager, NotificationContainer } from 'react-notifications';

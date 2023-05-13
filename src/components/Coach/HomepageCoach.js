@@ -1,10 +1,4 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { NotificationManager } from 'react-notifications';
-
-const ClientTrainings = ({ clientId }) => {
-  const [trainings, setTrainings] = useState({});
-
+const HomepageCoach = () => {
   const exampleTraining = [
     {
       id: 1,
@@ -47,68 +41,14 @@ const ClientTrainings = ({ clientId }) => {
       duration: 60,
     },
   ];
-
-  const getClubName = (id) => {
-    let club = {};
-    let clubName = '';
-
-    axios
-      .get('')
-      .then((res) => {
-        club = res.data;
-        clubName = club.name;
-      })
-      .catch(() => NotificationManager.error('Cannot get club name'));
-
-    return clubName;
-  };
-
-  const getCategoryName = (id) => {
-    let category = {};
-    let categoryName = '';
-
-    axios
-      .get('')
-      .then((res) => {
-        category = res.data;
-        categoryName = category.name;
-      })
-      .catch(() => NotificationManager.error('Cannot get club name'));
-
-    return categoryName;
-  };
-
-  const getTrainerName = (id) => {
-    let trainer = {};
-    let trainerName = '';
-
-    axios
-      .get('')
-      .then((res) => {
-        trainer = res.data;
-        trainerName = trainer.name;
-      })
-      .catch(() => NotificationManager.error('Cannot get club name'));
-
-    return trainerName;
-  };
-
-  //   axios
-  //     //! id will be as an param to get
-  //     .get('')
-  //     .then((res) => {
-  //       setTrainings(res.data);
-  //     })
-  //     .catch(() => NotificationManager.error('Couldnt get data'));
-
   return (
-    <div className="flex flex-col justify-center text-black">
-      <div className="flex justify-center">Your trainings:</div>
+    <section>
+      <h2>My trainings:</h2>
       <div className="mx-16 mt-8 grid grid-cols-2 gap-4">
         {exampleTraining.map((training) => {
           return (
             <div className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
-              {/* <div>Club name: {getClubName(training.club_id)}</div> */}
+              <div className="mb-3 text-center">EXAMPLE TRAINING</div>
               <div>Category: {training.category_id} here will be category name</div>
               <div>Club name: {training.club_id} here will be club name</div>
               <div>Start date: {training.start_date}</div>
@@ -125,8 +65,8 @@ const ClientTrainings = ({ clientId }) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default ClientTrainings;
+export default HomepageCoach;

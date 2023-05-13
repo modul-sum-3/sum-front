@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { Link } from 'react-router-dom';
-import routes from '../data/routes';
+import routes from '../../data/routes';
 
 const RegisterForm = ({ width, invert, display }) => {
   const [name, setName] = useState('');

@@ -1,9 +1,9 @@
 import { NotificationContainer } from 'react-notifications';
-import Navbar from '../components/Navbar';
-import ClientInfoForm from '../components/ClientInfoForm';
-import ClientBalance from '../components/ClientBalance';
-import ClientTrainings from '../components/ClientTrainings';
-import Footer from '../components/Footer';
+import Navbar from '../components/Site/Navbar';
+import ClientInfoForm from '../components/Client/ClientInfoForm';
+import ClientBalance from '../components/Client/ClientBalance';
+import ClientTrainings from '../components/Client/ClientTrainings';
+import Footer from '../components/Site/Footer';
 import user from '../data/store';
 
 const Client = () => {

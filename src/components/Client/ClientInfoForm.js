@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
-import user from '../data/store';
+import user from '../../data/store';
 
 const ClientInfoForm = () => {
   const [phone, setPhone] = useState('');
@@ -9,9 +9,9 @@ const ClientInfoForm = () => {
 
   const userData = user((state) => state.userData);
 
-  function isValidEmail(newEmail) {
-    return /\S+@\S+\.\S+/.test(newEmail);
-  }
+  // function isValidEmail(newEmail) {
+  //   return /\S+@\S+\.\S+/.test(newEmail);
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();

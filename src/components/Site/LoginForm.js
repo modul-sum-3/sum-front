@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { Link, useNavigate } from 'react-router-dom';
-import routes from '../data/routes';
-import user from '../data/store';
+import routes from '../../data/routes';
+import user from '../../data/store';
 
 const LoginForm = () => {
   const [login, setEmail] = useState('');
@@ -41,27 +41,40 @@ const LoginForm = () => {
                   setUser(res2.data);
                   setRole(result1.role);
                   setId(result1.id);
-                  if (result1.role === 'CLIENT') {
-                    navigate('/');
-                  } else if (result1.role === 'EMPLOYEE') {
-                    navigate('/employee');
-                  } else if (result1.role === 'COACH') {
-                    navigate('/coach');
-                  }
+                  navigate('/');
                 })
                 .catch((e) => {
                   NotificationManager.error(`Cannot get user - ${e}`);
                 });
-            } else {
+            } else if (result1.role === 'EMPLOYEE') {
+              axios
+                .get(`https://springboot-385918.oa.r.appspot.com/api/employee/${result1.id}`)
+                .then((res2) => {
+                  setUser(res2.data);
+                  setRole(result1.role);
+                  setId(result1.id);
+                  navigate('/employee');
+                })
+                .catch((e) => {
+                  NotificationManager.error(`Cannot get user - ${e}`);
+                });
+
               setRole(result1.role);
               setId(result1.id);
-              if (result1.role === 'CLIENT') {
-                navigate('/');
-              } else if (result1.role === 'EMPLOYEE') {
-                navigate('/employee');
-              } else if (result1.role === 'COACH') {
-                navigate('/coach');
-              }
+
+              navigate('/employee');
+            } else if (result1.role === 'TRAINER') {
+              axios
+                .get(`https://springboot-385918.oa.r.appspot.com/api/trainer/${result1.id}`)
+                .then((res2) => {
+                  setUser(res2.data);
+                  setRole(result1.role);
+                  setId(result1.id);
+                  navigate('/coach');
+                })
+                .catch((e) => {
+                  NotificationManager.error(`Cannot get user - ${e}`);
+                });
             }
           })
           .catch(() => {

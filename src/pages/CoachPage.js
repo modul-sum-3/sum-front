@@ -1,9 +1,9 @@
-import StaffTemplate from '../templates/StaffTemplate';
+import CoachTemplate from '../templates/CoachTemplate';
 
 const Coach = () => {
   return (
     <div>
-      <StaffTemplate>Bajo jajo</StaffTemplate>
+      <CoachTemplate>Bajo jajo</CoachTemplate>
     </div>
   );
 };

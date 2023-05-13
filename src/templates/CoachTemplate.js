@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NotificationContainer } from 'react-notifications';
-import ConfirmTraninings from '../components/Employee/ConfirmTrainings';
-import HomepageEmployee from '../components/Employee/HomepageEmployee';
-import RegisterForm from '../components/Site/RegisterForm';
+import AddTraining from '../components/Coach/AddTraining';
+import HomepageCoach from '../components/Coach/HomepageCoach';
+import AboutMeCoach from '../components/Coach/AboutMeCoach';
 import user from '../data/store';
 import Timetable from '../components/Timetable';
 
-const StaffTemplate = () => {
+const CoachTemplate = () => {
   const [page, setPage] = useState('homepage');
   const [isCenter, setIsCenter] = useState('');
   const setRole = user((state) => state.setRole);
@@ -24,16 +24,16 @@ const StaffTemplate = () => {
   const componentSwitch = (com) => {
     let component;
     if (com === 'homepage') {
-      component = <HomepageEmployee />;
+      component = <HomepageCoach />;
     }
     if (com === 'timetable') {
       component = <Timetable />;
     }
-    if (com === 'confirmTraninings') {
-      component = <ConfirmTraninings />;
+    if (com === 'addTranining') {
+      component = <AddTraining />;
     }
-    if (com === 'registerClient') {
-      component = <RegisterForm width="w-2/3" display="none" />;
+    if (com === 'aboutMe') {
+      component = <AboutMeCoach />;
     }
     return <div>{component}</div>;
   };
@@ -93,38 +93,13 @@ const StaffTemplate = () => {
                   <span className="ml-3 flex-1 whitespace-nowrap">Timetable</span>
                 </button>
               </li>
+
               <li>
                 <button
                   type="button"
-                  id="registerClient"
+                  id="addTranining"
                   onClick={() => {
-                    setPage('registerClient');
-                    setIsCenter('items-center');
-                  }}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="h-6 w-6 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">Register Client</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  id="confirmTraninings"
-                  onClick={() => {
-                    setPage('confirmTraninings');
+                    setPage('addTranining');
                     setIsCenter('');
                   }}
                   className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -142,7 +117,33 @@ const StaffTemplate = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">Confirm trainings</span>
+                  <span className="ml-3 flex-1 whitespace-nowrap">Add training</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  id="aboutMe"
+                  onClick={() => {
+                    setPage('aboutMe');
+                    setIsCenter('');
+                  }}
+                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="ml-3 flex-1 whitespace-nowrap">About me</span>
                 </button>
               </li>
               <li>
@@ -184,4 +185,4 @@ const StaffTemplate = () => {
   );
 };
 
-export default StaffTemplate;
+export default CoachTemplate;

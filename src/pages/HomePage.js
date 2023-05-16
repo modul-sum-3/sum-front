@@ -1,17 +1,15 @@
-import Footer from '../components/Site/Footer';
-import Jumbotron from '../components/Site/Jumbotron';
+/* eslint-disable tailwindcss/no-contradicting-classname */
+// import Jumbotron from '../components/Site/Jumbotron';
+import NavButtons from '../components/NavButtons';
 import Navbar from '../components/Site/Navbar';
 
 const Home = () => {
   return (
-    <div>
-      <div className="flex h-screen flex-col bg-gray-200">
+    <div className="h-screen">
+      <section className="flex h-full flex-col items-end bg-gray-500 bg-[url('assets/jumbo_bg.jpg')] bg-center bg-no-repeat bg-blend-multiply">
+        <NavButtons />
         <Navbar />
-        <Jumbotron />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      </section>
     </div>
   );
 };

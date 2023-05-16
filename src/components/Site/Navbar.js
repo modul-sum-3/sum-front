@@ -1,8 +1,17 @@
-import { Button, Navbar as Nav } from 'flowbite-react';
+import { Navbar as Nav } from 'flowbite-react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo_fit.svg';
 import routes from '../../data/routes';
 import user from '../../data/store';
+import NavButtons from '../NavButtons';
+import LogoutButton from './LogoutButton';
+
+const navList = [
+  { name: 'Home', link: routes.home },
+  { name: 'clubs', link: routes.clubs },
+  { name: 'membership', link: routes.membership },
+  { name: 'contact', link: routes.contact },
+];
 
 const Navbar = () => {
   const role = user((state) => state.role);
@@ -17,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full bg-transparent">
+    <div className="bg-transparent">
       <Nav fluid rounded className="w-[90vw] max-w-screen-xl bg-white/0">
         <Nav.Brand>
           <Link to={routes.home}>
@@ -44,25 +53,7 @@ const Navbar = () => {
           ) : null}
         </Nav.Collapse>
 
-        {role === '' ? (
-          <div className="flex place-items-center gap-6">
-            <Nav.Collapse>
-              <Link to={routes.login}>
-                <Nav.Link class="font-semibold hover:text-hover">Login</Nav.Link>
-              </Link>
-            </Nav.Collapse>
-            <div className="flex">
-              <Link to={routes.register}>
-                <Button className="bg-primary font-semibold hover:bg-hover">Register</Button>
-              </Link>
-              <Nav.Toggle />
-            </div>
-          </div>
-        ) : (
-          <Button className="bg-primary font-semibold hover:bg-hover" onClick={handleLogout}>
-            Logout
-          </Button>
-        )}
+        {role === '' ? <NavButtons /> : <LogoutButton handleLogout={handleLogout} />}
       </Nav>
     </div>
   );

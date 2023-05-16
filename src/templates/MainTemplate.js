@@ -1,14 +1,13 @@
-import clsx from 'clsx';
+/* eslint-disable tailwindcss/no-contradicting-classname */
 import Navbar from '../components/Site/Navbar';
 
-const MainTemplate = ({ children, bg = '' }) => {
+const MainTemplate = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col bg-gray-200">
-      <Navbar />
-
-      <div className={clsx('w-full max-w-screen-xl grow self-center px-2 py-16 sm:px-4', bg)}>
-        {children}
-      </div>
+    <div className="">
+      <section className="flex min-h-full flex-col  bg-black/50 bg-[url('assets/jumbo_bg.jpg')] bg-center bg-no-repeat bg-blend-multiply">
+        <Navbar className="self-end" />
+        <div className="min-h-screen max-w-screen-xl grow self-center">{children}</div>
+      </section>
     </div>
   );
 };

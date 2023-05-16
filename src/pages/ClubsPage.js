@@ -8,12 +8,12 @@ const Clubs = () => {
       <MainTemplate>
         <div className="clubs__header w-[50%]">
           <h2 className="text-4xl font-bold text-primary">Our clubs</h2>
-          <p className="my-4 text-lg text-gray-600">
+          <p className="my-4 text-2xl text-white">
             Check which facility is located in your area and choose something for yourself! In our
             offer you will find a wide range of workouts tailored to your personal preferences.
           </p>
         </div>
-        <div className="clubs__list mt-12 flex max-w-full flex-col gap-6">
+        <div className="clubs__list mt-12 flex flex-col gap-6">
           {clubsList.map(({ id, city, location, street, zip, opens, closes }) => (
             <ClubRow
               id={id}

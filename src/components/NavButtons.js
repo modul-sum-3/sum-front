@@ -6,14 +6,14 @@ const NavButtons = () => {
   return (
     <div className="flex justify-end text-white">
       <Link
-        className="flex h-20 w-[200px] items-center justify-center bg-purple-950 px-4 text-xl font-semibold hover:text-hover"
+        className="clip-left absolute right-44 top-0 flex w-[220px] items-center justify-center bg-fuchsia-950 p-6 text-xl font-semibold transition hover:bg-purple-950 "
         to={routes.login}
       >
         Login
       </Link>
 
       <Link
-        className="flex h-20 w-[200px] items-center justify-center gap-1 bg-primary px-4 text-xl font-semibold hover:bg-hover"
+        className="clip-right flex w-[200px] items-center justify-center gap-1 bg-primary p-6 text-xl font-semibold transition hover:bg-hover"
         to={routes.register}
       >
         Register

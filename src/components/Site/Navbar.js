@@ -2,8 +2,6 @@ import clsx from 'clsx';
 import { NavLink, useNavigate } from 'react-router-dom';
 import routes from '../../data/routes';
 import user from '../../data/store';
-// import NavButtons from '../NavButtons';
-// import LogoutButton from './LogoutButton';
 
 const navList = [
   { name: 'Home', link: routes.home },
@@ -25,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 bg-transparent text-xl">
+    <div className="flex flex-col gap-4 self-end bg-transparent text-xl">
       {/* {role === '' ? <NavButtons /> : <LogoutButton handleLogout={handleLogout} />} */}
       <div className="mr-12 flex gap-20 p-4 font-semibold">
         {navList.map(({ name, link }) => (

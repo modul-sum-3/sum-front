@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import { NavLink, useNavigate } from 'react-router-dom';
 import routes from '../../data/routes';
 import user from '../../data/store';
+import NavLoginButton from './NavLoginButton';
+import NavLogoutButton from './NavLogoutButton';
 
 const navList = [
   { name: 'Home', link: routes.home },
@@ -20,11 +22,11 @@ const Navbar = () => {
     setRole('');
     setToken('');
     navigate('/');
+    alert('logout');
   };
 
   return (
     <div className="flex flex-col gap-4 self-end bg-transparent text-xl">
-      {/* {role === '' ? <NavButtons /> : <LogoutButton handleLogout={handleLogout} />} */}
       <div className="mr-12 flex gap-20 p-4 font-semibold">
         {navList.map(({ name, link }) => (
           <NavLink
@@ -42,6 +44,15 @@ const Navbar = () => {
             {name}
           </NavLink>
         ))}
+        {role === '' ? (
+          <NavLoginButton link={routes.login} />
+        ) : (
+          <NavLogoutButton handleLogout={handleLogout} />
+        )}
+        {/* <NavLogoutButton
+          className="flex h-7 w-7 justify-end text-white"
+          handleLogout={handleLogout}
+        /> */}
       </div>
 
       {/* <Nav fluid rounded className="w-[90vw] max-w-screen-xl bg-white/0">

@@ -22,7 +22,6 @@ const Navbar = () => {
     setRole('');
     setToken('');
     navigate('/');
-    alert('logout');
   };
 
   return (
@@ -49,10 +48,6 @@ const Navbar = () => {
         ) : (
           <NavLogoutButton handleLogout={handleLogout} />
         )}
-        {/* <NavLogoutButton
-          className="flex h-7 w-7 justify-end text-white"
-          handleLogout={handleLogout}
-        /> */}
       </div>
 
       {/* <Nav fluid rounded className="w-[90vw] max-w-screen-xl bg-white/0">

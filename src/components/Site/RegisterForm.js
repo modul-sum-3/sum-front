@@ -89,7 +89,7 @@ const RegisterForm = ({ width, invert, display }) => {
   };
 
   return (
-    <div className="flex justify-center backdrop-blur-sm ">
+    <div className="flex justify-center">
       <form
         className={`flex ${width} flex-col gap-3 max-lg:w-1/2 max-md:w-2/3`}
         onSubmit={handleRegister}

@@ -31,12 +31,12 @@ const Contact = () => {
             </p>
           </span>
         </div>
-        <div className="mx-14 mt-14 w-1/2">
+        <div className="mx-14 mt-14 w-1/2 rounded-lg bg-white p-4">
           <h3 className="mb-8 h-10 w-full self-center rounded-lg bg-primary p-2 text-center text-white shadow">
             Leave your personal details and we will contact you
           </h3>
           <form className="">
-            <div className=" relative z-0 mb-6 w-full">
+            <div className="relative z-0 mb-6 w-full">
               <input
                 type="email"
                 name="floating_email"

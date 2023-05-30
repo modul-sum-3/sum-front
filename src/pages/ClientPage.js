@@ -1,9 +1,8 @@
 import { NotificationContainer } from 'react-notifications';
-import Navbar from '../components/Site/Navbar';
-import ClientInfoForm from '../components/Client/ClientInfoForm';
 import ClientBalance from '../components/Client/ClientBalance';
+import ClientInfoForm from '../components/Client/ClientInfoForm';
 import ClientTrainings from '../components/Client/ClientTrainings';
-import Footer from '../components/Site/Footer';
+import Navbar from '../components/Site/Navbar';
 import user from '../data/store';
 
 const Client = () => {
@@ -24,7 +23,6 @@ const Client = () => {
         </div>
       </div>
       <NotificationContainer />
-      <Footer />
     </div>
   );
 };

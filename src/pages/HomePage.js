@@ -1,18 +1,14 @@
-import Footer from '../components/Site/Footer';
-import Jumbotron from '../components/Site/Jumbotron';
-import Navbar from '../components/Site/Navbar';
+/* eslint-disable tailwindcss/no-contradicting-classname */
+// import Jumbotron from '../components/Site/Jumbotron';
+import MainTemplate from '../templates/MainTemplate';
 
 const Home = () => {
   return (
-    <div>
-      <div className="flex h-screen flex-col bg-gray-200">
-        <Navbar />
-        <Jumbotron />
+    <MainTemplate>
+      <div className="flex min-h-screen max-w-screen-xl grow items-center">
+        <div className="h-full  text-7xl uppercase text-white">Reach your goals at Fitnest</div>
       </div>
-      <div>
-        <Footer />
-      </div>
-    </div>
+    </MainTemplate>
   );
 };
 export default Home;

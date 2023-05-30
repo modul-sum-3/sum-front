@@ -1,8 +1,16 @@
-import { Button, Navbar as Nav } from 'flowbite-react';
-import { Link, useNavigate } from 'react-router-dom';
-import user from '../../data/store';
-import logo from '../../assets/logo_fit.svg';
+import clsx from 'clsx';
+import { NavLink, useNavigate } from 'react-router-dom';
 import routes from '../../data/routes';
+import user from '../../data/store';
+import NavLoginButton from './NavLoginButton';
+import NavLogoutButton from './NavLogoutButton';
+
+const navList = [
+  { name: 'Home', link: routes.home },
+  { name: 'Clubs', link: routes.clubs },
+  { name: 'Membership', link: routes.membership },
+  { name: 'Contact', link: routes.contact },
+];
 
 const Navbar = () => {
   const role = user((state) => state.role);
@@ -17,8 +25,32 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex w-full items-center justify-center bg-white">
-      <Nav fluid rounded className="w-[90vw] max-w-screen-xl bg-white/0">
+    <div className="flex flex-col gap-4 self-end bg-transparent text-xl">
+      <div className="mr-12 flex gap-20 p-4 font-semibold">
+        {navList.map(({ name, link }) => (
+          <NavLink
+            className={({ isActive }) =>
+              clsx(
+                'group flex items-center gap-3 rounded-2xl p-2.5 font-semibold transition duration-300 hover:scale-105',
+                isActive
+                  ? 'text-zinc-50 underline underline-offset-8 shadow-2xl shadow-zinc-900/10'
+                  : ' text-zinc-50 hover:bg-white/20 hover:shadow-2xl hover:shadow-zinc-900/10',
+              )
+            }
+            key={name}
+            to={link}
+          >
+            {name}
+          </NavLink>
+        ))}
+        {role === '' ? (
+          <NavLoginButton link={routes.login} />
+        ) : (
+          <NavLogoutButton handleLogout={handleLogout} />
+        )}
+      </div>
+
+      {/* <Nav fluid rounded className="w-[90vw] max-w-screen-xl bg-white/0">
         <Nav.Brand>
           <Link to={routes.home}>
             <img src={logo} className="mr-3 h-6 sm:h-9" alt="FitNest Logo" />
@@ -44,26 +76,8 @@ const Navbar = () => {
           ) : null}
         </Nav.Collapse>
 
-        {role === '' ? (
-          <div className="flex place-items-center gap-6">
-            <Nav.Collapse>
-              <Link to={routes.login}>
-                <Nav.Link class="font-semibold hover:text-hover">Login</Nav.Link>
-              </Link>
-            </Nav.Collapse>
-            <div className="flex">
-              <Link to={routes.register}>
-                <Button className="bg-primary font-semibold hover:bg-hover">Register</Button>
-              </Link>
-              <Nav.Toggle />
-            </div>
-          </div>
-        ) : (
-          <Button className="bg-primary font-semibold hover:bg-hover" onClick={handleLogout}>
-            Logout
-          </Button>
-        )}
-      </Nav>
+        {role === '' ? <NavButtons /> : <LogoutButton handleLogout={handleLogout} />}
+      </Nav> */}
     </div>
   );
 };

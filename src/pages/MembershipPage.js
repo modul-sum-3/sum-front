@@ -15,12 +15,12 @@ const Membership = () => {
   return (
     <div>
       <MainTemplate>
-        <div className="flex flex-col items-center">
-          <h3>Our pricing</h3>
-          <h1 className="font-bold text-primary ">Choose Your Best Plan</h1>
-          <p>Choose the plan that suits you</p>
+        <div className="mt-12 flex flex-col items-center text-white">
+          <p className="text-2xl">Our pricing</p>
+          <h1 className="text-4xl font-bold text-primary">Choose Your Best Plan</h1>
+          <p className="text-2xl">Choose the plan that suits you</p>
         </div>
-        <div className="my-6 flex gap-4">
+        <div className="mt-20 flex items-center gap-4 self-center">
           {cards.map(({ title, price, benefits }) => (
             <MembershipCard title={title} price={price} benefits={benefits} />
           ))}

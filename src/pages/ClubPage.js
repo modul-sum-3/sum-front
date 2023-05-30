@@ -4,7 +4,7 @@ import MainTemplate from '../templates/MainTemplate';
 const ClubPage = () => {
   return (
     <MainTemplate>
-      <Timetable />{' '}
+      <Timetable />
     </MainTemplate>
   );
 };

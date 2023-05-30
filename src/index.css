@@ -16,3 +16,17 @@
     @apply text-lg;
   }
 }
+
+.clip-right {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip-left {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}

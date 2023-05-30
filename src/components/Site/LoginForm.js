@@ -104,8 +104,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex justify-center backdrop-blur-sm">
-      <form className="flex w-1/4 flex-col gap-4 max-lg:w-1/3 max-md:w-1/2 " onSubmit={handleLogin}>
+    <div className="flex justify-center">
+      <form className="flex flex-col gap-4 max-lg:w-1/3 max-md:w-1/2 " onSubmit={handleLogin}>
         <input
           placeholder="Your email"
           id="email1"

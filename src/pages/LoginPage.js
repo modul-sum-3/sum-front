@@ -1,24 +1,22 @@
+/* eslint-disable tailwindcss/no-contradicting-classname */
+import { Navbar } from 'flowbite-react';
 import { NotificationContainer } from 'react-notifications';
-import { Link } from 'react-router-dom';
 import LoginForm from '../components/Site/LoginForm';
-import routes from '../data/routes';
+import MainTemplate from '../templates/MainTemplate';
+import RegisterForm from '../components/Site/RegisterForm';
 
 const Login = () => {
   return (
-    // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <div className="grid h-screen gap-0 bg-gray-500 bg-[url('assets/gym.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply ">
-      <div className="backdrop-blur-sm">
-        <Link to={routes.home} className="" aria-current="page">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Grey_close_x.svg/1200px-Grey_close_x.svg.png"
-            className="mx-2 mt-2 h-6 sm:h-9"
-            alt="cross"
-          />
-        </Link>
-        <NotificationContainer />
+    <MainTemplate dark="bg-black/90">
+      <div className="max-w-screen flex min-h-screen grow items-center justify-center">
+        <div className="flex text-white">
+          <LoginForm />
+        </div>
+        {/* <div className="flex w-1/2 text-white">
+          <RegisterForm />
+        </div> */}
       </div>
-      <LoginForm />
-    </div>
+    </MainTemplate>
   );
 };
 export default Login;

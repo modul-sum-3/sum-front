@@ -9,12 +9,12 @@ const Login = () => {
   return (
     <MainTemplate dark="bg-black/90">
       <div className="max-w-screen flex min-h-screen grow items-center justify-center">
-        <div className="flex w-1/2 text-white">
+        <div className="flex text-white">
           <LoginForm />
         </div>
-        <div className="flex w-1/2 text-white">
+        {/* <div className="flex w-1/2 text-white">
           <RegisterForm />
-        </div>
+        </div> */}
       </div>
     </MainTemplate>
   );

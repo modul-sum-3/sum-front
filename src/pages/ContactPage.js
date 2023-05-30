@@ -3,7 +3,7 @@ import MainTemplate from '../templates/MainTemplate';
 const Contact = () => {
   return (
     <MainTemplate>
-      <div className="mx-10 flex h-full items-center justify-center gap-10">
+      <div className="mx-10 mt-24 flex items-center justify-center gap-10">
         <div className="flex flex-col justify-center gap-3">
           <span
             href="#"
@@ -31,11 +31,11 @@ const Contact = () => {
             </p>
           </span>
         </div>
-        <div className="mx-14 mt-14 w-1/2 rounded-lg bg-white p-4">
-          <h3 className="mb-8 h-10 w-full self-center rounded-lg bg-primary p-2 text-center text-white shadow">
+        <div className=" mx-14 rounded-lg bg-white p-8">
+          <h3 className="mb-8 table-cell h-10 rounded-lg bg-primary p-4 text-center text-white shadow">
             Leave your personal details and we will contact you
           </h3>
-          <form className="">
+          <form className="mt-6">
             <div className="relative z-0 mb-6 w-full">
               <input
                 type="email"

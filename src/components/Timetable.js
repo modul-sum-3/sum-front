@@ -30,7 +30,7 @@ const events = [
 
 const Timetable = () => {
   return (
-    <div className="h-[700px] rounded-xl bg-white p-4">
+    <div className="h-[700px] w-[1200px] rounded-xl bg-white">
       <Kalend
         initialDate={new Date().toISOString()}
         initialView={CalendarView.WEEK}

@@ -10,7 +10,7 @@ const MainTemplate = ({ children, dark = 'bg-black/50' }) => {
           `flex min-h-full flex-col bg-[url("assets/jumbo_bg.jpg")] bg-center bg-no-repeat bg-blend-multiply ${dark} `,
         )}
       >
-        <Navbar className="self-end" />
+        <Navbar className="self-end" color="zinc-50" />
         <div className="min-h-screen max-w-screen-xl grow self-center">{children}</div>
       </section>
     </div>

@@ -9,7 +9,7 @@ const Client = () => {
   const userData = user((state) => state.userData);
 
   return (
-    <div className="flex h-full min-h-screen flex-col bg-gray-200">
+    <div className="flex h-screen min-h-screen flex-col bg-gray-200">
       <Navbar />
       <div className=" grid h-screen grid-cols-2 grid-rows-2 gap-4">
         <div className="col-span-1 row-span-2 mt-16 ">

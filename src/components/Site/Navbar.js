@@ -12,7 +12,7 @@ const navList = [
   { name: 'Contact', link: routes.contact },
 ];
 
-const Navbar = () => {
+const Navbar = ({ color }) => {
   const role = user((state) => state.role);
   const setRole = user((state) => state.setRole);
   const setToken = user((state) => state.setToken);
@@ -33,8 +33,8 @@ const Navbar = () => {
               clsx(
                 'group flex items-center gap-3 rounded-2xl p-2.5 font-semibold transition duration-300 hover:scale-105',
                 isActive
-                  ? 'text-zinc-50 underline underline-offset-8 shadow-2xl shadow-zinc-900/10'
-                  : ' text-zinc-50 hover:bg-white/20 hover:shadow-2xl hover:shadow-zinc-900/10',
+                  ? `text-${color} shadow-zinc-900/1 underline underline-offset-8 shadow-2xl`
+                  : ` text-${color} hover:bg-white/20 hover:shadow-2xl hover:shadow-zinc-900/10`,
               )
             }
             key={name}
@@ -43,6 +43,21 @@ const Navbar = () => {
             {name}
           </NavLink>
         ))}
+        {role === 'CLIENT' ? (
+          <NavLink
+            className={({ isActive }) =>
+              clsx(
+                'group flex items-center gap-3 rounded-2xl p-2.5 font-semibold transition duration-300 hover:scale-105',
+                isActive
+                  ? `text-${color} underline underline-offset-8 shadow-2xl shadow-zinc-900/10`
+                  : ` text-${color} hover:bg-white/20 hover:shadow-2xl hover:shadow-zinc-900/10`,
+              )
+            }
+            to={routes.client}
+          >
+            Client
+          </NavLink>
+        ) : null}
         {role === '' ? (
           <NavLoginButton link={routes.login} />
         ) : (

@@ -5,7 +5,7 @@ import ConfirmTraninings from '../components/Employee/ConfirmTrainings';
 import HomepageEmployee from '../components/Employee/HomepageEmployee';
 import RegisterForm from '../components/Site/RegisterForm';
 import user from '../data/store';
-import Timetable from '../components/Timetable';
+import TimetableEmployee from '../components/Employee/TimetableEmployee';
 
 const StaffTemplate = () => {
   const [page, setPage] = useState('homepage');
@@ -27,7 +27,7 @@ const StaffTemplate = () => {
       component = <HomepageEmployee />;
     }
     if (com === 'timetable') {
-      component = <Timetable />;
+      component = <TimetableEmployee />;
     }
     if (com === 'confirmTraninings') {
       component = <ConfirmTraninings />;

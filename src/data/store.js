@@ -23,11 +23,13 @@ const user = create(
       token: '',
       id: '',
       userData: {},
+      club: {},
 
       setRole: (role) => set(() => ({ role })),
       setToken: (token) => set(() => ({ token })),
       setId: (id) => set(() => ({ id })),
       setUser: (userData) => set(() => ({ userData })),
+      setClub: (club) => set(() => ({ club })),
     }),
     {
       name: 'user-storage',

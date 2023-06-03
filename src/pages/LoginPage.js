@@ -1,9 +1,7 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
-import { Navbar } from 'flowbite-react';
 import { NotificationContainer } from 'react-notifications';
 import LoginForm from '../components/Site/LoginForm';
 import MainTemplate from '../templates/MainTemplate';
-import RegisterForm from '../components/Site/RegisterForm';
 
 const Login = () => {
   return (
@@ -16,6 +14,7 @@ const Login = () => {
           <RegisterForm />
         </div> */}
       </div>
+      <NotificationContainer />
     </MainTemplate>
   );
 };

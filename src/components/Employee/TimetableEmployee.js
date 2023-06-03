@@ -1,18 +1,16 @@
 import Kalend, { CalendarView } from 'kalend';
-import { useParams } from 'react-router-dom';
 import { NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Timetable from '../components/Timetable';
-import MainTemplate from '../templates/MainTemplate';
+import user from '../../data/store';
 
-const ClubPage = () => {
-  const { id: clubId } = useParams();
-  const [events, setEvents] = useState([]);
+const TimetableEmployee = () => {
+  const club = user((state) => state.club);
+  const [events, setEvents] = useState({});
 
   useEffect(() => {
     axios
-      .get(`https://springboot-385918.oa.r.appspot.com/api/training/club/${clubId}`)
+      .get(`https://springboot-385918.oa.r.appspot.com/api/training/club/${club.id}`)
       .then((res) => {
         const eventsBeforeMap = res.data;
         const eventsFiltered = eventsBeforeMap.filter((obj) => obj.isConfirmed === true);
@@ -33,11 +31,11 @@ const ClubPage = () => {
       .catch((e) => {
         NotificationManager.error(`Cannot get user - ${e}`);
       });
-  }, [clubId]);
+  }, [club]);
 
   return (
-    <MainTemplate>
-      <div className="mt-14 h-[700px] w-[1200px] rounded-xl bg-white">
+    <div>
+      <div className="h-[850px] w-[950px] rounded-xl bg-white">
         <Kalend
           initialDate={new Date().toISOString()}
           initialView={CalendarView.WEEK}
@@ -48,8 +46,8 @@ const ClubPage = () => {
           disabledDragging
         />
       </div>
-    </MainTemplate>
+    </div>
   );
 };
 
-export default ClubPage;
+export default TimetableEmployee;

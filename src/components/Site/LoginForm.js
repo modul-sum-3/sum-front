@@ -14,6 +14,7 @@ const LoginForm = () => {
   const setToken = user((state) => state.setToken);
   const setUser = user((state) => state.setUser);
   const setId = user((state) => state.setId);
+  const setClub = user((state) => state.setClub);
 
   function isValidEmail(newEmail) {
     return /\S+@\S+\.\S+/.test(newEmail);
@@ -53,6 +54,7 @@ const LoginForm = () => {
                   setUser(res2.data);
                   setRole(result1.role);
                   setId(result1.id);
+                  setClub(res2.data.club);
                   navigate('/employee');
                 })
                 .catch((e) => {

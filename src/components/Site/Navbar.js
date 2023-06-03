@@ -26,7 +26,7 @@ const Navbar = ({ color }) => {
 
   return (
     <div className="flex flex-col gap-4 self-end bg-transparent text-xl">
-      <div className="mr-12 flex gap-20 p-4 font-semibold">
+      <div className={`text-${color} mr-12 flex gap-20 p-4 font-semibold`}>
         {navList.map(({ name, link }) => (
           <NavLink
             className={({ isActive }) =>

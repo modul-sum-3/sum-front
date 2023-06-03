@@ -3,7 +3,7 @@ import CoachTemplate from '../templates/CoachTemplate';
 const Coach = () => {
   return (
     <div>
-      <CoachTemplate>Bajo jajo</CoachTemplate>
+      <CoachTemplate />
     </div>
   );
 };

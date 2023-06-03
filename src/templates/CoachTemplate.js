@@ -5,7 +5,7 @@ import AddTraining from '../components/Coach/AddTraining';
 import HomepageCoach from '../components/Coach/HomepageCoach';
 import AboutMeCoach from '../components/Coach/AboutMeCoach';
 import user from '../data/store';
-import Timetable from '../components/Timetable';
+import TimetableCoach from '../components/Coach/TimetableCoach';
 
 const CoachTemplate = () => {
   const [page, setPage] = useState('homepage');
@@ -27,7 +27,7 @@ const CoachTemplate = () => {
       component = <HomepageCoach />;
     }
     if (com === 'timetable') {
-      component = <Timetable />;
+      component = <TimetableCoach />;
     }
     if (com === 'addTranining') {
       component = <AddTraining />;

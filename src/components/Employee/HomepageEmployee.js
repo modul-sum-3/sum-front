@@ -29,10 +29,8 @@ const HomepageEmployee = () => {
   }, [buttonFinish, buttonStart]);
 
   useEffect(() => {
-    if (clientId.length === 0) {
+    if (clientId.length < 36) {
       setDisplay('hidden');
-    } else {
-      setDisplay('block');
     }
   }, [clientId]);
 
@@ -42,6 +40,7 @@ const HomepageEmployee = () => {
       .then((res) => {
         setUser(res.data);
         NotificationManager.success('Successfuly found user');
+        setDisplay('block');
       })
       .catch((e) => {
         NotificationManager.error(`Cannot get user - ${e}`);

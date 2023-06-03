@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { NotificationContainer } from 'react-notifications';
 import AddTraining from '../components/Coach/AddTraining';
 import HomepageCoach from '../components/Coach/HomepageCoach';
-import AboutMeCoach from '../components/Coach/AboutMeCoach';
 import user from '../data/store';
 import TimetableCoach from '../components/Coach/TimetableCoach';
 
@@ -31,9 +30,6 @@ const CoachTemplate = () => {
     }
     if (com === 'addTranining') {
       component = <AddTraining />;
-    }
-    if (com === 'aboutMe') {
-      component = <AboutMeCoach />;
     }
     return <div>{component}</div>;
   };
@@ -118,32 +114,6 @@ const CoachTemplate = () => {
                     />
                   </svg>
                   <span className="ml-3 flex-1 whitespace-nowrap">Add training</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  id="aboutMe"
-                  onClick={() => {
-                    setPage('aboutMe');
-                    setIsCenter('');
-                  }}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="h-6 w-6 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">About me</span>
                 </button>
               </li>
               <li>

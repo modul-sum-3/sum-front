@@ -2,7 +2,6 @@ import Kalend, { CalendarView } from 'kalend';
 import { NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import user from '../../data/store';
 
 const TimetableCoach = () => {
   const [clubId, setClubId] = useState(1);

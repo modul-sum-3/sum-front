@@ -4,49 +4,6 @@ import { useState, useEffect } from 'react';
 import user from '../../data/store';
 
 const HomepageCoach = () => {
-  const exampleTraining = [
-    {
-      id: 1,
-      amount: 10,
-      start_date: '2023-01-05 12:00',
-      category_id: 2,
-      club_id: 1,
-      room_id: 1,
-      trainer_id: 1,
-      duration: 45,
-    },
-    {
-      id: 2,
-      amount: 9,
-      start_date: '2023-01-06 12:00',
-      category_id: 1,
-      club_id: 1,
-      room_id: 1,
-      trainer_id: 1,
-      duration: 60,
-    },
-    {
-      id: 3,
-      amount: 5,
-      start_date: '2023-01-07 12:00',
-      category_id: 5,
-      club_id: 1,
-      room_id: 1,
-      trainer_id: 2,
-      duration: 60,
-    },
-    {
-      id: 3,
-      amount: 5,
-      start_date: '2023-01-07 12:00',
-      category_id: 5,
-      club_id: 1,
-      room_id: 1,
-      trainer_id: 2,
-      duration: 60,
-    },
-  ];
-
   const id = user((state) => state.id);
   const [events, setEvents] = useState([]);
 
@@ -62,9 +19,9 @@ const HomepageCoach = () => {
   }, [id]);
 
   return (
-    <section>
+    <section className="">
       <h2>My trainings:</h2>
-      <div className="mx-16 mt-8 grid grid-cols-2 gap-4">
+      <div className="mx-16 mt-8 grid grid-cols-2 gap-4 overflow-auto">
         {events.map((training) => {
           return (
             <div className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">

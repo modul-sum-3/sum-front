@@ -21,7 +21,7 @@ const HomepageCoach = () => {
   return (
     <section className="">
       <h2>My trainings:</h2>
-      <div className="mx-16 mt-8 grid grid-cols-2 gap-4 overflow-auto">
+      <div className="mx-16 mt-8 grid h-[85vh] grid-cols-2 gap-4 overflow-auto">
         {events.map((training) => {
           return (
             <div className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">

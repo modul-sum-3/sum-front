@@ -7,11 +7,11 @@ const MainTemplate = ({ children, dark = 'bg-black/50' }) => {
     <div className="">
       <section
         className={clsx(
-          `flex min-h-full flex-col bg-[url("assets/jumbo_bg.jpg")] bg-center bg-no-repeat bg-blend-multiply ${dark} `,
+          `flex flex-col bg-[url("assets/jumbo_bg.jpg")] bg-center bg-no-repeat bg-blend-multiply ${dark} h-screen`,
         )}
       >
-        <Navbar className="self-end" color="zinc-50" />
-        <div className="min-h-screen max-w-screen-xl grow self-center">{children}</div>
+        <Navbar className="self-end" color="gray-100" />
+        <div className="h-screen max-w-screen-xl grow self-center">{children}</div>
       </section>
     </div>
   );

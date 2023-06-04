@@ -12,7 +12,7 @@ const navList = [
   { name: 'Contact', link: routes.contact },
 ];
 
-const Navbar = ({ color }) => {
+const Navbar = ({ color = 'zinc-500' }) => {
   const role = user((state) => state.role);
   const setRole = user((state) => state.setRole);
   const setToken = user((state) => state.setToken);

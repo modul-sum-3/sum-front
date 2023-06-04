@@ -6,13 +6,8 @@ import MainTemplate from '../templates/MainTemplate';
 const Login = () => {
   return (
     <MainTemplate dark="bg-black/90">
-      <div className="max-w-screen flex min-h-screen grow items-center justify-center">
-        <div className="flex text-white">
-          <LoginForm />
-        </div>
-        {/* <div className="flex w-1/2 text-white">
-          <RegisterForm />
-        </div> */}
+      <div className="flex h-full items-center text-white">
+        <LoginForm />
       </div>
       <NotificationContainer />
     </MainTemplate>

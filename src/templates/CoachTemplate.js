@@ -35,7 +35,7 @@ const CoachTemplate = () => {
   };
 
   return (
-    <div className="m-auto flex min-h-screen flex-col items-center bg-gray-200">
+    <div className="m-auto flex h-screen flex-col items-center bg-gray-200">
       <div>
         <aside
           id="default-sidebar"

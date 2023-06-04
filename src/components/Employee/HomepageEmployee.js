@@ -48,7 +48,7 @@ const HomepageEmployee = () => {
   };
 
   return (
-    <div className="flex h-screen w-full flex-col">
+    <div className="flex w-full flex-col">
       <div className="mt-12 flex justify-center">
         <input
           placeholder="Insert Client ID"

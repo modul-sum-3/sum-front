@@ -41,9 +41,16 @@ const TimetableEmployee = () => {
           initialView={CalendarView.WEEK}
           events={events}
           timeFormat="24"
+          autoScroll
+          hourHeight={80}
           weekDayStart="Monday"
           language="en"
           disabledDragging
+          colors={{
+            light: {
+              primaryColor: 'blue',
+            },
+          }}
         />
       </div>
     </div>

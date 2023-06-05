@@ -102,7 +102,7 @@ const HomepageCoach = () => {
           </div>
         ) : (
           <div className="text-center">
-            <p>Unluckily this training is already confirmed by one of our employees</p>
+            <p>Unluckily this training has been already confirmed by one of our employees.</p>
             <p>
               Contact one of our employees, we will try to find someone who can takeover this
               training

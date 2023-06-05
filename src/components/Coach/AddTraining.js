@@ -154,12 +154,12 @@ const AddTraining = () => {
 
   return (
     <div className="flex h-full items-center justify-center">
-      <form className="flex w-3/4 flex-col gap-3" onSubmit={handleSubmit}>
+      <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit}>
         <div className="flex flex-row gap-2">
           <select
             id="categorySelect"
             onChange={handleCategoryChange}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <option value="">Select a category</option>
             {categories.map((category) => (
@@ -172,7 +172,7 @@ const AddTraining = () => {
             id="clubSelect"
             disabled={isSecondSelectDisabled}
             onChange={handleClubChange}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <option value="">Select a club</option>
             {clubs.map((club) => (
@@ -185,7 +185,7 @@ const AddTraining = () => {
             id="roomSelect"
             disabled={isThirdSelectDisabled}
             onChange={(event) => setRoom(event.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <option value="">Select a room</option>
             {rooms.map((room) => (
@@ -202,7 +202,7 @@ const AddTraining = () => {
             type="time"
             required
             onChange={(e) => setTime(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-center text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
           />
           <input
             placeholder="Date"
@@ -210,7 +210,7 @@ const AddTraining = () => {
             type="date"
             required
             onChange={(e) => setDate(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
           />
         </div>
         <div className="flex flex-row items-center gap-2">
@@ -221,7 +221,7 @@ const AddTraining = () => {
             min={5}
             required
             onChange={(e) => setAmount(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
           />
 
           <input
@@ -231,12 +231,12 @@ const AddTraining = () => {
             min={30}
             required
             onChange={(e) => setDuration(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
           />
         </div>
         <button
           type="submit"
-          className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-primary"
+          className="rounded-lg bg-teal-400 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-teal-900 focus:outline-none focus:ring-4 focus:ring-teal-500"
         >
           Send to approval
         </button>

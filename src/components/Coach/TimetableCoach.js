@@ -65,15 +65,22 @@ const TimetableCoach = () => {
           ))}
         </select>
       </div>
-      <div className="h-[850px] w-[950px] rounded-xl bg-white">
+      <div className="h-[825px] w-[950px] rounded-xl bg-white">
         <Kalend
           initialDate={new Date().toISOString()}
           initialView={CalendarView.WEEK}
           events={events}
+          autoScroll
+          hourHeight={80}
           timeFormat="24"
           weekDayStart="Monday"
           language="en"
           disabledDragging
+          colors={{
+            light: {
+              primaryColor: 'blue',
+            },
+          }}
         />
       </div>
     </div>

@@ -46,8 +46,8 @@ const StaffTemplate = () => {
           className="absolute h-full w-64 -translate-x-full shadow-lg transition-transform sm:translate-x-0"
           aria-label="Sidebar"
         >
-          <div className="h-full overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800">
-            <ul className="space-y-2 font-medium">
+          <div className="flex h-full overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800">
+            <ul className="flex flex-col h-full space-y-2 font-medium">
               <li>
                 <button
                   type="button"
@@ -119,7 +119,7 @@ const StaffTemplate = () => {
                   <span className="ml-3 flex-1 whitespace-nowrap">Register Client</span>
                 </button>
               </li>
-              <li>
+              <li className="grow">
                 <button
                   type="button"
                   id="confirmTraninings"
@@ -145,7 +145,7 @@ const StaffTemplate = () => {
                   <span className="ml-3 flex-1 whitespace-nowrap">Confirm trainings</span>
                 </button>
               </li>
-              <li>
+              <li className="">
                 <button
                   type="button"
                   id="logout"

@@ -1,10 +1,12 @@
-// import axios from 'axios';
-// import { useState } from 'react';
-// import { NotificationManager } from 'react-notifications';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { NotificationManager } from 'react-notifications';
+import user from '../../data/store';
 
-const ClientTrainings = ({ clientId }) => {
-  // const [trainings, setTrainings] = useState({});
-
+const ClientTrainings = () => {
+  const [trainings, setTrainings] = useState([]);
+  const Userid = user((state) => state.id);
+  const [stateChange, setStateChange] = useState();
   const exampleTraining = [
     {
       id: 1,
@@ -98,76 +100,61 @@ const ClientTrainings = ({ clientId }) => {
     },
   ];
 
-  // const getClubName = (id) => {
-  //   let club = {};
-  //   let clubName = '';
+  useEffect(() => {
+    axios
+      .get(`http://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
+      .then((res) => {
+        const dataX = res.data;
+        setTrainings(dataX);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [Userid, stateChange]);
 
-  //   axios
-  //     .get('')
-  //     .then((res) => {
-  //       club = res.data;
-  //       clubName = club.name;
-  //     })
-  //     .catch(() => NotificationManager.error('Cannot get club name'));
-
-  //   return clubName;
-  // };
-
-  // const getCategoryName = (id) => {
-  //   let category = {};
-  //   let categoryName = '';
-
-  //   axios
-  //     .get('')
-  //     .then((res) => {
-  //       category = res.data;
-  //       categoryName = category.name;
-  //     })
-  //     .catch(() => NotificationManager.error('Cannot get club name'));
-
-  //   return categoryName;
-  // };
-
-  // const getTrainerName = (id) => {
-  //   let trainer = {};
-  //   let trainerName = '';
-
-  //   axios
-  //     .get('')
-  //     .then((res) => {
-  //       trainer = res.data;
-  //       trainerName = trainer.name;
-  //     })
-  //     .catch(() => NotificationManager.error('Cannot get club name'));
-
-  //   return trainerName;
-  // };
-
-  //   axios
-  //     //! id will be as an param to get
-  //     .get('')
-  //     .then((res) => {
-  //       setTrainings(res.data);
-  //     })
-  //     .catch(() => NotificationManager.error('Couldnt get data'));
+  const handleSignOff = (TrainingID) => {
+    axios
+      .patch(
+        `http://springboot-385918.oa.r.appspot.com/api/training/removeClient?TrainingID=${TrainingID}`,
+        { id: Userid },
+      )
+      .then((res) => {
+        setStateChange(Math.random());
+        NotificationManager.success('Successfuly signoff');
+      })
+      .catch(() => {
+        NotificationManager.error('Cannot sign off, try again later');
+      });
+  };
 
   return (
     <div className="flex flex-col justify-center text-black">
       <p className="self-center">Your trainings:</p>
       <div className="h-[400px] overflow-auto">
         <div className="mx-16 mt-8 grid grid-cols-2 gap-4 ">
-          {exampleTraining.map((training) => {
+          {trainings.map((training) => {
+            const newDate = new Date(training.startDate);
+            newDate.setHours(newDate.getHours() + 2);
+            const updatedDate = newDate.toISOString();
+            const date = updatedDate.slice(0, 10);
+            const time = updatedDate.slice(11, 16);
+            const final = `${date} - ${time}`;
             return (
               <div className="rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
                 {/* <div>Club name: {getClubName(training.club_id)}</div> */}
-                <div>Category: {training.category_id} here will be category name</div>
-                <div>Club name: {training.club_id} here will be club name</div>
-                <div>Start date: {training.start_date}</div>
+                <div>Category: {training.category.name} </div>
+                <div>Club name: {training.club.name} </div>
+                <div>Start date: {final}</div>
                 <div>Duration time: {training.duration}</div>
-                <div>Trainer: {training.trainer_id} here will be trainer name</div>
-                <div>Room: {training.room_id}</div>
+                <div>
+                  Trainer: {training.trainer.first_name} {training.trainer.last_name}
+                </div>
+                <div>
+                  Room: {training.room.id} - {training.room.type}
+                </div>
                 <button
                   type="button"
+                  onClick={() => handleSignOff(training.id)}
                   className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-600"
                 >
                   Sign off

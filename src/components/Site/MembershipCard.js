@@ -42,7 +42,7 @@ const MembershipCard = ({ title, price, benefits }) => {
         </button>
       </div>
       <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} title={title}>
-        {isAunth && (
+        {!isAunth && (
           <div className="flex flex-col items-center gap-4">
             <h3 className="font-semibold">It looks like you're not logged in!</h3>
             <Link
@@ -60,7 +60,7 @@ const MembershipCard = ({ title, price, benefits }) => {
             </Link>
           </div>
         )}
-        {!isAunth && (
+        {isAunth && (
           <div className="flex flex-col gap-4">
             {calculatedBalance >= 0 && (
               <div className="flex flex-col gap-2">
@@ -113,12 +113,12 @@ const MembershipCard = ({ title, price, benefits }) => {
                   >
                     Cancel
                   </button>
-                  <button
-                    type="button"
+                  <Link
+                    to={routes.client}
                     className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
                   >
                     Go
-                  </button>
+                  </Link>
                 </div>
               </div>
             )}

@@ -8,7 +8,7 @@ import ModalLogin from './ModalLogin';
 // import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 const MembershipCard = ({ title, price, benefits }) => {
-  const balance = 10;
+  const balance = 29;
   const calculatedBalance = balance - price;
   const isAunth = false;
   const [showModal, setShowModal] = useState(false);
@@ -63,7 +63,10 @@ const MembershipCard = ({ title, price, benefits }) => {
         {!isAunth && (
           <div className="flex flex-col gap-4">
             {calculatedBalance >= 0 && (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
+                <h2 className="mb-4 self-center">
+                  You chose the <span className="font-semibold">{title}</span> membership
+                </h2>
                 <p>
                   Your current balance is: <span className="font-semibold">{balance}$</span>. We
                   will take <span className="font-semibold">{price}$</span> from your account.
@@ -72,10 +75,10 @@ const MembershipCard = ({ title, price, benefits }) => {
                   Your balance after the transaction:{' '}
                   <span className="font-semibold">{calculatedBalance}$</span>.
                 </p>
-                <p>
+                <p className="mt-4">
                   Do you want to buy the <span className="font-semibold">{title}</span> membership?
                 </p>
-                <div className="flex justify-center gap-4">
+                <div className="mt-4 flex justify-center gap-4">
                   <button
                     type="button"
                     className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"
@@ -94,15 +97,15 @@ const MembershipCard = ({ title, price, benefits }) => {
             )}
 
             {calculatedBalance < 0 && (
-              <div className="flex flex-col gap-4">
-                <h2 className="self-center">You don't have enough funds in your account!</h2>
+              <div className="flex flex-col gap-2">
+                <h2 className="mb-4 self-center">You don't have enough funds in your account!</h2>
                 <p>
                   Your current balance is: <span className="font-semibold">{balance}$</span>. Your
                   are <span className="font-semibold">{-1 * calculatedBalance}$</span> short.
                 </p>
 
                 <p>Do you want to fund your account now?</p>
-                <div className="flex justify-center gap-4">
+                <div className="mt-4 flex justify-center gap-4">
                   <button
                     type="button"
                     className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"

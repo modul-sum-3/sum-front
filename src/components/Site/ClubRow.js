@@ -58,7 +58,7 @@ const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
             <TrainFour className="h-12 w-12" />
           </div>
 
-          <Link to={`/${id}`} className="min-w-fit rounded-xl bg-primary px-4 py-2">
+          <Link to={`/club/${id}`} className="min-w-fit rounded-xl bg-primary px-4 py-2">
             <div className="text-lg font-semibold text-white">Click to see the schedule</div>
           </Link>
         </div>

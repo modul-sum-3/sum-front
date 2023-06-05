@@ -40,7 +40,7 @@ const ConfirmTrainings = () => {
   return (
     <div className="flex flex-col justify-center text-black">
       <div className="flex justify-center text-2xl">Trainings to accept:</div>
-      <div className="mx-16 mt-8 grid grid-cols-2 gap-4">
+      <div className="mx-16 mt-8 grid h-[85vh] grid-cols-2 gap-4 overflow-auto">
         {events.length > 0
           ? events.map((event) => {
               const newDate = new Date(event.startDate);

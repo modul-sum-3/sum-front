@@ -128,10 +128,10 @@ const ClientTrainings = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center text-black">
-      <p className="self-center">Your trainings:</p>
-      <div className="h-[400px] overflow-auto">
-        <div className="mx-16 mt-8 grid grid-cols-2 gap-4 ">
+    <div className="flex w-full flex-col justify-center text-black">
+      <p className="mb-3 self-center">Your trainings:</p>
+      <div className="flex h-[400px]  overflow-auto justify-center">
+        <div className="mx-16 mt-8 grid grid-cols-3 gap-4 ">
           {trainings.map((training) => {
             const newDate = new Date(training.startDate);
             newDate.setHours(newDate.getHours() + 2);
@@ -140,7 +140,7 @@ const ClientTrainings = () => {
             const time = updatedDate.slice(11, 16);
             const final = `${date} - ${time}`;
             return (
-              <div className="rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
+              <div className="h-fit rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
                 {/* <div>Club name: {getClubName(training.club_id)}</div> */}
                 <div>Category: {training.category.name} </div>
                 <div>Club name: {training.club.name} </div>

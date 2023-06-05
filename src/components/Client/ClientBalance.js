@@ -18,7 +18,7 @@ const ClientBalance = () => {
         setBalance(res.data.balance);
       })
       .catch((e) => {
-        console.log(e);
+        NotificationManager.success(e);
       });
   }, [id, newBalance, stateChange]);
 

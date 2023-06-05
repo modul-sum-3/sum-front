@@ -1,4 +1,4 @@
-import Kalend, { CalendarView, OnEventClickData } from 'kalend';
+import Kalend, { CalendarView } from 'kalend';
 import { useParams } from 'react-router-dom';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import axios from 'axios';
@@ -15,7 +15,6 @@ const ClubPage = () => {
   const [event, setEvent] = useState([]);
   const role = user((state) => state.role);
   const Userid = user((state) => state.id);
-  const [clientTrainings, setClientTrainings] = useState([]);
   const [clientTrainingsIds, setClientTrainingsIds] = useState([]);
   const [final, setFinal] = useState('');
 
@@ -25,12 +24,11 @@ const ClubPage = () => {
         .get(`http://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
         .then((res) => {
           const dataX = res.data;
-          setClientTrainings(dataX);
           const onlyTrainingsIds = dataX.map((training) => training.id);
           setClientTrainingsIds(onlyTrainingsIds);
         })
         .catch((e) => {
-          console.log(e);
+          NotificationManager.success(e);
         });
     }
   }, [Userid, role, showModal]);
@@ -102,9 +100,16 @@ const ClubPage = () => {
           initialView={CalendarView.WEEK}
           events={events}
           timeFormat="24"
+          autoScroll
           weekDayStart="Monday"
+          hourHeight={80}
           language="en"
           disabledDragging
+          colors={{
+            light: {
+              primaryColor: 'blue',
+            },
+          }}
         />
       </div>
       <ModalLogin

@@ -12,12 +12,12 @@ const Client = () => {
   return (
     <div className="flex h-screen flex-col bg-gray-200">
       <Navbar />
-      <div className="box-border flex h-full w-full max-w-screen-xl gap-12 self-center py-24">
-        <div className="col-1 flex w-2/3 flex-col items-center justify-between">
-          <ClientTrainings />
+      <div className="box-border flex h-full w-full gap-12 self-center py-24">
+        <div className="col-1 ml-10 flex w-3/5 flex-col items-center justify-between">
           <ClientMembership />
+          <ClientTrainings />
         </div>
-        <div className="col-2 flex w-1/3 flex-col items-stretch justify-between">
+        <div className="mr-20 flex w-2/5 flex-col items-stretch justify-between">
           <ClientBalance balance={userData.balance} />
           <ClientInfoForm />
         </div>

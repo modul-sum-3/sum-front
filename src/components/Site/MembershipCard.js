@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as CheckIcon } from '../../assets/check-icon.svg';
 import routes from '../../data/routes';
 import ModalLogin from './ModalLogin';
+import user from '../../data/store';
 // import axios from 'axios';
 // import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 const MembershipCard = ({ title, price, benefits }) => {
-  const isAunth = false;
   const [showModal, setShowModal] = useState(false);
-
+  const userData = user((state) => state.userData);
+  const role = user((state) => state.role);
+  // const balance = 0;
+  const { balance } = userData;
+  const calculatedBalance = userData.balance - price;
   return (
     <div>
       <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-8">
@@ -40,7 +44,7 @@ const MembershipCard = ({ title, price, benefits }) => {
         </button>
       </div>
       <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} title={title}>
-        {!isAunth && (
+        {role === '' && (
           <div className="flex flex-col items-center gap-4">
             <h3 className="font-semibold">It looks like you're not logged in!</h3>
             <Link
@@ -58,7 +62,70 @@ const MembershipCard = ({ title, price, benefits }) => {
             </Link>
           </div>
         )}
-        {isAunth && <p>Zalogowano</p>}
+        {role === 'CLIENT' && (
+          <div className="flex flex-col gap-4">
+            {calculatedBalance >= 0 && (
+              <div className="flex flex-col gap-2">
+                <h2 className="mb-4 self-center">
+                  You chose the <span className="font-semibold">{title}</span> membership
+                </h2>
+                <p>
+                  Your current balance is: <span className="font-semibold">{balance}$</span>. We
+                  will take <span className="font-semibold">{price}$</span> from your account.
+                </p>
+                <p>
+                  Your balance after the transaction:{' '}
+                  <span className="font-semibold">{calculatedBalance}$</span>.
+                </p>
+                <p className="mt-4">
+                  Do you want to buy the <span className="font-semibold">{title}</span> membership?
+                </p>
+                <div className="mt-4 flex justify-center gap-4">
+                  <button
+                    type="button"
+                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                  >
+                    Accept
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {calculatedBalance < 0 && (
+              <div className="flex flex-col gap-2">
+                <h2 className="mb-4 self-center">You don't have enough funds in your account!</h2>
+                <p>
+                  Your current balance is: <span className="font-semibold">{balance}$</span>. Your
+                  are <span className="font-semibold">{-1 * calculatedBalance}$</span> short.
+                </p>
+
+                <p>Do you want to fund your account now?</p>
+                <div className="mt-4 flex justify-center gap-4">
+                  <button
+                    type="button"
+                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Cancel
+                  </button>
+                  <Link
+                    to={routes.client}
+                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                  >
+                    Go
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </ModalLogin>
     </div>
   );

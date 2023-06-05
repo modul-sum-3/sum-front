@@ -15,14 +15,9 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
   const [membership, setMembership] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`https://springboot-385918.oa.r.appspot.com/api/client/${Userid}`)
-      .then((res) => {
-        setBalance(res.data.balance);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    axios.get(`https://springboot-385918.oa.r.appspot.com/api/client/${Userid}`).then((res) => {
+      setBalance(res.data.balance);
+    });
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -34,11 +29,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
         config,
       )
       .then((res) => {
-        console.log(res.data);
         setMembership(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
       });
   }, [Userid, token]);
 
@@ -52,8 +43,6 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
       },
       carnetID: membershipId,
     };
-
-    console.log(newTransaction);
 
     axios
       .post('https://springboot-385918.oa.r.appspot.com/api/transaction', newTransaction, {
@@ -120,10 +109,10 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
             </p>
           </div>
         ) : null}
-        {membership.length === 0 && (
+        {membership.length === 0 && role === 'CLIENT' ? (
           <div className="flex flex-col gap-4">
-            {calculatedBalance >= 0 && (
-              <div className="flex flex-col gap-2">
+            {calculatedBalance >= 0 ? (
+              <div className="flex flex-col gap-2 text-center">
                 <h2 className="mb-4 self-center">
                   You chose the <span className="font-semibold">{title}</span> membership
                 </h2>
@@ -157,10 +146,8 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
                   </button>
                 </div>
               </div>
-            )}
-
-            {calculatedBalance < 0 && (
-              <div className="flex flex-col gap-2">
+            ) : (
+              <div className="flex flex-col gap-2 text-center">
                 <h2 className="mb-4 self-center">You don't have enough funds in your account!</h2>
                 <p>
                   Your current balance is: <span className="font-semibold">{balance}$</span>. Your
@@ -186,7 +173,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </ModalLogin>
     </div>
   );

@@ -27,13 +27,7 @@ const ClientMembership = () => {
           .get(`https://springboot-385918.oa.r.appspot.com/api/carnets/${res.data.carnetID}`)
           .then((res2) => {
             setCarnet(res2.data);
-          })
-          .catch((e) => {
-            NotificationManager.success(e);
           });
-      })
-      .catch((e) => {
-        NotificationManager.success(e);
       });
   }, [Userid, token]);
 
@@ -85,7 +79,8 @@ const ClientMembership = () => {
           </label>
         </div>
       ) : (
-        <div>
+        <div className="block w-full text-center">
+          <div className="mb-5">Your membership:</div>
           You dont have membership yet, go to{' '}
           <a href="/membership" className="underline">
             Membership

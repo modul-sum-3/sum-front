@@ -16,7 +16,7 @@ const ClientTrainings = () => {
         setTrainings(dataX);
       })
       .catch((e) => {
-        console.log(e);
+        NotificationManager.success(e);
       });
   }, [Userid, stateChange]);
 
@@ -26,7 +26,7 @@ const ClientTrainings = () => {
         `http://springboot-385918.oa.r.appspot.com/api/training/removeClient?TrainingID=${TrainingID}`,
         { id: Userid },
       )
-      .then((res) => {
+      .then(() => {
         setStateChange(Math.random());
         NotificationManager.success('Successfuly signoff');
       })

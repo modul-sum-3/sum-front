@@ -39,47 +39,49 @@ const ConfirmTrainings = () => {
 
   return (
     <div className="flex flex-col justify-center text-black">
-      <div className="flex justify-center text-2xl">Trainings to accept:</div>
-      <div className="mx-16 mt-8 grid h-[85vh] grid-cols-2 gap-4 overflow-auto">
-        {events.length > 0
-          ? events.map((event) => {
-              const newDate = new Date(event.startDate);
-              newDate.setHours(newDate.getHours() + 2);
-              const updatedDate = newDate.toISOString();
-              const date = updatedDate.slice(0, 10);
-              const time = updatedDate.slice(11, 16);
-              const final = `${date} - ${time}`;
-              return (
-                <div
-                  className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm"
-                  key={event.id}
-                >
-                  <p className="mb-1">Trainer:</p>
-                  <div className="flex flex-row items-center justify-center">
-                    <div> First Name: {event.trainer.first_name}</div>
-                    <div className="ml-4"> Last Name: {event.trainer.last_name}</div>
-                  </div>
-                  <p className="mb-1 mt-2">Training:</p>
-                  <div className="flex flex-col items-center justify-center">
-                    <div>Category: {event.category.name}</div>
-                    <div>Start date: {final}</div>
-                    <div>Duration time: {event.duration}</div>
-                    <div>
-                      Room: {event.room.id} - {event.room.type}
-                    </div>
-                    <div>No. of people: {event.amount}</div>
-                  </div>
-                  <button
-                    type="button"
-                    className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-600"
-                    onClick={() => handleAcceptTraining(event)}
+      <p className="justify-center text-2xl">Trainings to accept:</p>
+      <div className="h-[85vh] overflow-auto">
+        <div className="mx-16 mt-8 grid grid-cols-2 gap-4 ">
+          {events.length > 0
+            ? events.map((event) => {
+                const newDate = new Date(event.startDate);
+                newDate.setHours(newDate.getHours() + 2);
+                const updatedDate = newDate.toISOString();
+                const date = updatedDate.slice(0, 10);
+                const time = updatedDate.slice(11, 16);
+                const final = `${date} - ${time}`;
+                return (
+                  <div
+                    className="h-fit rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm"
+                    key={event.id}
                   >
-                    Accept
-                  </button>
-                </div>
-              );
-            })
-          : null}
+                    <p className="mb-1">Trainer:</p>
+                    <div className="flex flex-row items-center justify-center">
+                      <div> First Name: {event.trainer.first_name}</div>
+                      <div className="ml-4"> Last Name: {event.trainer.last_name}</div>
+                    </div>
+                    <p className="mb-1 mt-2">Training:</p>
+                    <div className="flex flex-col items-center justify-center">
+                      <div>Category: {event.category.name}</div>
+                      <div>Start date: {final}</div>
+                      <div>Duration time: {event.duration}</div>
+                      <div>
+                        Room: {event.room.id} - {event.room.type}
+                      </div>
+                      <div>No. of people: {event.amount}</div>
+                    </div>
+                    <button
+                      type="button"
+                      className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-600"
+                      onClick={() => handleAcceptTraining(event)}
+                    >
+                      Accept
+                    </button>
+                  </div>
+                );
+              })
+            : null}
+        </div>
       </div>
       {events.length === 0 ? (
         <div className="flex justify-center text-lg">No trainings to accept</div>

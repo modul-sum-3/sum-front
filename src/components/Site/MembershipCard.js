@@ -8,6 +8,8 @@ import ModalLogin from './ModalLogin';
 // import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 const MembershipCard = ({ title, price, benefits }) => {
+  const balance = 10;
+  const calculatedBalance = balance - price;
   const isAunth = false;
   const [showModal, setShowModal] = useState(false);
 
@@ -40,7 +42,7 @@ const MembershipCard = ({ title, price, benefits }) => {
         </button>
       </div>
       <ModalLogin isVisible={showModal} onClose={() => setShowModal(false)} title={title}>
-        {!isAunth && (
+        {isAunth && (
           <div className="flex flex-col items-center gap-4">
             <h3 className="font-semibold">It looks like you're not logged in!</h3>
             <Link
@@ -58,7 +60,67 @@ const MembershipCard = ({ title, price, benefits }) => {
             </Link>
           </div>
         )}
-        {isAunth && <p>Zalogowano</p>}
+        {!isAunth && (
+          <div className="flex flex-col gap-4">
+            {calculatedBalance >= 0 && (
+              <div className="flex flex-col gap-4">
+                <p>
+                  Your current balance is: <span className="font-semibold">{balance}$</span>. We
+                  will take <span className="font-semibold">{price}$</span> from your account.
+                </p>
+                <p>
+                  Your balance after the transaction:{' '}
+                  <span className="font-semibold">{calculatedBalance}$</span>.
+                </p>
+                <p>
+                  Do you want to buy the <span className="font-semibold">{title}</span> membership?
+                </p>
+                <div className="flex justify-center gap-4">
+                  <button
+                    type="button"
+                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                  >
+                    Accept
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {calculatedBalance < 0 && (
+              <div className="flex flex-col gap-4">
+                <h2 className="self-center">You don't have enough funds in your account!</h2>
+                <p>
+                  Your current balance is: <span className="font-semibold">{balance}$</span>. Your
+                  are <span className="font-semibold">{-1 * calculatedBalance}$</span> short.
+                </p>
+
+                <p>Do you want to fund your account now?</p>
+                <div className="flex justify-center gap-4">
+                  <button
+                    type="button"
+                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                  >
+                    Go
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </ModalLogin>
     </div>
   );

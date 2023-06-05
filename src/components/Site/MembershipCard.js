@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import routes from '../../data/routes';
 import ModalLogin from './ModalLogin';
@@ -12,8 +13,20 @@ const MembershipCard = ({ title, price, description }) => {
   const userData = user((state) => state.userData);
   const role = user((state) => state.role);
   // const balance = 0;
-  const { balance } = userData;
-  const calculatedBalance = userData.balance - price;
+  const [balance, setBalance] = useState(0);
+  const id = user((state) => state.id);
+  useEffect(() => {
+    axios
+      .get(`https://springboot-385918.oa.r.appspot.com/api/client/${id}`)
+      .then((res) => {
+        setBalance(res.data.balance);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [id]);
+
+  const calculatedBalance = balance - price;
   return (
     <div>
       <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-8">

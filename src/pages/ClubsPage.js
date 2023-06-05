@@ -1,8 +1,22 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import ClubRow from '../components/Site/ClubRow';
-import { clubsList } from '../data/clubsList';
 import MainTemplate from '../templates/MainTemplate';
 
 const Clubs = () => {
+  const [clubs, setClubs] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://springboot-385918.oa.r.appspot.com/api/clubs')
+      .then((res) => {
+        setClubs(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   return (
     <div>
       <MainTemplate>
@@ -14,15 +28,15 @@ const Clubs = () => {
           </p>
         </div>
         <div className="clubs__list mt-12 flex flex-col gap-6">
-          {clubsList.map(({ id, city, location, street, zip, opens, closes }) => (
+          {clubs.map(({ id, city, location, street, zip, openTime, closeTime }) => (
             <ClubRow
               id={id}
               city={city}
               location={location}
               street={street}
               zip={zip}
-              opens={opens}
-              closes={closes}
+              opens={openTime}
+              closes={closeTime}
             />
           ))}
         </div>

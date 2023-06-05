@@ -28,7 +28,7 @@ const Membership = () => {
           <h1 className="text-4xl font-bold text-primary">Choose Your Best Plan</h1>
           <p className="text-2xl">Choose the plan that suits you</p>
         </div>
-        <div className="mt-20 flex items-center gap-4 self-center">
+        <div className="mt-20 flex gap-4">
           {membership.map(({ name, price, description }) => (
             <MembershipCard title={name} price={price} description={description} />
           ))}

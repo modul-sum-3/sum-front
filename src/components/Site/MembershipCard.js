@@ -8,11 +8,8 @@ import user from '../../data/store';
 // import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 const MembershipCard = ({ title, price, description }) => {
-  const isAunth = false;
   const [showModal, setShowModal] = useState(false);
-  const userData = user((state) => state.userData);
   const role = user((state) => state.role);
-  // const balance = 0;
   const [balance, setBalance] = useState(0);
   const id = user((state) => state.id);
   useEffect(() => {
@@ -29,15 +26,17 @@ const MembershipCard = ({ title, price, description }) => {
   const calculatedBalance = balance - price;
   return (
     <div>
-      <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-8">
+      <div className="h-full w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-8">
         <h5 className="mb-4 text-xl font-medium uppercase text-gray-500">{title}</h5>
         <div className="mb-5 flex items-baseline text-gray-900 dark:text-white">
           <span className="text-3xl font-semibold">$</span>
           <span className="text-5xl font-extrabold tracking-tight">{price}</span>
           <span className="ml-1 text-xl font-normal text-gray-500">/month</span>
         </div>
+        <div className="h-[56%]">
+          <span className="text-base font-normal leading-tight text-gray-500">{description}</span>
+        </div>
 
-        <span className="text-base font-normal leading-tight text-gray-500">{description}</span>
         <button
           onClick={() => setShowModal(true)}
           type="button"

@@ -6,6 +6,7 @@ import user from '../../data/store';
 const ClientBalance = () => {
   const [balance, setBalance] = useState(0);
   const [newBalance, setNewBalance] = useState();
+  const [stateChange, setStateChange] = useState();
   const id = user((state) => state.id);
   // const userData = user((state) => state.userData);
   // const setUser = user((state) => state.setUser);
@@ -19,7 +20,7 @@ const ClientBalance = () => {
       .catch((e) => {
         console.log(e);
       });
-  }, [id, newBalance]);
+  }, [id, newBalance, stateChange]);
 
   const handleBalanceChange = (e) => {
     e.preventDefault();
@@ -32,6 +33,7 @@ const ClientBalance = () => {
     axios
       .patch(`https://springboot-385918.oa.r.appspot.com/api/client/${id}?amount=${newBalance}`)
       .then(() => {
+        setStateChange(Math.random());
         NotificationManager.success('Successfuly added');
       })
       .catch(() => {

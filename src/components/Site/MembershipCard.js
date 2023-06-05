@@ -1,27 +1,71 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { NotificationManager } from 'react-notifications';
 import routes from '../../data/routes';
 import ModalLogin from './ModalLogin';
 import user from '../../data/store';
-// import axios from 'axios';
-// import { NotificationManager, NotificationContainer } from 'react-notifications';
 
-const MembershipCard = ({ title, price, description }) => {
+const MembershipCard = ({ membershipId, title, price, description }) => {
   const [showModal, setShowModal] = useState(false);
   const role = user((state) => state.role);
+  const token = user((state) => state.token);
   const [balance, setBalance] = useState(0);
-  const id = user((state) => state.id);
+  const Userid = user((state) => state.id);
+  const [membership, setMembership] = useState([]);
+
   useEffect(() => {
     axios
-      .get(`https://springboot-385918.oa.r.appspot.com/api/client/${id}`)
+      .get(`https://springboot-385918.oa.r.appspot.com/api/client/${Userid}`)
       .then((res) => {
         setBalance(res.data.balance);
       })
       .catch((e) => {
         console.log(e);
       });
-  }, [id]);
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    axios
+      .get(
+        `https://springboot-385918.oa.r.appspot.com/api/transaction/clientActive/${Userid}`,
+        config,
+      )
+      .then((res) => {
+        console.log(res.data);
+        setMembership(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [Userid, token]);
+
+  const handleBuyCarnet = () => {
+    const newDate = new Date();
+
+    const newTransaction = {
+      transactionDate: newDate,
+      clientID: {
+        id: Userid,
+      },
+      carnetID: membershipId,
+    };
+
+    console.log(newTransaction);
+
+    axios
+      .post('https://springboot-385918.oa.r.appspot.com/api/transaction', newTransaction, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(() => {
+        NotificationManager.success('Membership bought successfully!');
+      })
+      .catch((err) => {
+        NotificationManager.error(`Couldnt buy membership - ${err}`);
+      });
+  };
 
   const calculatedBalance = balance - price;
   return (
@@ -64,7 +108,19 @@ const MembershipCard = ({ title, price, description }) => {
             </Link>
           </div>
         )}
-        {role === 'CLIENT' && (
+        {membership.length !== 0 ? (
+          <div className="text-center">
+            <p>You already have membership!</p>
+            <p>
+              You can check informations about it on{' '}
+              <a href="/client" className="underline">
+                Client
+              </a>{' '}
+              page!
+            </p>
+          </div>
+        ) : null}
+        {membership.length === 0 && (
           <div className="flex flex-col gap-4">
             {calculatedBalance >= 0 && (
               <div className="flex flex-col gap-2">
@@ -92,6 +148,9 @@ const MembershipCard = ({ title, price, description }) => {
                   </button>
                   <button
                     type="button"
+                    onClick={() => {
+                      handleBuyCarnet(membershipId);
+                    }}
                     className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
                   >
                     Accept

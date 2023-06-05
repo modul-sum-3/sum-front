@@ -3,7 +3,6 @@ import { NotificationContainer } from 'react-notifications';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MembershipCard from '../components/Site/MembershipCard';
-import { cards } from '../data/cards';
 import MainTemplate from '../templates/MainTemplate';
 
 const Membership = () => {
@@ -29,8 +28,13 @@ const Membership = () => {
           <p className="text-2xl">Choose the plan that suits you</p>
         </div>
         <div className="mt-20 flex gap-4">
-          {membership.map(({ name, price, description }) => (
-            <MembershipCard title={name} price={price} description={description} />
+          {membership.map(({ id, name, price, description }) => (
+            <MembershipCard
+              title={name}
+              price={price}
+              description={description}
+              membershipId={id}
+            />
           ))}
         </div>
       </MainTemplate>

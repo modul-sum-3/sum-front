@@ -33,7 +33,7 @@ const ClubPage = () => {
           console.log(e);
         });
     }
-  }, [Userid, role]);
+  }, [Userid, role, showModal]);
 
   useEffect(() => {
     axios
@@ -89,6 +89,8 @@ const ClubPage = () => {
       .catch((err) => {
         NotificationManager.error(`Couldn't enroll ${err}`);
       });
+    setShowModal(false);
+    setHidden('');
   };
 
   return (

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { NotificationManager } from 'react-notifications';
 import user from '../../data/store';
 
 const ClientMembership = () => {

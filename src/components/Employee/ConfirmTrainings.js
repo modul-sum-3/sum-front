@@ -15,9 +15,6 @@ const ConfirmTrainings = () => {
         const eventsFiltered = eventsBeforeFilter.filter((obj) => obj.isConfirmed === false);
 
         setEvents(eventsFiltered);
-      })
-      .catch((e) => {
-        console.log(e);
       });
   }, [club]);
 
@@ -27,19 +24,17 @@ const ConfirmTrainings = () => {
     axios
       .put(url)
       .then((res) => {
-        console.log('Training confirmed:', res.data);
-
-        // Remove the accepted training from the events state
+        NotificationManager.success('Training confirmed:', res.data);
         setEvents((prevEvents) => prevEvents.filter((event) => event.id !== training.id));
       })
       .catch((error) => {
-        // Handle error, such as showing an error message or logging the error
+        NotificationManager.error(error);
       });
   };
 
   return (
     <div className="flex flex-col justify-center text-black">
-      <p className="justify-center text-2xl">Trainings to accept:</p>
+      <div className="text-center text-2xl">Trainings to accept:</div>
       <div className="h-[85vh] overflow-auto">
         <div className="mx-16 mt-8 grid grid-cols-2 gap-4 ">
           {events.length > 0

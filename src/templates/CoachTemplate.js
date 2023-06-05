@@ -43,7 +43,7 @@ const CoachTemplate = () => {
           aria-label="Sidebar"
         >
           <div className="h-full overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800">
-            <ul className="flex flex-col h-full space-y-2 font-medium">
+            <ul className="flex h-full flex-col space-y-2 font-medium">
               <li>
                 <button
                   type="button"

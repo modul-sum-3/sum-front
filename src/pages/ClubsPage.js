@@ -7,14 +7,9 @@ const Clubs = () => {
   const [clubs, setClubs] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('https://springboot-385918.oa.r.appspot.com/api/clubs')
-      .then((res) => {
-        setClubs(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    axios.get('https://springboot-385918.oa.r.appspot.com/api/clubs').then((res) => {
+      setClubs(res.data);
+    });
   }, []);
 
   return (

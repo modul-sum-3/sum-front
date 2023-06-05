@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { NotificationContainer } from 'react-notifications';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MembershipCard from '../components/Site/MembershipCard';
@@ -15,7 +15,7 @@ const Membership = () => {
         setMembership(res.data);
       })
       .catch((e) => {
-        console.log(e);
+        NotificationManager.error(e);
       });
   }, []);
 

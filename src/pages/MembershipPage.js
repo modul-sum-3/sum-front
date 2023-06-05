@@ -1,16 +1,24 @@
 // import { useState } from 'react';
 import { NotificationContainer } from 'react-notifications';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import MembershipCard from '../components/Site/MembershipCard';
 import { cards } from '../data/cards';
 import MainTemplate from '../templates/MainTemplate';
 
 const Membership = () => {
-  // const [membership, setMembership] = useState({});
+  const [membership, setMembership] = useState([]);
 
-  // axios
-  //   .get('')
-  //   .then((res) => setMembership(res.data))
-  //   .catch(() => NotificationManager.error('Couldnt get data'));
+  useEffect(() => {
+    axios
+      .get('https://springboot-385918.oa.r.appspot.com/api/carnets')
+      .then((res) => {
+        setMembership(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   return (
     <div>
@@ -21,8 +29,8 @@ const Membership = () => {
           <p className="text-2xl">Choose the plan that suits you</p>
         </div>
         <div className="mt-20 flex items-center gap-4 self-center">
-          {cards.map(({ title, price, benefits }) => (
-            <MembershipCard title={title} price={price} benefits={benefits} />
+          {membership.map(({ name, price, description }) => (
+            <MembershipCard title={name} price={price} description={description} />
           ))}
         </div>
       </MainTemplate>

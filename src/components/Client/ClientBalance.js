@@ -1,15 +1,26 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NotificationManager } from 'react-notifications';
-// import user from '../data/store';
+import user from '../../data/store';
 
-const ClientBalance = ({ balance }) => {
+const ClientBalance = () => {
+  const [balance, setBalance] = useState(0);
   const [newBalance, setNewBalance] = useState();
-  // const id = user((state) => state.id);
+  const id = user((state) => state.id);
   // const userData = user((state) => state.userData);
   // const setUser = user((state) => state.setUser);
 
-  //! Tu trzeba dorobic puta i bedzie banglalo
+  useEffect(() => {
+    axios
+      .get(`https://springboot-385918.oa.r.appspot.com/api/client/${id}`)
+      .then((res) => {
+        setBalance(res.data.balance);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [id, newBalance]);
+
   const handleBalanceChange = (e) => {
     e.preventDefault();
 
@@ -19,9 +30,7 @@ const ClientBalance = ({ balance }) => {
     }
 
     axios
-      .put('', {
-        balance: newBalance,
-      })
+      .patch(`https://springboot-385918.oa.r.appspot.com/api/client/${id}?amount=${newBalance}`)
       .then(() => {
         NotificationManager.success('Successfuly added');
       })

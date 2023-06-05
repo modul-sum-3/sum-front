@@ -130,7 +130,7 @@ const ClientTrainings = () => {
   return (
     <div className="flex w-full flex-col justify-center text-black">
       <p className="mb-3 self-center">Your trainings:</p>
-      <div className="flex h-[400px]  overflow-auto justify-center">
+      <div className="flex h-[400px]  justify-center overflow-auto">
         <div className="mx-16 mt-8 grid grid-cols-3 gap-4 ">
           {trainings.map((training) => {
             const newDate = new Date(training.startDate);

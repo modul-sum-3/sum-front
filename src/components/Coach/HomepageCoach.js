@@ -23,15 +23,22 @@ const HomepageCoach = () => {
       <h2>My trainings:</h2>
       <div className="mx-16 mt-8 grid h-[85vh] grid-cols-2 gap-4 overflow-auto">
         {events.map((training) => {
+          const newDate = new Date(training.startDate);
+          newDate.setHours(newDate.getHours() + 2);
+          const updatedDate = newDate.toISOString();
+          const date = updatedDate.slice(0, 10);
+          const time = updatedDate.slice(11, 16);
+          const final = `${date} - ${time}`;
+
           return (
             <div className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
               <div className="mb-3 text-center">EXAMPLE TRAINING</div>
               <div>Category: {training.category.name}</div>
               <div>Club name: {training.club.name} </div>
-              <div>Start date: {training.startDate}</div>
+              <div>Start date: {final}</div>
               <div>Duration time: {training.duration}</div>
               <div>
-                Room: {training.room.id} {training.room.type}
+                Room: {training.room.id} - {training.room.type}
               </div>
               <div>Confirmed: {training.isConfirmed.toString()}</div>
               <button

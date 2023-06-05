@@ -31,31 +31,46 @@ const AddTraining = () => {
 
   useEffect(() => {
     if (categoryR) {
-      const filteredCategories = categories.filter((item) => item.id === parseInt(categoryR, 10));
-      if (filteredCategories.length > 0) {
-        const filteredClubs = filteredCategories[0].roomList.map((room) => room.club);
-        setClubs(
-          filteredClubs.filter(
-            (obj, index, self) => index === self.findIndex((el) => el.name === obj.name),
-          ),
-        );
-      }
+      axios
+        .get('https://springboot-385918.oa.r.appspot.com/api/clubs')
+        .then((res) => {
+          const notFiltered = res.data;
+          const filtered = notFiltered.filter((club) =>
+            club.rooms.some((room) =>
+              room.categoryList.some((category) => category.id === Number(categoryR)),
+            ),
+          );
+          setClubs(filtered);
+        })
+        .catch((e) => {
+          NotificationManager.error(`Cannot get categories - ${e}`);
+        });
+      // const filteredCategories = categories.filter((item) => item.id === parseInt(categoryR, 10));
+      // if (filteredCategories.length > 0) {
+      //   const filteredClubs = filteredCategories[0].roomList.map((room) => room.club);
+      //   setClubs(
+      //     filteredClubs.filter(
+      //       (obj, index, self) => index === self.findIndex((el) => el.name === obj.name),
+      //     ),
+      //   );
+      // }
     }
   }, [categoryR, categories]);
 
   useEffect(() => {
     if (clubR) {
-      axios
-        .get('https://springboot-385918.oa.r.appspot.com/api/rooms')
-        .then((res) => {
-          const notFiltered = res.data;
-          setRooms(notFiltered.filter((item) => item.club.id === Number(clubR)));
-        })
-        .catch((e) => {
-          NotificationManager.error(`Cannot get categories - ${e}`);
-        });
+      const filterClub = clubs.filter((club) => club.id === Number(clubR));
+
+      const notFilteredRooms = filterClub.map((item) => item.rooms).flat();
+
+      setRooms(
+        notFilteredRooms.filter((room) =>
+          room.categoryList.some((category) => category.id === Number(categoryR)),
+        ),
+      );
     }
-  }, [clubR, clubs]);
+  }, [clubR, clubs, categoryR]);
+
   const handleClubChange = (event) => {
     if (event.target.value === '') {
       setIsThirdSelectDisabled(true);
@@ -89,7 +104,7 @@ const AddTraining = () => {
     const datetimeObj = new Date(dateTimeStr);
 
     // Adjust the time zone offset to match the desired time zone
-    datetimeObj.setHours(datetimeObj.getHours() + 3);
+    datetimeObj.setHours(datetimeObj.getHours() + 1);
 
     const newDateTimeStrStart = datetimeObj.toISOString().replace(/Z$/, '+01:00');
     const dateWithoutMilliseconds = newDateTimeStrStart.replace('.000', '');

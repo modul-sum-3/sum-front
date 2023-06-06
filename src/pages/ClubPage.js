@@ -160,7 +160,7 @@ const ClubPage = () => {
                 page and sign off from any training
               </div>
             ) : null}
-            {!clientTrainingsIds.includes(event.id) ? (
+            {!clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
               <div className="text-center">
                 <p>If you want to enroll to this training click button below</p>
                 <button

@@ -23,8 +23,7 @@ const ConfirmTrainings = () => {
 
     axios
       .put(url)
-      .then((res) => {
-        NotificationManager.success('Training confirmed:', res.data);
+      .then(() => {
         setEvents((prevEvents) => prevEvents.filter((event) => event.id !== training.id));
       })
       .catch((error) => {

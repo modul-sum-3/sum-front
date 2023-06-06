@@ -142,7 +142,7 @@ const ClubPage = () => {
         {membership.length !== 0 && role === 'CLIENT' ? (
           <div>
             {membership.expireDate <= event.startAt ? (
-              <div>
+              <div className="text-center">
                 In the day of the training your membership will be expired. Wait for your membership
                 to expire and renew it or{' '}
                 <a href="/contact" className="underline">
@@ -159,7 +159,8 @@ const ClubPage = () => {
                 </a>{' '}
                 page and sign off from any training
               </div>
-            ) : (
+            ) : null}
+            {!clientTrainingsIds.includes(event.id) ? (
               <div className="text-center">
                 <p>If you want to enroll to this training click button below</p>
                 <button
@@ -170,7 +171,7 @@ const ClubPage = () => {
                   Enroll
                 </button>
               </div>
-            )}
+            ) : null}
           </div>
         ) : (
           <div className="text-center">

@@ -12,11 +12,13 @@ const ClubPage = () => {
   const [events, setEvents] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isHidden, setHidden] = useState('');
+  const [membership, setMembership] = useState([]);
   const [event, setEvent] = useState([]);
   const role = user((state) => state.role);
   const Userid = user((state) => state.id);
   const [clientTrainingsIds, setClientTrainingsIds] = useState([]);
   const [final, setFinal] = useState('');
+  const token = user((state) => state.token);
 
   useEffect(() => {
     if (role === 'CLIENT') {
@@ -30,8 +32,20 @@ const ClubPage = () => {
         .catch((e) => {
           NotificationManager.success(e);
         });
+      const config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      axios
+        .get(
+          `https://springboot-385918.oa.r.appspot.com/api/transaction/clientActive/${Userid}`,
+          config,
+        )
+        .then((res) => {
+          setMembership(res.data);
+        });
     }
-  }, [Userid, role, showModal]);
+  }, [Userid, role, showModal, token]);
 
   useEffect(() => {
     axios
@@ -120,14 +134,24 @@ const ClubPage = () => {
         }}
         title="Training enrollment"
       >
-        <div className="mb-8">
+        <div className="mb-8 text-center">
           <h2 className="mb-2">Training data:</h2>
           <div>{event.summary}</div>
           <div>{final}</div>
         </div>
-        {role === 'CLIENT' ? (
+        {membership.length !== 0 && role === 'CLIENT' ? (
           <div>
-            {clientTrainingsIds.includes(event.id) ? (
+            {membership.expireDate <= event.startAt ? (
+              <div>
+                In the day of the training your membership will be expired. Wait for your membership
+                to expire and renew it or{' '}
+                <a href="/contact" className="underline">
+                  contact{' '}
+                </a>{' '}
+                one of our employees to deal with this problem
+              </div>
+            ) : null}
+            {clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
               <div>
                 You have already enroll to this training, do you want to sign off? Go to{' '}
                 <a href="/client" className="underline">
@@ -136,12 +160,12 @@ const ClubPage = () => {
                 page and sign off from any training
               </div>
             ) : (
-              <div>
+              <div className="text-center">
                 <p>If you want to enroll to this training click button below</p>
                 <button
                   type="button"
                   onClick={handleTrainingEnroll}
-                  className="mt-2 rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                  className="mt-2 w-full rounded-lg bg-primary px-6 py-2 font-semibold text-white"
                 >
                   Enroll
                 </button>
@@ -149,7 +173,13 @@ const ClubPage = () => {
             )}
           </div>
         ) : (
-          <div> If u want to enroll to training - log in</div>
+          <div className="text-center">
+            You need to have{' '}
+            <a href="/membership" className="underline">
+              membership
+            </a>{' '}
+            to enroll to training
+          </div>
         )}
       </ModalLogin>
       <NotificationContainer />

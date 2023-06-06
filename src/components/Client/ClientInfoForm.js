@@ -36,21 +36,15 @@ const ClientInfoForm = () => {
       <form className="flex w-2/3 flex-col gap-2" onSubmit={handleSubmit} id="userSettings">
         <label htmlFor="name">
           Name
-          <input
-            type="text"
-            value={userData.first_name}
-            disabled
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
-          />
+          <div className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+            {userData.first_name}
+          </div>
         </label>
         <label htmlFor="surname">
           Surname
-          <input
-            type="text"
-            value={userData.last_name}
-            disabled
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
-          />
+          <div className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+            {userData.last_name}
+          </div>
         </label>
         <label htmlFor="phoneNumber">
           Phone

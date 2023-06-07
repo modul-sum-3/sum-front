@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { NotificationManager } from 'react-notifications';
+import ClientCarnet from './ClientCarnet';
 
 const HomepageEmployee = () => {
   const [clientId, setClientId] = useState('');
@@ -8,8 +9,6 @@ const HomepageEmployee = () => {
   const [display, setDisplay] = useState('');
   const [displayVisit, setDisplayVisit] = useState('block');
   const [displayVisit2, setDisplayVisit2] = useState('hidden');
-
-  const isCarnetActive = false;
 
   const buttonStart = document.getElementById('button-start');
   const buttonFinish = document.getElementById('button-end');
@@ -40,6 +39,7 @@ const HomepageEmployee = () => {
       .then((res) => {
         setUser(res.data);
         NotificationManager.success('Successfuly found user');
+
         setDisplay('block');
       })
       .catch((e) => {
@@ -70,28 +70,17 @@ const HomepageEmployee = () => {
           className={`${display} block w-3/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
         >
           <div className="flex flex-col">
-            <p className="mt-10 text-center text-2xl">Client information</p>
+            <p className="mt-10 text-center text-2xl">About client:</p>
             <div className="mt-6 flex flex-row items-center justify-center gap-7">
-              <section className="flex w-fit flex-col rounded-2xl border border-red-500 bg-gray-50 p-2.5 text-sm">
+              <section className="flex w-fit flex-col rounded-2xl bg-gray-50 p-2.5 text-sm">
+                <div className="mb-5">Client info:</div>
                 <div className=" ">First name: {user.first_name}</div>
                 <div className=" ">Last name: {user.last_name}</div>
                 <div>Birthday: {user.date_of_birth}</div>
                 <div>Phone: {user.phoneNumber}</div>
                 <div>Email: {user.email}</div>
               </section>
-              <section className="flex w-fit flex-col rounded-2xl border border-red-500 bg-gray-50 p-2.5 text-sm">
-                <div>Current carnet:</div>
-                <div>Date of purchase:</div>
-                <div>Date of expiration:</div>
-                {isCarnetActive === false ? (
-                  <button
-                    type="button"
-                    className="mt-3 rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
-                  >
-                    Activate carnet
-                  </button>
-                ) : null}
-              </section>
+              {user.length !== 0 ? <ClientCarnet clientId={user.id} /> : null}
             </div>
             <p className="mt-10 text-center text-2xl">Visit information</p>
             <div className="mt-6  flex items-center justify-center">

@@ -49,6 +49,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
+        setShowModal(false);
         NotificationManager.success('Membership bought successfully!');
       })
       .catch((err) => {

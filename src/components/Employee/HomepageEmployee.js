@@ -73,7 +73,7 @@ const HomepageEmployee = () => {
             <p className="mt-10 text-center text-2xl">About client:</p>
             <div className="mt-6 flex flex-row items-center justify-center gap-7">
               <section className="flex w-fit flex-col rounded-2xl bg-gray-50 p-2.5 text-sm">
-                <div className="mb-5">Client info:</div>
+                <div className="mb-5 text-center">Client info:</div>
                 <div className=" ">First name: {user.first_name}</div>
                 <div className=" ">Last name: {user.last_name}</div>
                 <div>Birthday: {user.date_of_birth}</div>

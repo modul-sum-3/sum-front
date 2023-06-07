@@ -125,7 +125,7 @@ const ClientCarnet = ({ clientId }) => {
           </div>
         ) : (
           <div>
-            <div className="mb-5">Membership info: </div>
+            <div className="mb-5 text-center">Membership info: </div>
             <div>Current carnet: {carnet.name}</div>
             <div>Date of purchase: {finalStart}</div>
             <div>Date of expiration: {finalEnd}</div>

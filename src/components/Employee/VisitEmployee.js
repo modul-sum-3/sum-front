@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import user from '../../data/store';
+import ModalLogin from '../Site/ModalLogin';
 
 const VisitEmployee = ({ clientID }) => {
   const [closestTraining, setClosestTraining] = useState([]);
@@ -9,7 +10,9 @@ const VisitEmployee = ({ clientID }) => {
   const [final, setFinal] = useState();
   const [final2, setFinal2] = useState();
   const [stateHandler, setStateHandler] = useState();
+  const [grade, setGrade] = useState();
   const [disabled, setDisabled] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const club = user((state) => state.club);
 
@@ -34,7 +37,7 @@ const VisitEmployee = ({ clientID }) => {
   }, [closestTraining]);
 
   useEffect(() => {
-    if (activeVisit.length !== 0) {
+    if (activeVisit !== null && activeVisit.length !== 0) {
       const newDate = new Date(activeVisit.start_visit);
       newDate.setHours(newDate.getHours() + 4);
       const updatedDate = newDate.toISOString();
@@ -134,19 +137,50 @@ const VisitEmployee = ({ clientID }) => {
       });
   };
 
+  const handleFinishVisitGym = () => {
+    axios
+      .patch(`https://springboot-385918.oa.r.appspot.com/api/Ranking/client/${clientID}/neutral`)
+      .then(() => {
+        setStateHandler(Math.random());
+        NotificationManager.success('Training Finished!');
+      })
+      .catch(() => {
+        NotificationManager.error('Cannot finish training');
+      });
+  };
+  const handleFinishVisitTraining = () => {
+    if (grade === '') {
+      NotificationManager.error('Choose one of ratings please!');
+      return;
+    }
+
+    axios
+      .patch(`https://springboot-385918.oa.r.appspot.com/api/Ranking/client/${clientID}/${grade}`)
+      .then(() => {
+        setStateHandler(Math.random());
+        setShowModal(false);
+        NotificationManager.success('Training Finished!');
+      })
+      .catch(() => {
+        NotificationManager.error('Cannot finish training');
+      });
+  };
+
   return (
     <div className="mt-6  flex items-center justify-center">
       <div className="block w-3/4 ">
-        <section>
+        <section className="text-center">
           <p>Upcoming training:</p>
 
           {closestTraining.length !== 0 ? (
-            <div>
-              <div>{closestTraining.category.name}</div>
-              <div>{closestTraining.club.name}</div>
+            <div className="mt-3 flex flex-col justify-center text-center">
+              <div>
+                {closestTraining.category.name} - {closestTraining.club.name}
+              </div>
               <div>Training starts: {final}</div>
-              <div>Duration: {closestTraining.duration}</div>
-              <div>Room: {closestTraining.room.type}</div>
+              <div>
+                Duration: {closestTraining.duration} - Room: {closestTraining.room.type}
+              </div>
             </div>
           ) : null}
         </section>
@@ -180,16 +214,17 @@ const VisitEmployee = ({ clientID }) => {
             )}
           </div>
         ) : (
-          <div className=" flex-col rounded-2xl border border-red-500 bg-gray-50 p-2.5 text-sm">
-            <div>Visit start date: {final2}</div>
-            {activeVisit.length !== 0 ? (
+          <div className="mt-5 flex-col rounded-2xl  bg-gray-50 p-2.5 text-center text-sm">
+            <p>Current visit:</p>
+            <div className="mt-3">Visit start date: {final2}</div>
+            {activeVisit.length !== 0 && activeVisit !== null ? (
               <div>
                 {activeVisit.training !== null ? (
                   <div>
-                    <p>Is on training</p>
-                    <p>Room: {activeVisit}</p>
+                    <p>Is on training in room: {activeVisit.training.room.type}</p>
                     <button
                       type="button"
+                      onClick={() => setShowModal(true)}
                       className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
                     >
                       Finish Visit
@@ -198,6 +233,7 @@ const VisitEmployee = ({ clientID }) => {
                 ) : (
                   <button
                     type="button"
+                    onClick={() => handleFinishVisitGym()}
                     className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
                   >
                     Finish Visit
@@ -208,6 +244,38 @@ const VisitEmployee = ({ clientID }) => {
           </div>
         )}
       </div>
+      <ModalLogin
+        isVisible={showModal}
+        onClose={() => {
+          setShowModal(false);
+        }}
+        title="Finish visit"
+      >
+        <div className="text-center">
+          <p className="text-lg">Rate a training!</p>
+          <select
+            id="categorySelect"
+            onChange={(e) => {
+              setGrade(e.target.value);
+            }}
+            className="mt-3 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <option value="">Select one rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="VeryGood">Very good</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+            <option value="Tragic">Tragic</option>
+          </select>
+          <button
+            type="button"
+            onClick={() => handleFinishVisitTraining()}
+            className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+          >
+            Finish Visit
+          </button>
+        </div>
+      </ModalLogin>
     </div>
   );
 };

@@ -48,31 +48,31 @@ const ClientMembership = () => {
   }, [membership]);
 
   return (
-    <div className="mb-5 flex flex-col">
+    <div className="flex w-full flex-col">
       {membership.length !== 0 || carnet.length !== 0 ? (
         <div className="grid gap-4 text-center text-lg">
           <label className="col-span-3 grid text-xl font-semibold" htmlFor="name">
             Your membership:
-            <div className="mt-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-lg text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+            <div className=" mt-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-lg text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
               {carnet.name}
             </div>
           </label>
 
           <label className="" htmlFor="name">
             Start date:
-            <div className="mb-3 mt-2  block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+            <div className="mb-3 mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-base text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
               {finalStart}
             </div>
           </label>
           <label className="" htmlFor="name">
             Duration:
-            <div className="mb-3 mt-2  block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+            <div className="mb-3 mt-2  block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-base text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
               {carnet.duration}
             </div>
           </label>
           <label className="" htmlFor="name">
             Expire date:
-            <div className="mb-3 mt-2  block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+            <div className="mb-3 mt-2  block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-base text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
               {finalEnd}
             </div>
           </label>

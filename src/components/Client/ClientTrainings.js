@@ -41,12 +41,12 @@ const ClientTrainings = () => {
   };
 
   return (
-    <div className="flex w-full flex-col justify-center text-black">
+    <div className="flex w-full flex-col justify-center">
       <p className="mb-3 self-center text-xl font-semibold">Your trainings:</p>
-      <div className="flex h-[400px]  justify-center overflow-auto">
+      <div className="flex h-[340px] justify-center overflow-auto">
         <div className="grid grid-rows-1">
           {trainings.length === 0 ? (
-            <div className="mt-5 block w-full text-center">
+            <div className="mt-5 block w-full rounded-lg bg-gray-100 p-6 text-center shadow-inner">
               You haven't enrolled to any trainings, you can do it by openining your{' '}
               <a className="underline" href="/clubs">
                 Club
@@ -54,16 +54,16 @@ const ClientTrainings = () => {
               calendar and click on chosen training!{' '}
             </div>
           ) : null}
-          <div className="mx-16 mt-8 grid grid-cols-3  ">
-            {trainings.length !== 0
-              ? trainings.map((training) => {
-                  const newDate = new Date(training.startDate);
-                  newDate.setHours(newDate.getHours() + 2);
-                  const updatedDate = newDate.toISOString();
-                  const date = updatedDate.slice(0, 10);
-                  const time = updatedDate.slice(11, 16);
-                  const final = `${date} - ${time}`;
-                  return (
+          {trainings.length !== 0
+            ? trainings.map((training) => {
+                const newDate = new Date(training.startDate);
+                newDate.setHours(newDate.getHours() + 2);
+                const updatedDate = newDate.toISOString();
+                const date = updatedDate.slice(0, 10);
+                const time = updatedDate.slice(11, 16);
+                const final = `${date} - ${time}`;
+                return (
+                  <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-gray-100 p-6 shadow-inner">
                     <div className="h-fit rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
                       {/* <div>Club name: {getClubName(training.club_id)}</div> */}
                       <div>Category: {training.category.name} </div>
@@ -88,10 +88,10 @@ const ClientTrainings = () => {
                         Sign off
                       </button>
                     </div>
-                  );
-                })
-              : null}
-          </div>
+                  </div>
+                );
+              })
+            : null}
         </div>
       </div>
       <ModalLogin

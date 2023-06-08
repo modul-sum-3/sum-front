@@ -31,7 +31,7 @@ const Contact = () => {
             </p>
           </span>
         </div>
-        <div className=" mx-14 rounded-lg bg-white p-8">
+        <div className="mx-14 rounded-lg bg-white p-8">
           <h3 className="mb-8 table-cell h-10 rounded-lg bg-primary p-4 text-center text-white shadow">
             Leave your personal details and we will contact you
           </h3>

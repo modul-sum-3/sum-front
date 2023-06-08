@@ -5,8 +5,8 @@ import MainTemplate from '../templates/MainTemplate';
 const Home = () => {
   return (
     <MainTemplate>
-      <div className="flex max-w-screen-xl grow items-center">
-        <div className="mt-96 text-7xl uppercase text-white">Reach your goals at Fitnest</div>
+      <div className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-7xl uppercase text-white">
+        Reach your goals at Fitnest
       </div>
     </MainTemplate>
   );

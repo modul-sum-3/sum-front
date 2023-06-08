@@ -135,7 +135,7 @@ const LoginForm = () => {
         <p className="flex list-none items-center gap-2">
           <Link
             to={routes.register}
-            className="block rounded py-2 pl-3 pr-4 text-white hover:text-primary md:bg-transparent md:p-0"
+            className="block rounded py-2 pl-3 pr-4 text-gray-900 hover:text-primary md:bg-transparent md:p-0"
             aria-current="page"
           >
             Don't have an account? Register

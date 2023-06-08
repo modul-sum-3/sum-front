@@ -48,12 +48,12 @@ const ClientMembership = () => {
   }, [membership]);
 
   return (
-    <div className="mb-5 flex w-2/5 flex-col">
+    <div className="mb-5 flex flex-col">
       {membership.length !== 0 || carnet.length !== 0 ? (
-        <div className="grid text-center">
-          <label className="col-span-3 grid" htmlFor="name">
+        <div className="grid gap-4 text-center text-lg">
+          <label className="col-span-3 grid text-xl font-semibold" htmlFor="name">
             Your membership:
-            <div className="mb-3 mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+            <div className="mt-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-lg text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
               {carnet.name}
             </div>
           </label>
@@ -79,7 +79,7 @@ const ClientMembership = () => {
         </div>
       ) : (
         <div className="block w-full text-center">
-          <div className="mb-5">Your membership:</div>
+          <div className="mb-5 text-xl font-semibold">Your membership:</div>
           You dont have membership yet, go to{' '}
           <a href="/membership" className="underline">
             Membership

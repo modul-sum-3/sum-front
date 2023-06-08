@@ -12,27 +12,22 @@ const Client = () => {
   return (
     <div className="flex h-screen flex-col bg-gray-200">
       <Navbar />
-      <div className="box-border flex h-full w-full gap-12 self-center py-24">
-        <div className="col-1 ml-10 flex w-3/5 flex-col items-center justify-between">
-          <ClientMembership />
-          <ClientTrainings />
+      <div className="absolute left-1/2 top-1/2 flex w-full max-w-screen-2xl -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border-r bg-white p-6">
+        <div className="flex w-3/5 border-r">
+          <div className="flex w-full flex-col items-center">
+            <ClientMembership />
+            <ClientTrainings />
+          </div>
         </div>
-        <div className="mr-20 flex w-2/5 flex-col items-stretch justify-between">
-          <ClientBalance balance={userData.balance} />
-          <ClientInfoForm />
+
+        <div className="flex w-2/5 flex-col">
+          <div className="flex flex-col gap-20">
+            <ClientBalance balance={userData.balance} />
+            <ClientInfoForm />
+          </div>
         </div>
       </div>
-      {/* <div className=" grid h-screen grid-cols-2 grid-rows-2 gap-4">
-        <div className="col-span-1 row-span-2 mt-16 ">
-          <ClientTrainings className="row-span-2" />
-        </div>
-        <div className="mt-16">
-          <ClientBalance balance={userData.balance} className="" />
-        </div>
-        <div className="mb-16 mt-[-10%]">
-          <ClientInfoForm className="" />
-        </div>
-      </div> */}
+
       <NotificationContainer />
     </div>
   );

@@ -1,9 +1,7 @@
-import axios from 'axios';
 import IMask from 'imask';
 import { useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-import { Link } from 'react-router-dom';
 import MainTemplate from '../templates/MainTemplate';
 
 const Contact = () => {
@@ -43,11 +41,13 @@ const Contact = () => {
     setMessage(null);
   };
 
+  // rounded-xl border-[3px] border-primary
+
   return (
     <MainTemplate>
       <div className="absolute left-1/2 top-1/2 flex w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 justify-between">
         <div className="flex flex-col gap-10">
-          <article className="rounded-xl border-[3px] border-primary">
+          <article className="">
             <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6">
               <h2 className="font-semibold text-gray-800">Customer Service Department</h2>
             </div>
@@ -63,7 +63,7 @@ const Contact = () => {
             <div className="flex items-center space-x-2 rounded-b-lg border-t border-gray-200 bg-white p-6" />
           </article>
 
-          <article className="rounded-xl border-[3px] border-primary">
+          <article className="">
             <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6">
               <h2 className="font-semibold text-gray-800">Contact For Companies</h2>
             </div>
@@ -79,7 +79,7 @@ const Contact = () => {
           </article>
         </div>
 
-        <div className="rounded-xl border-[3px] border-primary">
+        <div className="">
           <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6">
             <h2 className="font-semibold text-gray-800">Send us a message</h2>
           </div>

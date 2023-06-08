@@ -32,7 +32,8 @@ const ClientInfoForm = () => {
   };
 
   return (
-    <div className="flex  justify-center text-black">
+    <div className="flex flex-col items-center text-black">
+      <p className="mb-4 text-xl font-semibold">Your information: </p>
       <form className="flex w-2/3 flex-col gap-2" onSubmit={handleSubmit} id="userSettings">
         <label htmlFor="name">
           Name

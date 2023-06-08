@@ -42,7 +42,7 @@ const ClientTrainings = () => {
 
   return (
     <div className="flex w-full flex-col justify-center text-black">
-      <p className="mb-3 self-center">Your trainings:</p>
+      <p className="mb-3 self-center text-xl font-semibold">Your trainings:</p>
       <div className="flex h-[400px]  justify-center overflow-auto">
         <div className="grid grid-rows-1">
           {trainings.length === 0 ? (

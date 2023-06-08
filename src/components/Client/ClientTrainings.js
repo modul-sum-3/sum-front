@@ -44,10 +44,10 @@ const ClientTrainings = () => {
   return (
     <div className="flex w-full flex-col justify-center">
       <p className="mb-3 self-center text-xl font-semibold">Your trainings:</p>
-      <div className="flex h-[340px] justify-center overflow-auto">
-        <div className="grid grid-rows-1">
+      <div className="flex h-[340px] justify-center overflow-auto bg-gray-100">
+        <div className="grid grid-cols-3 bg-gray-100">
           {trainings.length === 0 ? (
-            <div className="mt-5 block w-full rounded-lg bg-gray-100 p-6 text-center shadow-inner">
+            <div className="mt-5 block w-full rounded-lg  p-6 text-center ">
               You haven't enrolled to any trainings, you can do it by openining your{' '}
               <Link to="/sum-front/clubs" className="underline">
                 Club
@@ -64,7 +64,7 @@ const ClientTrainings = () => {
                 const time = updatedDate.slice(11, 16);
                 const final = `${date} - ${time}`;
                 return (
-                  <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-gray-100 p-6 shadow-inner">
+                  <div className="mt-4 grid  gap-2 rounded-lg  p-6">
                     <div className="h-fit rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
                       {/* <div>Club name: {getClubName(training.club_id)}</div> */}
                       <div>Category: {training.category.name} </div>

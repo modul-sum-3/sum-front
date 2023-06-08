@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sum-front/static/css/main.fe3750b0.css",
+    "main.js": "/sum-front/static/js/main.633f18e6.js",
+    "static/media/jumbo_bg.jpg": "/sum-front/static/media/jumbo_bg.eaff96d07cdfa52194bd.jpg",
+    "static/media/gym1.jpg": "/sum-front/static/media/gym1.9dcb9f49a1f1260984ec.jpg",
+    "static/media/timezone-soft.cjs": "/sum-front/static/media/timezone-soft.6bb2e207e88304f0e672.cjs",
+    "static/media/notification.svg?s3g3t9": "/sum-front/static/media/notification.5d0158671dd860c714c4.svg",
+    "static/media/notification.eot": "/sum-front/static/media/notification.3657084dc0419605a91c.eot",
+    "static/media/4.svg": "/sum-front/static/media/4.45b7e875812857fa822c7e9cc95fc328.svg",
+    "static/media/notification.woff?s3g3t9": "/sum-front/static/media/notification.c392cd33d9d9de730f9d.woff",
+    "static/media/notification.ttf?s3g3t9": "/sum-front/static/media/notification.c5d9251ea82e42f75381.ttf",
+    "index.html": "/sum-front/index.html",
+    "static/media/arrow-icon.svg": "/sum-front/static/media/arrow-icon.c894d9d2bc18d62df40894e839a04c99.svg",
+    "main.fe3750b0.css.map": "/sum-front/static/css/main.fe3750b0.css.map",
+    "main.633f18e6.js.map": "/sum-front/static/js/main.633f18e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe3750b0.css",
+    "static/js/main.633f18e6.js"
+  ]
+}

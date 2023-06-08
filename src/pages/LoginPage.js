@@ -14,7 +14,7 @@ const Login = () => {
           <ArrowLeftIcon className="mb-10 h-10 w-10 text-white" />
         </button>
         <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6" />
-        <div className="bg-white p-12 py-24">
+        <div className="bg-white p-12">
           <LoginForm />
         </div>
         <div className="flex items-center space-x-2 rounded-b-lg border-t border-gray-200 bg-white p-6" />

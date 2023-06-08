@@ -23,7 +23,7 @@ const Client = () => {
         <div className="flex w-2/5 flex-col">
           <div className="flex h-full flex-col justify-between gap-20">
             <ClientBalance balance={userData.balance} />
-            <ClientInfoForm />
+            <ClientInfoForm clientID={userData.id} />
           </div>
         </div>
       </div>

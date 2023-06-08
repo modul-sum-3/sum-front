@@ -29,6 +29,10 @@ const ClientBalance = () => {
       NotificationManager.error('U cannot add zero or minus to your balance');
       return;
     }
+    if (newBalance > 100) {
+      NotificationManager.error('Dont exaggerate');
+      return;
+    }
 
     axios
       .patch(`https://springboot-385918.oa.r.appspot.com/api/client/${id}?amount=${newBalance}`)

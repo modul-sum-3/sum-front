@@ -1,5 +1,5 @@
 import Kalend, { CalendarView } from 'kalend';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -19,6 +19,10 @@ const ClubPage = () => {
   const [clientTrainingsIds, setClientTrainingsIds] = useState([]);
   const [final, setFinal] = useState('');
   const token = user((state) => state.token);
+
+  const [clubData, setClubData] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (role === 'CLIENT') {
@@ -52,6 +56,7 @@ const ClubPage = () => {
       .get(`https://springboot-385918.oa.r.appspot.com/api/training/club/${clubId}`)
       .then((res) => {
         const eventsBeforeMap = res.data;
+        setClubData(res.data[0].club);
         const eventsFiltered = eventsBeforeMap.filter((obj) => obj.isConfirmed === true);
         const eventsMapped = eventsFiltered.map(
           ({ id, startDate, endTime, category, trainer }) => ({
@@ -107,7 +112,21 @@ const ClubPage = () => {
 
   return (
     <MainTemplate>
-      <div className={`${isHidden} mt-14 h-[700px] w-[1200px] rounded-xl bg-white`}>
+      <div className="mt-5 grid grid-cols-3">
+        <button
+          type="button"
+          onClick={() => navigate('/sum-front/clubs')}
+          className="ml-3 mt-3 block w-1/2 rounded-lg border bg-slate-100 p-1 hover:bg-slate-300"
+        >
+          Get back to clubs
+        </button>
+        {clubData.length !== 0 ? (
+          <div className="mt-3 flex justify-center p-1 text-white">
+            Calendar for {clubData.name}
+          </div>
+        ) : null}
+      </div>
+      <div className={`${isHidden} mt-3 h-[700px] w-[1200px] rounded-xl bg-white`}>
         <Kalend
           onEventClick={(e) => handleEventClick(e)}
           initialDate={new Date().toISOString()}
@@ -145,7 +164,7 @@ const ClubPage = () => {
               <div className="text-center">
                 In the day of the training your membership will be expired. Wait for your membership
                 to expire and renew it or{' '}
-                <a href="/contact" className="underline">
+                <a href="/sum-front/contact" className="underline">
                   contact{' '}
                 </a>{' '}
                 one of our employees to deal with this problem
@@ -154,7 +173,7 @@ const ClubPage = () => {
             {clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
               <div>
                 You have already enroll to this training, do you want to sign off? Go to{' '}
-                <a href="/client" className="underline">
+                <a href="/sum-front/client" className="underline">
                   Client
                 </a>{' '}
                 page and sign off from any training
@@ -176,7 +195,7 @@ const ClubPage = () => {
         ) : (
           <div className="text-center">
             You need to have{' '}
-            <a href="/membership" className="underline">
+            <a href="/sum-front/membership" className="underline">
               membership
             </a>{' '}
             to enroll to training

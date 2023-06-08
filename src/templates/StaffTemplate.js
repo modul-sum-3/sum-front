@@ -18,7 +18,7 @@ const StaffTemplate = () => {
   const handleLogout = () => {
     setRole('');
     setToken('');
-    navigate('/');
+    navigate('/sum-front');
   };
 
   const componentSwitch = (com) => {

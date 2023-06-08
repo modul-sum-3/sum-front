@@ -59,7 +59,7 @@ const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
           </div>
 
           <Link
-            to={`/club/${id}`}
+            to={`/sum-front/club/${id}`}
             className="min-w-fit rounded-xl bg-primary px-4 py-2 transition-colors hover:bg-hover"
           >
             <div className="text-lg font-semibold text-white">Click to see the schedule</div>

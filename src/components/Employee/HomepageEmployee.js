@@ -2,30 +2,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { NotificationManager } from 'react-notifications';
 import ClientCarnet from './ClientCarnet';
+import VisitEmployee from './VisitEmployee';
 
 const HomepageEmployee = () => {
   const [clientId, setClientId] = useState('');
   const [user, setUser] = useState({});
   const [display, setDisplay] = useState('');
-  const [displayVisit, setDisplayVisit] = useState('block');
-  const [displayVisit2, setDisplayVisit2] = useState('hidden');
-
-  const buttonStart = document.getElementById('button-start');
-  const buttonFinish = document.getElementById('button-end');
-
-  useEffect(() => {
-    if (buttonStart || buttonFinish) {
-      buttonStart.addEventListener('click', () => {
-        setDisplayVisit('hidden');
-        setDisplayVisit2('block');
-      });
-
-      buttonFinish.addEventListener('click', () => {
-        setDisplayVisit('block');
-        setDisplayVisit2('hidden');
-      });
-    }
-  }, [buttonFinish, buttonStart]);
 
   useEffect(() => {
     if (clientId.length < 36) {
@@ -83,6 +65,7 @@ const HomepageEmployee = () => {
               {user.length !== 0 ? <ClientCarnet clientId={user.id} /> : null}
             </div>
             <p className="mt-10 text-center text-2xl">Visit information</p>
+
             <div className="mt-6  flex items-center justify-center">
               <div className="block w-3/4 ">
                 <section className="flex flex-col">
@@ -113,6 +96,8 @@ const HomepageEmployee = () => {
                 </section>
               </div>
             </div>
+
+            <VisitEmployee clientID={clientId} />
           </div>
         </div>
       </div>

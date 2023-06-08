@@ -22,7 +22,7 @@ const Navbar = ({ color = 'zinc-500' }) => {
   const handleLogout = () => {
     setRole('');
     setToken('');
-    navigate('/');
+    navigate('/sum-front');
   };
 
   return (

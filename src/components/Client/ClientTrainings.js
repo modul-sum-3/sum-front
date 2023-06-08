@@ -14,7 +14,7 @@ const ClientTrainings = () => {
 
   useEffect(() => {
     axios
-      .get(`http://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
+      .get(`https://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
       .then((res) => {
         const dataX = res.data;
         setTrainings(dataX);
@@ -27,7 +27,7 @@ const ClientTrainings = () => {
   const handleSignOff = (TrainingID) => {
     axios
       .patch(
-        `http://springboot-385918.oa.r.appspot.com/api/training/removeClient?TrainingID=${TrainingID}`,
+        `https://springboot-385918.oa.r.appspot.com/api/training/removeClient?TrainingID=${TrainingID}`,
         { id: Userid },
       )
       .then(() => {
@@ -48,7 +48,7 @@ const ClientTrainings = () => {
           {trainings.length === 0 ? (
             <div className="mt-5 block w-full rounded-lg bg-gray-100 p-6 text-center shadow-inner">
               You haven't enrolled to any trainings, you can do it by openining your{' '}
-              <a className="underline" href="/clubs">
+              <a className="underline" href="/sum-front/clubs">
                 Club
               </a>{' '}
               calendar and click on chosen training!{' '}

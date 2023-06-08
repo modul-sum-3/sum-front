@@ -62,7 +62,7 @@ const RegisterForm = ({ width, invert, display }) => {
         last_name: surname,
         gender: 'OTHER',
         date_of_birth: birthday,
-        // phoneNumber: phoneNumber1,
+        phoneNumber: phoneNumber1,
         email: email1,
         balance: 0,
       },

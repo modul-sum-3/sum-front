@@ -9,10 +9,6 @@ const ClientInfoForm = () => {
 
   const userData = user((state) => state.userData);
 
-  // function isValidEmail(newEmail) {
-  //   return /\S+@\S+\.\S+/.test(newEmail);
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -36,13 +32,13 @@ const ClientInfoForm = () => {
       <form className="flex w-2/3 flex-col gap-2" onSubmit={handleSubmit} id="userSettings">
         <label htmlFor="name">
           Name
-          <div className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+          <div className="block w-full rounded-lg border border-gray-300 bg-gray-300 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
             {userData.first_name}
           </div>
         </label>
         <label htmlFor="surname">
           Surname
-          <div className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
+          <div className="block w-full rounded-lg border border-gray-300 bg-gray-300 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
             {userData.last_name}
           </div>
         </label>

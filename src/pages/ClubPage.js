@@ -1,5 +1,5 @@
 import Kalend, { CalendarView } from 'kalend';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -19,6 +19,8 @@ const ClubPage = () => {
   const [clientTrainingsIds, setClientTrainingsIds] = useState([]);
   const [final, setFinal] = useState('');
   const token = user((state) => state.token);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (role === 'CLIENT') {
@@ -108,6 +110,9 @@ const ClubPage = () => {
   return (
     <MainTemplate>
       <div className={`${isHidden} mt-14 h-[700px] w-[1200px] rounded-xl bg-white`}>
+        <button type="button" onClick={() => navigate('/sum-front/clubs')}>
+          Get back to clubs
+        </button>
         <Kalend
           onEventClick={(e) => handleEventClick(e)}
           initialDate={new Date().toISOString()}
@@ -145,7 +150,7 @@ const ClubPage = () => {
               <div className="text-center">
                 In the day of the training your membership will be expired. Wait for your membership
                 to expire and renew it or{' '}
-                <a href="/contact" className="underline">
+                <a href="/sum-front/contact" className="underline">
                   contact{' '}
                 </a>{' '}
                 one of our employees to deal with this problem
@@ -154,7 +159,7 @@ const ClubPage = () => {
             {clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
               <div>
                 You have already enroll to this training, do you want to sign off? Go to{' '}
-                <a href="/client" className="underline">
+                <a href="/sum-front/client" className="underline">
                   Client
                 </a>{' '}
                 page and sign off from any training
@@ -176,7 +181,7 @@ const ClubPage = () => {
         ) : (
           <div className="text-center">
             You need to have{' '}
-            <a href="/membership" className="underline">
+            <a href="/sum-front/membership" className="underline">
               membership
             </a>{' '}
             to enroll to training

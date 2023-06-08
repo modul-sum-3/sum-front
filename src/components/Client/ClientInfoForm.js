@@ -11,7 +11,7 @@ const ClientInfoForm = ({ clientID }) => {
 
   useEffect(() => {
     axios
-      .get(`http://springboot-385918.oa.r.appspot.com/api/client/${clientID}`)
+      .get(`https://springboot-385918.oa.r.appspot.com/api/client/${clientID}`)
       .then((res) => {
         setUser(res.data);
         setPhone(res.data.phoneNumber);

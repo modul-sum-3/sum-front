@@ -19,7 +19,7 @@ const ConfirmTrainings = () => {
   }, [club]);
 
   const handleAcceptTraining = (training) => {
-    const url = `http://springboot-385918.oa.r.appspot.com/api/training/${training.id}/confirmed?isConfirmed=true`;
+    const url = `https://springboot-385918.oa.r.appspot.com/api/training/${training.id}/confirmed?isConfirmed=true`;
 
     axios
       .put(url)

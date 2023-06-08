@@ -14,7 +14,7 @@ const ClientTrainings = () => {
 
   useEffect(() => {
     axios
-      .get(`http://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
+      .get(`https://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
       .then((res) => {
         const dataX = res.data;
         setTrainings(dataX);
@@ -27,7 +27,7 @@ const ClientTrainings = () => {
   const handleSignOff = (TrainingID) => {
     axios
       .patch(
-        `http://springboot-385918.oa.r.appspot.com/api/training/removeClient?TrainingID=${TrainingID}`,
+        `https://springboot-385918.oa.r.appspot.com/api/training/removeClient?TrainingID=${TrainingID}`,
         { id: Userid },
       )
       .then(() => {

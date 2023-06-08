@@ -24,7 +24,7 @@ const HomepageCoach = () => {
 
   const handleSignOff = (trainingID) => {
     axios
-      .delete(`http://springboot-385918.oa.r.appspot.com/api/training/${trainingID}`)
+      .delete(`https://springboot-385918.oa.r.appspot.com/api/training/${trainingID}`)
       .then(() => {
         setStateHandler(Math.random());
         setShowModal(false);

@@ -81,7 +81,7 @@ const ClientMembership = () => {
         <div className="block w-full text-center">
           <div className="mb-5">Your membership:</div>
           You dont have membership yet, go to{' '}
-          <a href="/membership" className="underline">
+          <a href="/sum-front/membership" className="underline">
             Membership
           </a>{' '}
           page to buy it!{' '}

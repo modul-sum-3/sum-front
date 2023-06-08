@@ -74,7 +74,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
         <button
           onClick={() => setShowModal(true)}
           type="button"
-          className="mt-5 inline-flex w-full justify-center rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-green-100 focus:outline-none focus:ring-4 focus:ring-gray-300"
+          className="mt-5 inline-flex w-full justify-center rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-green-100"
         >
           Choose plan
         </button>
@@ -85,14 +85,14 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
             <h3 className="font-semibold">It looks like you're not logged in!</h3>
             <Link
               to={routes.login}
-              className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+              className="rounded-lg bg-primary px-6 py-2 font-semibold text-white transition-colors hover:bg-hover"
             >
               Login
             </Link>
             <p>or</p>
             <Link
               to={routes.register}
-              className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+              className="rounded-lg bg-primary px-6 py-2 font-semibold text-white transition-colors hover:bg-hover"
             >
               Register
             </Link>
@@ -128,7 +128,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
                 <div className="mt-4 flex justify-center gap-4">
                   <button
                     type="button"
-                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"
+                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-orange-700"
                     onClick={() => setShowModal(false)}
                   >
                     Cancel
@@ -138,7 +138,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
                     onClick={() => {
                       handleBuyCarnet(membershipId);
                     }}
-                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white transition-colors hover:bg-hover"
                   >
                     Accept
                   </button>
@@ -156,14 +156,14 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
                 <div className="mt-4 flex justify-center gap-4">
                   <button
                     type="button"
-                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white"
+                    className="rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-orange-700"
                     onClick={() => setShowModal(false)}
                   >
                     Cancel
                   </button>
                   <Link
                     to={routes.client}
-                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                    className="rounded-lg bg-primary px-6 py-2 font-semibold text-white transition-colors hover:bg-hover"
                   >
                     Go
                   </Link>

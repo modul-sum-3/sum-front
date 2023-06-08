@@ -63,7 +63,7 @@ const HomepageCoach = () => {
                     setShowModal(true);
                     setCurrentEvent(training);
                   }}
-                  className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-600"
+                  className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-800"
                 >
                   Sign off
                 </button>
@@ -95,7 +95,7 @@ const HomepageCoach = () => {
             <button
               type="button"
               onClick={() => handleSignOff(currentEvent.id)}
-              className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-600"
+              className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-800"
             >
               Sign off
             </button>

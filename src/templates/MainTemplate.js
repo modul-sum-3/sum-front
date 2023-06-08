@@ -11,7 +11,7 @@ const MainTemplate = ({ children, dark = 'bg-black/50' }) => {
         )}
       >
         <Navbar className="self-end" color="gray-100" />
-        <div className="h-screen max-w-screen-xl grow self-center">{children}</div>
+        <div className="h-screen w-full max-w-screen-xl grow self-center">{children}</div>
       </section>
     </div>
   );

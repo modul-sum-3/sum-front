@@ -42,7 +42,7 @@ const HomepageEmployee = () => {
         <button
           type="button"
           onClick={handleSearch}
-          className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover"
+          className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-hover"
         >
           Search
         </button>

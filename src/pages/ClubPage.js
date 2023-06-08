@@ -185,7 +185,7 @@ const ClubPage = () => {
                 <button
                   type="button"
                   onClick={handleTrainingEnroll}
-                  className="mt-2 w-full rounded-lg bg-primary px-6 py-2 font-semibold text-white"
+                  className="mt-2 w-full rounded-lg bg-primary px-6 py-2 font-semibold text-white transition-colors hover:bg-hover"
                 >
                   Enroll
                 </button>

@@ -182,14 +182,14 @@ const RegisterForm = ({ width, invert, display }) => {
         </div>
         <button
           type="submit"
-          className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-primary"
+          className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-hover"
         >
           Register
         </button>
         <p className="flex list-none items-center gap-2">
           <Link
             to={routes.login}
-            className={`rounded py-2 pl-3 pr-4 ${display} text-white hover:text-primary md:bg-transparent md:p-0`}
+            className={` ${display} text-gray-900 hover:text-primary`}
             aria-current="page"
           >
             Already have an account? Log in

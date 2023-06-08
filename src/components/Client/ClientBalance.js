@@ -46,9 +46,9 @@ const ClientBalance = () => {
   };
 
   return (
-    <div className="flex flex-col ">
-      <div className="flex justify-center">Current Balance: {balance}</div>
-      <div className="mt-8 flex justify-center ">
+    <div className="flex flex-col">
+      <div className="flex justify-center text-xl font-semibold">Current Balance: {balance}$</div>
+      <div className="mt-8 flex justify-center">
         <form className="flex w-2/3 flex-col gap-2" onSubmit={handleBalanceChange} id="userBalance">
           <label htmlFor="balance">
             <input
@@ -60,7 +60,7 @@ const ClientBalance = () => {
           <button
             type="submit"
             id="button-add"
-            className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-primary"
+            className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-hover"
           >
             Add
           </button>

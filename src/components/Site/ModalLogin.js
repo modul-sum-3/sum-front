@@ -11,7 +11,7 @@ const ModalLogin = ({ isVisible, onClose, title, children }) => {
               <button
                 onClick={() => onClose()}
                 type="button"
-                className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 transition-colors hover:bg-gray-200 hover:text-gray-900"
               >
                 <svg
                   className="h-5 w-5"
@@ -29,7 +29,7 @@ const ModalLogin = ({ isVisible, onClose, title, children }) => {
             </div>
             <div className="space-y-6 p-6">{children}</div>
 
-            <div className="flex items-center space-x-2 rounded-b border-t border-gray-200 p-6 dark:border-gray-600" />
+            <div className="flex items-center space-x-2 rounded-b border-t border-gray-200 p-6" />
           </div>
         </div>
       </div>

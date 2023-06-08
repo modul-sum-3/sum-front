@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { UserCircleIcon } from '@heroicons/react/24/solid';
 import routes from '../../data/routes';
 import user from '../../data/store';
 import NavLoginButton from './NavLoginButton';
@@ -55,7 +56,8 @@ const Navbar = ({ color = 'zinc-500' }) => {
             }
             to={routes.client}
           >
-            Client
+            <UserCircleIcon className="h-7 w-7" />
+            Account
           </NavLink>
         ) : null}
         {role === '' ? (

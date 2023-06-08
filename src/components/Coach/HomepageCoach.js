@@ -48,7 +48,10 @@ const HomepageCoach = () => {
             const final = `${date} - ${time}`;
 
             return (
-              <div className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
+              <div
+                className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm"
+                key={training.id}
+              >
                 <div className="mb-3 text-center">{training.category.name}</div>
                 <div>Club name: {training.club.name} </div>
                 <div>Start date: {final}</div>

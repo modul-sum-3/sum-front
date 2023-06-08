@@ -105,7 +105,6 @@ const AddTraining = () => {
 
     // Adjust the time zone offset to match the desired time zone
     datetimeObj.setHours(datetimeObj.getHours() + 1);
-
     const newDateTimeStrStart = datetimeObj.toISOString().replace(/Z$/, '+01:00');
     const dateWithoutMilliseconds = newDateTimeStrStart.replace('.000', '');
     // Clone the datetimeObj before modifying it to calculate the end time
@@ -201,15 +200,18 @@ const AddTraining = () => {
             id="time"
             type="time"
             required
-            onChange={(e) => setTime(e.target.value)}
+            onBlur={(e) => setTime(e.target.value)}
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-center text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
           />
           <input
             placeholder="Date"
             id="dateInput"
             type="date"
+            defaultValue="13-06-2023"
             required
-            onChange={(e) => setDate(e.target.value)}
+            onBlur={(e) => {
+              setDate(e.target.value);
+            }}
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
           />
         </div>

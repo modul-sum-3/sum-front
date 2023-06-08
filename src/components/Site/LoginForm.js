@@ -106,8 +106,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <form className="flex flex-col gap-4 max-lg:w-1/3 max-md:w-1/2 " onSubmit={handleLogin}>
+    <div className="flex justify-center ">
+      <form className="flex flex-col gap-4 max-lg:w-1/3 max-md:w-1/2" onSubmit={handleLogin}>
         <input
           placeholder="Your email"
           id="email1"
@@ -132,15 +132,14 @@ const LoginForm = () => {
         >
           Log in
         </button>
-        <p className="flex list-none items-center gap-2">
-          <Link
-            to={routes.register}
-            className="block rounded py-2 pl-3 pr-4 text-gray-900 hover:text-primary md:bg-transparent md:p-0"
-            aria-current="page"
-          >
-            Don't have an account? Register
-          </Link>
-        </p>
+
+        <Link
+          to={routes.register}
+          className="text-gray-900 transition-colors hover:text-primary"
+          aria-current="page"
+        >
+          Don't have an account? Register
+        </Link>
       </form>
     </div>
   );

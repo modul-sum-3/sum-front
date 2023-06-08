@@ -189,7 +189,7 @@ const RegisterForm = ({ width, invert, display }) => {
         <p className="flex list-none items-center gap-2">
           <Link
             to={routes.login}
-            className={`rounded py-2 pl-3 pr-4 ${display} text-gray-900 hover:text-primary md:bg-transparent md:p-0`}
+            className={` ${display} text-gray-900 hover:text-primary`}
             aria-current="page"
           >
             Already have an account? Log in

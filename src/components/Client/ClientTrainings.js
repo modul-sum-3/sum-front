@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { NotificationManager } from 'react-notifications';
+import { Link } from 'react-router-dom';
 import user from '../../data/store';
 import ModalLogin from '../Site/ModalLogin';
 
@@ -48,9 +49,9 @@ const ClientTrainings = () => {
           {trainings.length === 0 ? (
             <div className="mt-5 block w-full text-center">
               You haven't enrolled to any trainings, you can do it by openining your{' '}
-              <a className="underline" href="/sum-front/clubs">
+              <Link to="/sum-front/clubs" className="underline">
                 Club
-              </a>{' '}
+              </Link>{' '}
               calendar and click on chosen training!{' '}
             </div>
           ) : null}

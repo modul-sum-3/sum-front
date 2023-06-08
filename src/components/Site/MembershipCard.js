@@ -102,10 +102,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
           <div className="text-center">
             <p>You already have membership!</p>
             <p>
-              You can check informations about it on{' '}
-              <a href="/client" className="underline">
-                Client
-              </a>{' '}
+              You can check informations about it on <Link to="/sum-front/client">Client</Link>{' '}
               page!
             </p>
           </div>

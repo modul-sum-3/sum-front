@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import user from '../../data/store';
 
 const ClientMembership = () => {
@@ -81,9 +82,9 @@ const ClientMembership = () => {
         <div className="block w-full text-center">
           <div className="mb-5">Your membership:</div>
           You dont have membership yet, go to{' '}
-          <a href="/sum-front/membership" className="underline">
+          <Link to="/sum-front/membership" className="underline">
             Membership
-          </a>{' '}
+          </Link>{' '}
           page to buy it!{' '}
         </div>
       )}

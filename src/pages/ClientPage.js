@@ -19,7 +19,7 @@ const Client = () => {
         </div>
         <div className="mr-20 flex w-2/5 flex-col items-stretch justify-between">
           <ClientBalance balance={userData.balance} />
-          <ClientInfoForm />
+          <ClientInfoForm clientID={userData.id} />
         </div>
       </div>
       {/* <div className=" grid h-screen grid-cols-2 grid-rows-2 gap-4">

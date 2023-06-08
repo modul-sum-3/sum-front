@@ -52,7 +52,7 @@ const CoachTemplate = () => {
                     setPage('homepage');
                     setIsCenter('');
                   }}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  className="flex items-center rounded-lg p-2 text-gray-900 transition-colors hover:bg-gray-100"
                 >
                   <svg
                     aria-hidden="true"

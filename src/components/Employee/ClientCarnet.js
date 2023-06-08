@@ -118,7 +118,7 @@ const ClientCarnet = ({ clientId }) => {
             <button
               type="button"
               onClick={() => setShowModal(true)}
-              className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+              className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-500"
             >
               Activate membership
             </button>
@@ -156,7 +156,7 @@ const ClientCarnet = ({ clientId }) => {
         <button
           type="button"
           onClick={() => handleBuyCarnet()}
-          className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+          className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-500"
         >
           Activate
         </button>

@@ -16,7 +16,7 @@ const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
         <button
           type="button"
           onClick={accordionToggle}
-          className="flex w-full items-center justify-between rounded-t-lg border-gray-200 bg-white px-12 align-middle shadow hover:bg-gray-50"
+          className="flex w-full items-center justify-between rounded-t-lg border-gray-200 bg-white px-12 align-middle shadow transition-colors hover:bg-gray-50"
         >
           <div className="clubs__list__row flex whitespace-nowrap py-6">
             <h2 className="self-center font-semibold text-gray-600">FitNest Club, {city}</h2>
@@ -58,7 +58,10 @@ const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
             <TrainFour className="h-12 w-12" />
           </div>
 
-          <Link to={`/club/${id}`} className="min-w-fit rounded-xl bg-primary px-4 py-2">
+          <Link
+            to={`/club/${id}`}
+            className="min-w-fit rounded-xl bg-primary px-4 py-2 transition-colors hover:bg-hover"
+          >
             <div className="text-lg font-semibold text-white">Click to see the schedule</div>
           </Link>
         </div>

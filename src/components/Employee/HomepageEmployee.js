@@ -60,7 +60,7 @@ const HomepageEmployee = () => {
         <button
           type="button"
           onClick={handleSearch}
-          className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover"
+          className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-hover"
         >
           Search
         </button>
@@ -89,7 +89,7 @@ const HomepageEmployee = () => {
                   <button
                     id="button-start"
                     type="button"
-                    className={`${displayVisit} mt-3 rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500`}
+                    className={`${displayVisit} mt-3 rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-500`}
                   >
                     Start Visit
                   </button>
@@ -104,7 +104,7 @@ const HomepageEmployee = () => {
                       <button
                         id="button-end"
                         type="button"
-                        className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+                        className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-500"
                       >
                         Finish Visit
                       </button>

@@ -182,7 +182,7 @@ const RegisterForm = ({ width, invert, display }) => {
         </div>
         <button
           type="submit"
-          className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-primary"
+          className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-hover"
         >
           Register
         </button>

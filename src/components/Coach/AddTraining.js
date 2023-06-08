@@ -236,7 +236,7 @@ const AddTraining = () => {
         </div>
         <button
           type="submit"
-          className="rounded-lg bg-teal-400 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-teal-900 focus:outline-none focus:ring-4 focus:ring-teal-500"
+          className="rounded-lg bg-teal-400 px-5 py-2.5 text-center text-lg font-medium text-white transition-colors hover:bg-teal-900"
         >
           Send to approval
         </button>

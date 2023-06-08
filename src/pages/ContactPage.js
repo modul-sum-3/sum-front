@@ -7,7 +7,7 @@ const Contact = () => {
         <div className="flex flex-col justify-center gap-3">
           <span
             href="#"
-            className=" mt-4 block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            className=" mt-4 block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow "
           >
             <h2 className="font-semibold text-primary">Customer Service Department</h2>
             <p className="my-4 ml-1 text-base font-normal text-gray-900">12 345 67 89 </p>
@@ -20,7 +20,7 @@ const Contact = () => {
           </span>
           <span
             href="#"
-            className="mt-4 block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            className="mt-4 block max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow"
           >
             <h2 className="font-semibold text-primary">Contact For Companies</h2>
             <p className="ml-1 mt-4 text-base font-normal text-gray-900">
@@ -130,7 +130,7 @@ const Contact = () => {
             <button
               id="submitButton"
               type="submit"
-              className="w-full rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-hover focus:outline-none focus:ring-4 focus:ring-gray-300"
+              className="w-full rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-hover"
             >
               Send
             </button>

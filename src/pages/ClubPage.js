@@ -20,6 +20,8 @@ const ClubPage = () => {
   const [final, setFinal] = useState('');
   const token = user((state) => state.token);
 
+  const [clubData, setClubData] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -54,6 +56,7 @@ const ClubPage = () => {
       .get(`https://springboot-385918.oa.r.appspot.com/api/training/club/${clubId}`)
       .then((res) => {
         const eventsBeforeMap = res.data;
+        setClubData(res.data[0].club);
         const eventsFiltered = eventsBeforeMap.filter((obj) => obj.isConfirmed === true);
         const eventsMapped = eventsFiltered.map(
           ({ id, startDate, endTime, category, trainer }) => ({
@@ -109,10 +112,21 @@ const ClubPage = () => {
 
   return (
     <MainTemplate>
-      <div className={`${isHidden} mt-14 h-[700px] w-[1200px] rounded-xl bg-white`}>
-        <button type="button" onClick={() => navigate('/sum-front/clubs')}>
+      <div className="mt-5 grid grid-cols-3">
+        <button
+          type="button"
+          onClick={() => navigate('/sum-front/clubs')}
+          className="ml-3 mt-3 block w-1/2 rounded-lg border bg-slate-100 p-1 hover:bg-slate-300"
+        >
           Get back to clubs
         </button>
+        {clubData.length !== 0 ? (
+          <div className="mt-3 flex justify-center p-1 text-white">
+            Calendar for {clubData.name}
+          </div>
+        ) : null}
+      </div>
+      <div className={`${isHidden} mt-3 h-[700px] w-[1200px] rounded-xl bg-white`}>
         <Kalend
           onEventClick={(e) => handleEventClick(e)}
           initialDate={new Date().toISOString()}

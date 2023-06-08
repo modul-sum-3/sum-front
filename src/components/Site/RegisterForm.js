@@ -10,7 +10,7 @@ const RegisterForm = ({ width, invert, display }) => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [birthday, setBirthday] = useState('');
-  const [, setPhoneNumber] = useState('');
+  const [phoneNumber1, setPhoneNumber] = useState('');
   const [email1, setEmail] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');

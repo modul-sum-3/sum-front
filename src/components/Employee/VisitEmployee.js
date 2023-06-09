@@ -194,7 +194,7 @@ const VisitEmployee = ({ clientID }) => {
                 onClick={() => handleStartVisitGym()}
                 className="rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
               >
-                Start visit - just gym
+                Start visit – just gym
               </button>
             ) : (
               <div>
@@ -203,20 +203,20 @@ const VisitEmployee = ({ clientID }) => {
                   onClick={() => handleStartVisitTraining()}
                   className="mr-5 rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
                 >
-                  Start visit - training
+                  Start visit – training
                 </button>
                 <button
                   type="button"
                   onClick={() => handleStartVisitGym()}
                   className="rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
                 >
-                  Start visit - just gym
+                  Start visit – just gym
                 </button>
               </div>
             )}
           </div>
         ) : (
-          <div className="mt-5 flex-col rounded-2xl bg-gray-50 p-2.5 text-center">
+          <div className="mt-3 flex-col rounded-2xl bg-gray-50 p-2.5 text-center">
             <p className="mb-2 text-lg font-semibold">Current visit:</p>
             <div className="mt-3">Visit start date: {final2}</div>
             {activeVisit.length !== 0 && activeVisit !== null ? (

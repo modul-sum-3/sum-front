@@ -115,7 +115,7 @@ const ClubPage = () => {
       <div className="mt-5 grid grid-cols-3">
         <button
           type="button"
-          onClick={() => navigate('/sum-front/clubs')}
+          onClick={() => navigate('/clubs')}
           className="ml-3 mt-3 block w-1/2 rounded-lg border bg-slate-100 p-1 hover:bg-slate-300"
         >
           Get back to clubs
@@ -164,7 +164,7 @@ const ClubPage = () => {
               <div className="text-center">
                 In the day of the training your membership will be expired. Wait for your membership
                 to expire and renew it or{' '}
-                <a href="/sum-front/contact" className="underline">
+                <a href="/contact" className="underline">
                   contact{' '}
                 </a>{' '}
                 one of our employees to deal with this problem
@@ -173,7 +173,7 @@ const ClubPage = () => {
             {clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
               <div>
                 You have already enroll to this training, do you want to sign off? Go to{' '}
-                <a href="/sum-front/client" className="underline">
+                <a href="/client" className="underline">
                   Client
                 </a>{' '}
                 page and sign off from any training
@@ -195,7 +195,7 @@ const ClubPage = () => {
         ) : (
           <div className="text-center">
             You need to have{' '}
-            <a href="/sum-front/membership" className="underline">
+            <a href="/membership" className="underline">
               membership
             </a>{' '}
             to enroll to training

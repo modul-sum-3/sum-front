@@ -82,7 +82,7 @@ const ClientMembership = () => {
         <div className="block w-full text-center">
           <div className="mb-5 text-xl font-semibold">Your membership:</div>
           You dont have membership yet, go to{' '}
-          <Link to="/sum-front/membership" className="underline">
+          <Link to="/membership" className="underline">
             Membership
           </Link>{' '}
           page to buy it!{' '}

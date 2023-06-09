@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { MapPinIcon } from '@heroicons/react/24/solid';
 import { ReactComponent as ArrowIcon } from '../../assets/arrow-icon.svg';
 import { ReactComponent as BoxingIcon } from '../../assets/trainings/boxing.svg';
 import { ReactComponent as ZumbaIcon } from '../../assets/trainings/zumba.svg';
@@ -66,7 +67,7 @@ const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) 
         </button>
       </div>
       <div
-        className={`m-auto w-full rounded-b-lg border-gray-200 bg-white p-0 shadow ${
+        className={`m-auto w-full rounded-b-lg border-gray-200 bg-gray-50 p-0 shadow ${
           show ? '' : 'hidden'
         }`}
       >
@@ -85,13 +86,18 @@ const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) 
             {yoga && <YogaIcon title="Yoga" className="h-7 w-7 fill-gray-800" />}
             {boxing && <BoxingIcon title="Boxing" className="white h-7 w-7 fill-gray-800" />}
           </div>
-
-          <Link
-            to={`/sum-front/club/${clubId}`}
-            className="min-w-fit rounded-xl bg-primary px-4 py-2 transition-colors hover:bg-hover"
-          >
-            <div className="text-lg font-semibold text-white">Click to see the schedule</div>
-          </Link>
+          <div className="flex gap-12">
+            <MapPinIcon
+              title="See on the map"
+              className="h-11 w-11 self-center rounded-full border border-gray-900/5 bg-white p-1 text-primary shadow-md transition-all hover:scale-110"
+            />
+            <Link
+              to={`/sum-front/club/${clubId}`}
+              className="min-w-fit rounded-xl bg-primary px-4 py-2 transition-colors hover:bg-hover"
+            >
+              <div className="text-lg font-semibold text-white">Click to see the schedule</div>
+            </Link>
+          </div>
         </div>
       </div>
 

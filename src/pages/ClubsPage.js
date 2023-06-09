@@ -17,7 +17,9 @@ const Clubs = () => {
 
   useEffect(() => {
     if (filter !== '') {
-      const filteredByCity = clubs.filter((club) => club.city.includes(filter));
+      const filteredByCity = clubs.filter((club) =>
+        club.city.toLowerCase().includes(filter.toLowerCase()),
+      );
       const filteredByCategory = clubs.filter((club) =>
         club.rooms.some((room) =>
           room.categoryList.some((category) => category.name.includes(filter)),

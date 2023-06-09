@@ -32,7 +32,6 @@ const HomepageEmployee = () => {
   return (
     <div className="flex w-full flex-col">
       <div className="text-center text-2xl font-semibold">Enter client ID:</div>
-
       <div className="mt-12 flex justify-center">
         <input
           placeholder="Enter client ID"
@@ -49,29 +48,32 @@ const HomepageEmployee = () => {
           Search
         </button>
       </div>
-      <div className="mt-8 flex h-2/3 flex-col items-center justify-center gap-2">
-        <div
-          className={`${display} block w-4/6 scale-95 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
-        >
-          <div className="my-2 flex w-full flex-col">
-            <p className=" text-center text-2xl font-semibold">About client:</p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-2">
-              <section className="flex w-fit flex-col justify-center gap-2 rounded-2xl bg-gray-50 leading-6">
-                <div className=" ">First name: {user.first_name}</div>
-                <div className=" ">Last name: {user.last_name}</div>
-                <div>Birthday: {user.date_of_birth}</div>
-                <div>Phone: {user.phoneNumber}</div>
-                <div>Email: {user.email}</div>
-              </section>
-              {user.length !== 0 ? <ClientCarnet clientId={user.id} /> : null}
+
+      <div className="mt-10 h-[750px] overflow-auto">
+        <div className="mt-8 flex  w-full flex-col items-center justify-center gap-8 ">
+          <div
+            className={`${display} block  w-4/6  rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
+          >
+            <div className="my-2 flex w-full flex-col">
+              <p className=" text-center text-2xl font-semibold">About client:</p>
+              <div className="mt-6 flex flex-col items-center justify-center gap-2">
+                <section className="flex w-fit flex-col justify-center gap-2 rounded-2xl bg-gray-50 leading-6">
+                  <div className=" ">First name: {user.first_name}</div>
+                  <div className=" ">Last name: {user.last_name}</div>
+                  <div>Birthday: {user.date_of_birth}</div>
+                  <div>Phone: {user.phoneNumber}</div>
+                  <div>Email: {user.email}</div>
+                </section>
+                {user.length !== 0 ? <ClientCarnet clientId={user.id} /> : null}
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className={`${display} block w-4/6 scale-95 rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-6 text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
-        >
-          <p className="text-center text-2xl font-semibold">Visit information</p>
-          <VisitEmployee clientID={clientId} />
+          <div
+            className={`${display} block w-4/6  rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-4 text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
+          >
+            <p className="text-center text-2xl font-semibold">Visit information</p>
+            <VisitEmployee clientID={clientId} />
+          </div>
         </div>
       </div>
     </div>

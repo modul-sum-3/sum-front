@@ -35,7 +35,9 @@ const TimetableEmployee = () => {
 
   return (
     <div>
-      <div className="h-[850px] w-[950px] rounded-xl bg-white">
+      <div className="text-center text-2xl font-semibold">Timetable – {club.name}</div>
+
+      <div className="mt-8 h-[850px] w-[950px] rounded-xl bg-white">
         <Kalend
           initialDate={new Date().toISOString()}
           initialView={CalendarView.WEEK}

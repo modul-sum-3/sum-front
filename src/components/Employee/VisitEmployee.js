@@ -11,13 +11,13 @@ const VisitEmployee = ({ clientID }) => {
   const [final2, setFinal2] = useState();
   const [stateHandler, setStateHandler] = useState();
   const [grade, setGrade] = useState();
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState('disabled');
   const [showModal, setShowModal] = useState(false);
 
   const club = user((state) => state.club);
 
   useEffect(() => {
-    if (closestTraining.length !== 0) {
+    if (closestTraining.length !== 0 && closestTraining !== null) {
       const newDate = new Date(closestTraining.startDate);
       newDate.setHours(newDate.getHours() + 2);
       const updatedDate = newDate.toISOString();
@@ -51,24 +51,27 @@ const VisitEmployee = ({ clientID }) => {
     axios
       .get(`https://springboot-385918.oa.r.appspot.com/api/training/client/${clientID}`)
       .then((res) => {
-        const allTrainings = res.data;
+        if (res.data === null) {
+          setClosestTraining(null);
+        } else {
+          const allTrainings = res.data;
 
-        const currentDate = new Date();
+          const currentDate = new Date();
 
-        const theClosestTraining = allTrainings.reduce((closest, current) => {
-          const startDate = new Date(current.startDate);
-          const closestStartDate = new Date(closest.startDate);
+          const theClosestTraining = allTrainings.reduce((closest, current) => {
+            const startDate = new Date(current.startDate);
+            const closestStartDate = new Date(closest.startDate);
 
-          const timeDiffCurrent = Math.abs(startDate.getTime() - currentDate.getTime());
-          const timeDiffClosest = Math.abs(closestStartDate.getTime() - currentDate.getTime());
+            const timeDiffCurrent = Math.abs(startDate.getTime() - currentDate.getTime());
+            const timeDiffClosest = Math.abs(closestStartDate.getTime() - currentDate.getTime());
 
-          if (timeDiffCurrent < timeDiffClosest) {
-            return current;
-          }
-          return closest;
-        });
-
-        setClosestTraining(theClosestTraining);
+            if (timeDiffCurrent < timeDiffClosest) {
+              return current;
+            }
+            return closest;
+          });
+          setClosestTraining(theClosestTraining);
+        }
       });
 
     axios

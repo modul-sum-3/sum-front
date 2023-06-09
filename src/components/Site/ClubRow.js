@@ -2,7 +2,10 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowIcon } from '../../assets/arrow-icon.svg';
-import { ReactComponent as TrainFour } from '../../assets/trainings/4.svg';
+import { ReactComponent as BoxingIcon } from '../../assets/trainings/boxing.svg';
+import { ReactComponent as ZumbaIcon } from '../../assets/trainings/zumba.svg';
+import { ReactComponent as YogaIcon } from '../../assets/trainings/yoga.svg';
+import { ReactComponent as StretchingIcon } from '../../assets/trainings/stretching.svg';
 
 const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
   const [show, setShow] = useState(false);
@@ -51,11 +54,11 @@ const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
           </div>
 
           {/* training icons */}
-          <div className="absolute left-1/2 flex w-96 -translate-x-1/2 justify-center rounded-xl bg-primary/20">
-            <TrainFour className="h-12 w-12" />
-            <TrainFour className="h-12 w-12" />
-            <TrainFour className="h-12 w-12" />
-            <TrainFour className="h-12 w-12" />
+          <div className="absolute left-1/2 flex w-96 -translate-x-1/2 items-center justify-center gap-4 rounded-xl bg-primary/20 p-4">
+            <ZumbaIcon className="h-7 w-7" />
+            <StretchingIcon className="h-7 w-7" />
+            <YogaIcon className="h-7 w-7" />
+            <BoxingIcon className="h-6 w-6" />
           </div>
 
           <Link

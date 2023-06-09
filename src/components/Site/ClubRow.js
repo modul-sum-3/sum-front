@@ -15,6 +15,10 @@ const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) 
   const [boxing, setBoxing] = useState(false);
   const [stretching, setStretching] = useState(false);
 
+  const formattedAddress = `${street},${zip},${city}`;
+  const encodedAddress = encodeURIComponent(formattedAddress);
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+
   useEffect(() => {
     rooms.forEach((room) => {
       room.categoryList.forEach((category) => {
@@ -87,10 +91,12 @@ const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) 
             {boxing && <BoxingIcon title="Boxing" className="white h-7 w-7 fill-gray-800" />}
           </div>
           <div className="flex gap-12">
-            <MapPinIcon
-              title="See on the map"
-              className="h-11 w-11 self-center rounded-full border border-gray-900/5 bg-white p-1 text-primary shadow-md transition-all hover:scale-110"
-            />
+            <Link to={googleMapsUrl}>
+              <MapPinIcon
+                title="See on the map"
+                className="h-11 w-11 self-center rounded-full border border-gray-900/5 bg-white p-1 text-primary shadow-md transition-all hover:scale-110"
+              />
+            </Link>
             <Link
               to={`/sum-front/club/${clubId}`}
               className="min-w-fit rounded-xl bg-primary px-4 py-2 transition-colors hover:bg-hover"

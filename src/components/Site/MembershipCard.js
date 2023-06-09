@@ -67,8 +67,8 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
           <span className="text-5xl font-extrabold tracking-tight">{price}</span>
           <span className="ml-1 text-xl font-normal text-gray-500">/month</span>
         </div>
-        <div className="h-[56%]">
-          <span className="text-base font-normal leading-tight text-gray-500">{description}</span>
+        <div className="h-[60%] leading-7">
+          <span className="text-base font-normal text-gray-500">{description}</span>
         </div>
 
         <button

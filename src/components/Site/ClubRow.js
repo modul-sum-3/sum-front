@@ -115,7 +115,7 @@ const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) 
               <MapPinIcon className="h-11 w-11 self-center rounded-full border border-gray-900/5 bg-white p-1 text-primary shadow-md transition-all duration-300 hover:scale-110" />
             </a>
             <Link
-              to={`/sum-front/club/${clubId}`}
+              to={`/club/${clubId}`}
               className="min-w-fit rounded-xl bg-primary px-4 py-2 transition-colors hover:bg-hover"
             >
               <div className="text-lg font-semibold text-white">Click to see the schedule</div>

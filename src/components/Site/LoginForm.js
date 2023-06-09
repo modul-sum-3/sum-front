@@ -42,7 +42,7 @@ const LoginForm = () => {
                   setUser(res2.data);
                   setRole(result1.role);
                   setId(result1.id);
-                  navigate('/sum-front');
+                  navigate('/');
                 })
                 .catch((e) => {
                   NotificationManager.error(`Cannot get user - ${e}`);
@@ -55,7 +55,7 @@ const LoginForm = () => {
                   setRole(result1.role);
                   setId(result1.id);
                   setClub(res2.data.club);
-                  navigate('/sum-front/employee');
+                  navigate('/employee');
                 })
                 .catch((e) => {
                   NotificationManager.error(`Cannot get user - ${e}`);
@@ -64,7 +64,7 @@ const LoginForm = () => {
               setRole(result1.role);
               setId(result1.id);
 
-              navigate('/sum-front/employee');
+              navigate('/employee');
             } else if (result1.role === 'TRAINER') {
               axios
                 .get(`https://springboot-385918.oa.r.appspot.com/api/trainer/${result1.id}`)
@@ -72,7 +72,7 @@ const LoginForm = () => {
                   setUser(res2.data);
                   setRole(result1.role);
                   setId(result1.id);
-                  navigate('/sum-front/coach');
+                  navigate('/coach');
                 })
                 .catch((e) => {
                   NotificationManager.error(`Cannot get user - ${e}`);

@@ -27,7 +27,8 @@ const Clubs = () => {
           ),
         ),
       );
-      const filteredClubs2 = [...filteredByCity, ...filteredByCategory];
+      const filteredClubsSet = new Set([...filteredByCity, ...filteredByCategory]);
+      const filteredClubs2 = [...filteredClubsSet];
       setFilteredClubs(filteredClubs2);
     } else {
       setFilteredClubs(clubs);

@@ -45,7 +45,7 @@ const Contact = () => {
 
   return (
     <MainTemplate>
-      <div className="absolute left-1/2 top-1/2 flex w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 justify-between">
+      <div className="absolute left-1/2 top-1/2 mt-8 flex w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 justify-between">
         <div className="flex flex-col gap-10">
           <article className="">
             <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6">

@@ -23,15 +23,16 @@ const Clubs = () => {
           </p>
         </div>
         <div className="clubs__list mt-12 flex flex-col gap-6">
-          {clubs.map(({ id, city, location, street, zip, openTime, closeTime }) => (
+          {clubs.map(({ id, city, location, street, zip, openTime, closeTime, rooms }) => (
             <ClubRow
-              id={id}
+              clubId={id}
               city={city}
               location={location}
               street={street}
               zip={zip}
               opens={openTime}
               closes={closeTime}
+              rooms={rooms}
             />
           ))}
         </div>

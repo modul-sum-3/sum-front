@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowIcon } from '../../assets/arrow-icon.svg';
 import { ReactComponent as BoxingIcon } from '../../assets/trainings/boxing.svg';
@@ -7,8 +7,33 @@ import { ReactComponent as ZumbaIcon } from '../../assets/trainings/zumba.svg';
 import { ReactComponent as YogaIcon } from '../../assets/trainings/yoga.svg';
 import { ReactComponent as StretchingIcon } from '../../assets/trainings/stretching.svg';
 
-const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
+const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) => {
   const [show, setShow] = useState(false);
+  const [yoga, setYoga] = useState(false);
+  const [zumba, setZumba] = useState(false);
+  const [boxing, setBoxing] = useState(false);
+  const [stretching, setStretching] = useState(false);
+
+  useEffect(() => {
+    rooms.forEach((room) => {
+      room.categoryList.forEach((category) => {
+        const categoryId = category.id;
+
+        if (categoryId === 1) {
+          setZumba(true);
+        }
+        if (categoryId === 2) {
+          setBoxing(true);
+        }
+        if (categoryId === 3) {
+          setYoga(true);
+        }
+        if (categoryId === 4) {
+          setStretching(true);
+        }
+      });
+    });
+  }, [rooms]);
 
   const accordionToggle = () => {
     setShow((prev) => !prev);
@@ -54,15 +79,15 @@ const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
           </div>
 
           {/* training icons */}
-          <div className="absolute left-1/2 flex w-96 -translate-x-1/2 items-center justify-center gap-4 rounded-xl bg-primary/20 p-4">
-            <ZumbaIcon title="Zumba" className="h-7 w-7" />
-            <StretchingIcon title="Stretching" className="h-7 w-7" />
-            <YogaIcon title="Yoga" className="h-7 w-7" />
-            <BoxingIcon title="Boxing" className="h-7 w-7" />
+          <div className="absolute left-1/2 flex w-96 -translate-x-1/2 items-center justify-center gap-4 rounded-xl bg-primary/20 p-4 shadow-inner">
+            {zumba && <ZumbaIcon title="Zumba" className="h-7 w-7" />}
+            {stretching && <StretchingIcon title="Stretching" className="h-7 w-7" />}
+            {yoga && <YogaIcon title="Yoga" className="h-7 w-7" />}
+            {boxing && <BoxingIcon title="Boxing" className="h-7 w-7" />}
           </div>
 
           <Link
-            to={`/sum-front/club/${id}`}
+            to={`/sum-front/club/${clubId}`}
             className="min-w-fit rounded-xl bg-primary px-4 py-2 transition-colors hover:bg-hover"
           >
             <div className="text-lg font-semibold text-white">Click to see the schedule</div>

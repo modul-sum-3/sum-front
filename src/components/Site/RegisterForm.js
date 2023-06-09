@@ -5,8 +5,10 @@ import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { Link } from 'react-router-dom';
 import routes from '../../data/routes';
+import user from '../../data/store';
 
 const RegisterForm = ({ width, invert, display }) => {
+  const role = user((state) => state.role);
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [birthday, setBirthday] = useState('');
@@ -187,13 +189,15 @@ const RegisterForm = ({ width, invert, display }) => {
           Register
         </button>
         <p className="flex list-none items-center gap-2">
-          <Link
-            to={routes.login}
-            className={` ${display} text-gray-900 hover:text-primary`}
-            aria-current="page"
-          >
-            Already have an account? Log in
-          </Link>
+          {role === '' ? (
+            <Link
+              to={routes.login}
+              className={` ${display} text-gray-900 hover:text-primary`}
+              aria-current="page"
+            >
+              Already have an account? Log in
+            </Link>
+          ) : null}
         </p>
       </form>
     </div>

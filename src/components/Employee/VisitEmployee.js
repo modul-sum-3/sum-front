@@ -167,19 +167,19 @@ const VisitEmployee = ({ clientID }) => {
   };
 
   return (
-    <div className="mt-6 flex items-center justify-center">
+    <div className="mt-2 flex items-center justify-center">
       <div className="block w-3/4 ">
         <section className="text-center">
           {closestTraining.length !== 0 ? (
-            <div className="mt-3 flex flex-col justify-center text-center">
-              <p>Upcoming training:</p>
-              <div>
+            <div className="flex flex-col justify-center text-center leading-7">
+              <p className="mb-2 text-lg font-semibold">Upcoming training:</p>
+              <p>
                 {closestTraining.category.name} - {closestTraining.club.name}
-              </div>
-              <div>Training starts: {final}</div>
-              <div>
+              </p>
+              <p>Training starts: {final}</p>
+              <p>
                 Duration: {closestTraining.duration} - Room: {closestTraining.room.type}
-              </div>
+              </p>
             </div>
           ) : null}
         </section>

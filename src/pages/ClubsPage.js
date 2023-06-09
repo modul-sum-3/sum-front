@@ -37,7 +37,7 @@ const Clubs = () => {
   return (
     <div>
       <MainTemplate>
-        <div className="flex flex-row items-center ">
+        <div className="flex flex-row items-center justify-between">
           <div className="clubs__header w-[50%]">
             <h2 className="text-4xl font-bold text-primary">Our clubs</h2>
             <p className="my-4 text-2xl text-white">
@@ -45,11 +45,11 @@ const Clubs = () => {
               offer you will find a wide range of workouts tailored to your personal preferences.
             </p>
           </div>
-          <div className="block w-1/2">
+          <div className="block w-2/5">
             <input
               type="text"
               placeholder="Find your Club by city or training available!"
-              className="w-full"
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 px-4 text-base text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
               onChange={(e) => {
                 setFilter(e.target.value);
                 if (e.target.value.length === 0) {

@@ -1,6 +1,7 @@
 import { NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { FaceSmileIcon } from '@heroicons/react/24/solid';
 import user from '../../data/store';
 
 const ConfirmTrainings = () => {
@@ -32,8 +33,14 @@ const ConfirmTrainings = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center text-black">
-      <div className="text-center text-2xl">Trainings to accept:</div>
+    <div className="relative flex flex-col justify-center text-black">
+      <div className="text-center text-2xl font-semibold">Trainings that require approval:</div>
+      {events.length === 0 ? (
+        <div className="absolute left-1/2 top-1/2 my-auto flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-8">
+          <h1>There are no trainings to accept</h1>
+          <FaceSmileIcon className="h-24 w-24 text-gray-500" />
+        </div>
+      ) : null}
       <div className="h-[85vh] overflow-auto">
         <div className="mx-16 mt-8 grid grid-cols-2 gap-4 ">
           {events.length > 0
@@ -69,7 +76,7 @@ const ConfirmTrainings = () => {
                       className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-800"
                       onClick={() => handleAcceptTraining(event)}
                     >
-                      Accept
+                      Approve
                     </button>
                   </div>
                 );
@@ -77,9 +84,6 @@ const ConfirmTrainings = () => {
             : null}
         </div>
       </div>
-      {events.length === 0 ? (
-        <div className="flex justify-center text-lg">No trainings to accept</div>
-      ) : null}
     </div>
   );
 };

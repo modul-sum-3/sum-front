@@ -167,7 +167,7 @@ const VisitEmployee = ({ clientID }) => {
   };
 
   return (
-    <div className="mt-6  flex items-center justify-center">
+    <div className="mt-6 flex items-center justify-center">
       <div className="block w-3/4 ">
         <section className="text-center">
           <p>Upcoming training:</p>
@@ -190,7 +190,7 @@ const VisitEmployee = ({ clientID }) => {
               <button
                 type="button"
                 onClick={() => handleStartVisitGym()}
-                className="rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+                className="rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
               >
                 Start visit - just gym
               </button>
@@ -199,14 +199,14 @@ const VisitEmployee = ({ clientID }) => {
                 <button
                   type="button"
                   onClick={() => handleStartVisitTraining()}
-                  className="mr-5 rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+                  className="mr-5 rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
                 >
                   Start visit - training
                 </button>
                 <button
                   type="button"
                   onClick={() => handleStartVisitGym()}
-                  className="rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+                  className="rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
                 >
                   Start visit - just gym
                 </button>
@@ -214,7 +214,7 @@ const VisitEmployee = ({ clientID }) => {
             )}
           </div>
         ) : (
-          <div className="mt-5 flex-col rounded-2xl  bg-gray-50 p-2.5 text-center text-sm">
+          <div className="mt-5 flex-col rounded-2xl bg-gray-50 p-2.5 text-center">
             <p>Current visit:</p>
             <div className="mt-3">Visit start date: {final2}</div>
             {activeVisit.length !== 0 && activeVisit !== null ? (
@@ -225,7 +225,7 @@ const VisitEmployee = ({ clientID }) => {
                     <button
                       type="button"
                       onClick={() => setShowModal(true)}
-                      className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+                      className="mt-3 w-full rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
                     >
                       Finish Visit
                     </button>
@@ -234,7 +234,7 @@ const VisitEmployee = ({ clientID }) => {
                   <button
                     type="button"
                     onClick={() => handleFinishVisitGym()}
-                    className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+                    className="mt-3 w-full rounded-lg bg-red-600 p-3 text-center text-white transition-colors hover:bg-red-800"
                   >
                     Finish Visit
                   </button>
@@ -270,7 +270,7 @@ const VisitEmployee = ({ clientID }) => {
           <button
             type="button"
             onClick={() => handleFinishVisitTraining()}
-            className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white hover:bg-red-500"
+            className="mt-3 w-full rounded-lg bg-red-600 px-4 text-center text-white hover:bg-red-800"
           >
             Finish Visit
           </button>

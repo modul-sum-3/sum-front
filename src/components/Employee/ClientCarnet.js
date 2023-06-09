@@ -111,24 +111,24 @@ const ClientCarnet = ({ clientId }) => {
 
   return (
     <div>
-      <section className="flex w-fit flex-col rounded-2xl  bg-gray-50 p-2.5 text-sm">
+      <section className="flex w-fit flex-col rounded-2xl  bg-gray-50 p-2.5 ">
         {membership.length === 0 ? (
           <div>
-            <p>Client doesn't have active membership</p>
+            <p>Client doesn't have an active membership</p>
             <button
               type="button"
               onClick={() => setShowModal(true)}
-              className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-500"
+              className="mt-3 w-full rounded-lg bg-red-600 p-3 text-center font-medium text-white transition-colors hover:bg-red-800"
             >
               Activate membership
             </button>
           </div>
         ) : (
-          <div>
-            <div className="mb-5 text-center">Membership info: </div>
-            <div>Current carnet: {carnet.name}</div>
-            <div>Date of purchase: {finalStart}</div>
-            <div>Date of expiration: {finalEnd}</div>
+          <div className="leading-7">
+            <div className="mb-5 text-center text-lg font-semibold">Membership info: </div>
+            <p>Current carnet: {carnet.name}</p>
+            <p>Date of purchase: {finalStart}</p>
+            <p>Date of expiration: {finalEnd}</p>
           </div>
         )}
       </section>
@@ -156,7 +156,7 @@ const ClientCarnet = ({ clientId }) => {
         <button
           type="button"
           onClick={() => handleBuyCarnet()}
-          className="mt-3 w-full rounded-lg bg-red-600 px-5 py-1.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-500"
+          className="mt-3 w-full rounded-lg bg-red-600 p-3 text-center  font-medium text-white transition-colors hover:bg-red-800"
         >
           Activate
         </button>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { NotificationContainer } from 'react-notifications';
 import ConfirmTraninings from '../components/Employee/ConfirmTrainings';
 import HomepageEmployee from '../components/Employee/HomepageEmployee';
-import RegisterForm from '../components/Site/RegisterForm';
+import RegisterClient from '../components/Employee/RegisterClient';
 import user from '../data/store';
 import TimetableEmployee from '../components/Employee/TimetableEmployee';
 
@@ -18,7 +18,7 @@ const StaffTemplate = () => {
   const handleLogout = () => {
     setRole('');
     setToken('');
-    navigate('/sum-front');
+    navigate('/');
   };
 
   const componentSwitch = (com) => {
@@ -33,7 +33,7 @@ const StaffTemplate = () => {
       component = <ConfirmTraninings />;
     }
     if (com === 'registerClient') {
-      component = <RegisterForm width="w-2/3" display="none" />;
+      component = <RegisterClient />;
     }
     return <div>{component}</div>;
   };

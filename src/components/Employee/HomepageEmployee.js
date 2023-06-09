@@ -53,9 +53,9 @@ const HomepageEmployee = () => {
         <div
           className={`${display} block w-4/6 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
         >
-          <div className="my-2 flex w-full flex-col">
+          <div className="my-4 flex w-full flex-col">
             <p className=" text-center text-2xl font-semibold">About client:</p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-4">
+            <div className="mt-6 flex flex-col items-center justify-center gap-7">
               <section className="flex w-fit flex-col justify-center gap-2 rounded-2xl bg-gray-50 leading-6">
                 <div className=" ">First name: {user.first_name}</div>
                 <div className=" ">Last name: {user.last_name}</div>

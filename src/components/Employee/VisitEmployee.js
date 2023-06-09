@@ -170,9 +170,10 @@ const VisitEmployee = ({ clientID }) => {
     <div className="mt-6 flex items-center justify-center">
       <div className="block w-3/4 ">
         <section className="text-center">
+          <p>Upcoming training:</p>
+
           {closestTraining.length !== 0 ? (
-            <div className="flex flex-col justify-center text-center">
-              <p className="mb-2 text-lg font-semibold">Upcoming training:</p>
+            <div className="mt-3 flex flex-col justify-center text-center">
               <div>
                 {closestTraining.category.name} - {closestTraining.club.name}
               </div>
@@ -214,7 +215,7 @@ const VisitEmployee = ({ clientID }) => {
           </div>
         ) : (
           <div className="mt-5 flex-col rounded-2xl bg-gray-50 p-2.5 text-center">
-            <p className="mb-2 text-lg font-semibold">Current visit:</p>
+            <p>Current visit:</p>
             <div className="mt-3">Visit start date: {final2}</div>
             {activeVisit.length !== 0 && activeVisit !== null ? (
               <div>

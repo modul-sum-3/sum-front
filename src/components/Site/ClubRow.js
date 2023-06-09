@@ -112,7 +112,7 @@ const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) 
           </div>
           <div className="flex gap-12">
             <a href={googleMapsUrl} title="See on the map">
-              <MapPinIcon className="h-11 w-11 self-center rounded-full border border-gray-900/5 bg-white p-1 text-primary shadow-md transition-all hover:scale-110" />
+              <MapPinIcon className="h-11 w-11 self-center rounded-full border border-gray-900/5 bg-white p-1 text-primary shadow-md transition-all duration-300 hover:scale-110" />
             </a>
             <Link
               to={`/sum-front/club/${clubId}`}

@@ -49,7 +49,7 @@ const ClientTrainings = () => {
           {trainings.length === 0 ? (
             <div className="mt-5 block w-full rounded-lg  p-6 text-center ">
               You haven't enrolled to any trainings, you can do it by openining your{' '}
-              <Link to="/sum-front/clubs" className="underline">
+              <Link to="/clubs" className="underline">
                 Club
               </Link>{' '}
               calendar and click on chosen training!{' '}

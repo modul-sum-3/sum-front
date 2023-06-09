@@ -5,11 +5,11 @@ import 'react-notifications/lib/notifications.css';
 import MainTemplate from '../templates/MainTemplate';
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [phoneNumber1, setPhoneNumber] = useState('');
+  const [, setName] = useState('');
+  const [, setSurname] = useState('');
+  const [, setPhoneNumber] = useState('');
   const [email1, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [, setMessage] = useState('');
 
   function handlePhone() {
     const phone = document.querySelector('#phonenumber');

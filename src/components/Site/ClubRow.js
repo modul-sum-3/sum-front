@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import { ReactComponent as ArrowIcon } from '../../assets/arrow-icon.svg';

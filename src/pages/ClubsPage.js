@@ -22,7 +22,9 @@ const Clubs = () => {
       );
       const filteredByCategory = clubs.filter((club) =>
         club.rooms.some((room) =>
-          room.categoryList.some((category) => category.name.includes(filter)),
+          room.categoryList.some((category) =>
+            category.name.toLowerCase().includes(filter.toLowerCase()),
+          ),
         ),
       );
       const filteredClubs2 = [...filteredByCity, ...filteredByCategory];

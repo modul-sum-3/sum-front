@@ -57,12 +57,12 @@ const HomepageEmployee = () => {
             <div className="my-2 flex w-full flex-col">
               <p className=" text-center text-2xl font-semibold">About client:</p>
               <div className="mt-6 flex flex-col items-center justify-center gap-2">
-                <section className="flex w-fit flex-col justify-center gap-2 rounded-2xl bg-gray-50 leading-6">
-                  <div className=" ">First name: {user.first_name}</div>
-                  <div className=" ">Last name: {user.last_name}</div>
-                  <div>Birthday: {user.date_of_birth}</div>
-                  <div>Phone: {user.phoneNumber}</div>
-                  <div>Email: {user.email}</div>
+                <section className="flex w-fit flex-wrap justify-center gap-4 gap-y-0 rounded-2xl bg-gray-50">
+                  <p className=" ">First name: {user.first_name}</p>
+                  <p className=" ">Last name: {user.last_name}</p>
+                  <p>Birthday: {user.date_of_birth}</p>
+                  <p>Phone: {user.phoneNumber}</p>
+                  <p>Email: {user.email}</p>
                 </section>
                 {user.length !== 0 ? <ClientCarnet clientId={user.id} /> : null}
               </div>

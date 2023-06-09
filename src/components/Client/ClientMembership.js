@@ -68,7 +68,7 @@ const ClientMembership = () => {
           <label className="" htmlFor="name">
             Duration:
             <div className="mb-3 mt-2  block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-base text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50">
-              {carnet.duration}
+              {carnet.duration} days
             </div>
           </label>
           <label className="" htmlFor="name">

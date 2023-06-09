@@ -102,8 +102,7 @@ const MembershipCard = ({ membershipId, title, price, description }) => {
           <div className="text-center">
             <p>You already have membership!</p>
             <p>
-              You can check informations about it on <Link to="/sum-front/client">Client</Link>{' '}
-              page!
+              You can check informations about it on <Link to="/client">Client</Link> page!
             </p>
           </div>
         ) : null}

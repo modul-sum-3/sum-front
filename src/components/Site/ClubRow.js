@@ -80,10 +80,10 @@ const ClubRow = ({ clubId, city, location, street, zip, opens, closes, rooms }) 
 
           {/* training icons */}
           <div className="absolute left-1/2 flex w-96 -translate-x-1/2 items-center justify-center gap-5 rounded-xl bg-primary/20 p-4 shadow-inner">
-            {zumba && <ZumbaIcon title="Zumba" className="h-7 w-7" />}
-            {stretching && <StretchingIcon title="Stretching" className="h-7 w-7" />}
-            {yoga && <YogaIcon title="Yoga" className="h-7 w-7" />}
-            {boxing && <BoxingIcon title="Boxing" className="h-7 w-7" />}
+            {zumba && <ZumbaIcon title="Zumba" className="h-7 w-7 fill-gray-800" />}
+            {stretching && <StretchingIcon title="Stretching" className="h-7 w-7 fill-gray-800" />}
+            {yoga && <YogaIcon title="Yoga" className="h-7 w-7 fill-gray-800" />}
+            {boxing && <BoxingIcon title="Boxing" className="white h-7 w-7 fill-gray-800" />}
           </div>
 
           <Link

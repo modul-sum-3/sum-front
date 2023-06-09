@@ -114,7 +114,7 @@ const ClientCarnet = ({ clientId }) => {
       <section className="flex w-fit flex-col rounded-2xl  bg-gray-50 p-2.5 ">
         {membership.length === 0 ? (
           <div>
-            <p>Client doesn't have an active membership</p>
+            <p className="font-semibold">Client doesn't have an active membership</p>
             <button
               type="button"
               onClick={() => setShowModal(true)}
@@ -125,7 +125,7 @@ const ClientCarnet = ({ clientId }) => {
           </div>
         ) : (
           <div className="leading-7">
-            <div className="mb-5 text-center text-lg font-semibold">Membership info: </div>
+            <div className="mb-2 text-center text-lg font-semibold">Membership info: </div>
             <p>Current carnet: {carnet.name}</p>
             <p>Date of purchase: {finalStart}</p>
             <p>Date of expiration: {finalEnd}</p>

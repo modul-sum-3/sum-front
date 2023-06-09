@@ -170,7 +170,7 @@ const VisitEmployee = ({ clientID }) => {
   };
 
   return (
-    <div className="relative mt-2 flex items-center justify-center">
+    <div className="mt-2 flex items-center justify-center">
       <div className="block w-3/4 ">
         <section className="text-center">
           {closestTraining.length !== 0 ? (
@@ -246,40 +246,39 @@ const VisitEmployee = ({ clientID }) => {
           </div>
         )}
       </div>
-      <div className="">
-        <ModalLogin
-          isVisible={showModal}
-          onClose={() => {
-            setShowModal(false);
-          }}
-          title="Finish visit"
-        >
-          <div className="text-center">
-            <p className="text-lg">Rate a training!</p>
-            <select
-              id="categorySelect"
-              onChange={(e) => {
-                setGrade(e.target.value);
-              }}
-              className="mt-3 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <option value="">Select one rating</option>
-              <option value="Excellent">Excellent</option>
-              <option value="VeryGood">Very good</option>
-              <option value="Good">Good</option>
-              <option value="Bad">Bad</option>
-              <option value="Tragic">Tragic</option>
-            </select>
-            <button
-              type="button"
-              onClick={() => handleFinishVisitTraining()}
-              className="mt-3 w-full rounded-lg bg-red-600 px-4 text-center text-white hover:bg-red-800"
-            >
-              Finish Visit
-            </button>
-          </div>
-        </ModalLogin>
-      </div>
+
+      <ModalLogin
+        isVisible={showModal}
+        onClose={() => {
+          setShowModal(false);
+        }}
+        title="Finish visit"
+      >
+        <div className="text-center">
+          <p className="text-lg">Rate a training!</p>
+          <select
+            id="categorySelect"
+            onChange={(e) => {
+              setGrade(e.target.value);
+            }}
+            className="mt-3 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-900 focus:ring-teal-900 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <option value="">Select one rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="VeryGood">Very good</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+            <option value="Tragic">Tragic</option>
+          </select>
+          <button
+            type="button"
+            onClick={() => handleFinishVisitTraining()}
+            className="mt-3 w-full rounded-lg bg-red-600 px-4 text-center text-white hover:bg-red-800"
+          >
+            Finish Visit
+          </button>
+        </div>
+      </ModalLogin>
     </div>
   );
 };

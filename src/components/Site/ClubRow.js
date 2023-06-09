@@ -55,10 +55,10 @@ const ClubRow = ({ id, city, location, street, zip, opens, closes }) => {
 
           {/* training icons */}
           <div className="absolute left-1/2 flex w-96 -translate-x-1/2 items-center justify-center gap-4 rounded-xl bg-primary/20 p-4">
-            <ZumbaIcon className="h-7 w-7" />
-            <StretchingIcon className="h-7 w-7" />
-            <YogaIcon className="h-7 w-7" />
-            <BoxingIcon className="h-6 w-6" />
+            <ZumbaIcon title="Zumba" className="h-7 w-7" />
+            <StretchingIcon title="Stretching" className="h-7 w-7" />
+            <YogaIcon title="Yoga" className="h-7 w-7" />
+            <BoxingIcon title="Boxing" className="h-7 w-7" />
           </div>
 
           <Link

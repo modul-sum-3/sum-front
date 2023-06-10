@@ -48,25 +48,27 @@ const HomepageCoach = () => {
             const final = `${date} - ${time}`;
 
             return (
-              <div
-                className=" rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm"
-                key={training.id}
-              >
-                <div className="mb-3 text-center">{training.category.name}</div>
-                <div>Club name: {training.club.name} </div>
-                <div>Start date: {final}</div>
-                <div>Duration time: {training.duration}</div>
-                <div>
-                  Room: {training.room.id} - {training.room.type}
+              <div className="rounded-lg border border-gray-300 bg-gray-50 p-3" key={training.id}>
+                <div className="mb-2 text-center text-lg font-semibold">
+                  {training.category.name}
                 </div>
-                <div>Confirmed: {training.isConfirmed.toString()}</div>
+                <div className="font-medium">
+                  <p>Club name: {training.club.name} </p>
+                  <p>Start date: {final}</p>
+                  <p>Duration: {training.duration} minutes</p>
+                  <p>
+                    Room: {training.room.id} - {training.room.type}
+                  </p>
+                  <p>Confirmed: {training.isConfirmed.toString()}</p>
+                </div>
+
                 <button
                   type="button"
                   onClick={() => {
                     setShowModal(true);
                     setCurrentEvent(training);
                   }}
-                  className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-800"
+                  className="mt-3 w-full rounded-lg bg-red-600 p-3 text-center font-medium text-white transition-colors hover:bg-red-800"
                 >
                   Sign off
                 </button>
@@ -83,14 +85,14 @@ const HomepageCoach = () => {
         title="Cancel training"
       >
         {currentEvent.isConfirmed === false ? (
-          <div>
-            <h2>Are you sure u want to cancel this training?</h2>
+          <div className="text-lg font-medium">
+            <h2 className="mb-6">Are you sure you want to cancel this training?</h2>
             <div className="mb-3">
-              <h3 className="mb-2 mt-3">Training data:</h3>
-              <p>{currentEvent.category.name}</p>
+              {/* <h3 className="mb-2 mt-3 font-normal">Training data:</h3> */}
+              <p className="my-2 text-xl font-semibold">{currentEvent.category.name}</p>
               <p>Club name: {currentEvent.club.name} </p>
               <p>Start date: {currentEvent.startDate}</p>
-              <p>Duration time: {currentEvent.duration}</p>
+              <p>Duration: {currentEvent.duration} minutes</p>
               <p>
                 Room: {currentEvent.room.id} - {currentEvent.room.type}
               </p>
@@ -98,7 +100,7 @@ const HomepageCoach = () => {
             <button
               type="button"
               onClick={() => handleSignOff(currentEvent.id)}
-              className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-800"
+              className="mt-3 w-full rounded-lg bg-red-600 p-3 text-center font-medium text-white transition-colors hover:bg-red-800"
             >
               Sign off
             </button>

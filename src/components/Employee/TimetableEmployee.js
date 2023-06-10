@@ -40,7 +40,7 @@ const TimetableEmployee = () => {
       <div className="mt-8 h-[850px] w-[950px] rounded-xl bg-white">
         <Kalend
           initialDate={new Date().toISOString()}
-          initialView={CalendarView.WEEK}
+          initialView={CalendarView.AGENDA}
           events={events}
           timeFormat="24"
           autoScroll

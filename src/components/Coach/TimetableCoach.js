@@ -68,7 +68,7 @@ const TimetableCoach = () => {
       <div className="h-[825px] w-[950px] rounded-xl bg-white">
         <Kalend
           initialDate={new Date().toISOString()}
-          initialView={CalendarView.WEEK}
+          initialView={CalendarView.AGENDA}
           events={events}
           autoScroll
           hourHeight={80}

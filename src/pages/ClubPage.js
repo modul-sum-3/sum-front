@@ -161,7 +161,7 @@ const ClubPage = () => {
         {membership.length !== 0 && role === 'CLIENT' ? (
           <div>
             {membership.expireDate <= event.startAt ? (
-              <div className="text-center">
+              <div className="text-center font-medium">
                 In the day of the training your membership will be expired. Wait for your membership
                 to expire and renew it or{' '}
                 <a href="/contact" className="underline">
@@ -171,17 +171,17 @@ const ClubPage = () => {
               </div>
             ) : null}
             {clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
-              <div>
-                You have already enroll to this training, do you want to sign off? Go to{' '}
+              <div className="font-medium">
+                You have already enrolled to this training. Go to{' '}
                 <a href="/client" className="underline">
                   Client
                 </a>{' '}
-                page and sign off from any training
+                page to sign off or check your trainings.
               </div>
             ) : null}
             {!clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
-              <div className="text-center">
-                <p>If you want to enroll to this training click button below</p>
+              <div className="text-center font-medium">
+                <p>If you want to enroll to this training, click the button below</p>
                 <button
                   type="button"
                   onClick={handleTrainingEnroll}
@@ -193,12 +193,12 @@ const ClubPage = () => {
             ) : null}
           </div>
         ) : (
-          <div className="text-center">
-            You need to have{' '}
+          <div className="text-center font-medium">
+            You need to have an active{' '}
             <a href="/membership" className="underline">
               membership
             </a>{' '}
-            to enroll to training
+            to enroll to this training.
           </div>
         )}
       </ModalLogin>

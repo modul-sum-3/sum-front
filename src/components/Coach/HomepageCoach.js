@@ -38,7 +38,7 @@ const HomepageCoach = () => {
     <section className="">
       <h2 className="text-center text-2xl font-semibold">My trainings:</h2>
       <div className="h-[85vh] overflow-auto">
-        <div className="mx-16 mt-8 grid grid-cols-2 gap-4">
+        <div className="mx-16 mt-8 grid scale-90 grid-cols-2 gap-4">
           {events.map((training) => {
             const newDate = new Date(training.startDate);
             newDate.setHours(newDate.getHours() + 2);
@@ -85,8 +85,8 @@ const HomepageCoach = () => {
         title="Cancel training"
       >
         {currentEvent.isConfirmed === false ? (
-          <div className="text-lg font-medium">
-            <h2 className="mb-6">Are you sure you want to cancel this training?</h2>
+          <div className="font-medium">
+            <h3 className="mb-6 text-xl">Are you sure you want to cancel this training?</h3>
             <div className="mb-3">
               {/* <h3 className="mb-2 mt-3 font-normal">Training data:</h3> */}
               <p className="my-2 text-xl font-semibold">{currentEvent.category.name}</p>

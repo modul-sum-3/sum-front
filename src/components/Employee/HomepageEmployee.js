@@ -52,15 +52,15 @@ const HomepageEmployee = () => {
       <div className="mt-10 h-[750px] overflow-auto">
         <div className="mt-2 flex  w-full flex-col items-center justify-center gap-8 ">
           <div
-            className={`${display} block  w-4/6  rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
+            className={`${display} block  w-4/6  rounded-lg border border-gray-300 bg-gray-50 p-2.5 font-medium text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
           >
             <div className="my-2 flex w-full flex-col">
               <p className=" text-center text-2xl font-semibold">About client:</p>
-              <div className="mt-6 flex flex-col items-center justify-center gap-2">
+              <div className="mt-4 flex flex-col items-center justify-center gap-2">
                 <section className="flex w-full flex-wrap justify-center gap-4 gap-y-0 rounded-2xl bg-gray-50">
                   <p className=" ">First name: {user.first_name}</p>
                   <p className=" ">Last name: {user.last_name}</p>
-                  <p>Birthday: {user.date_of_birth}</p>
+                  <p>Date of birth: {user.date_of_birth}</p>
                   <p>Phone: {user.phoneNumber}</p>
                   <p>Email: {user.email}</p>
                 </section>
@@ -69,7 +69,7 @@ const HomepageEmployee = () => {
             </div>
           </div>
           <div
-            className={`${display} block w-4/6  rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-4 text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
+            className={`${display} block w-4/6  rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-4 font-medium text-gray-900 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50`}
           >
             <p className="text-center text-2xl font-semibold">Visit information</p>
             <VisitEmployee clientID={clientId} />

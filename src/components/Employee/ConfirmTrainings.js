@@ -53,16 +53,15 @@ const ConfirmTrainings = () => {
                 const final = `${date} - ${time}`;
                 return (
                   <div
-                    className="h-fit rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm"
+                    className="h-fit rounded-lg border border-gray-300 bg-gray-50 p-3 font-medium"
                     key={event.id}
                   >
-                    <p className="mb-1">Trainer:</p>
-                    <div className="flex flex-row items-center justify-center">
-                      <div> First Name: {event.trainer.first_name}</div>
-                      <div className="ml-4"> Last Name: {event.trainer.last_name}</div>
-                    </div>
-                    <p className="mb-1 mt-2">Training:</p>
-                    <div className="flex flex-col items-center justify-center">
+                    <p className="font-lg mb-2 text-center">
+                      Trainer: {event.trainer.first_name} {event.trainer.last_name}
+                    </p>
+
+                    <p className="font-lg mb-2 mt-4 text-center">Training:</p>
+                    <div className="ml-2 flex flex-col">
                       <div>Category: {event.category.name}</div>
                       <div>Start date: {final}</div>
                       <div>Duration time: {event.duration}</div>
@@ -73,7 +72,7 @@ const ConfirmTrainings = () => {
                     </div>
                     <button
                       type="button"
-                      className="mt-3 w-full rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-red-800"
+                      className="mt-3 w-full rounded-lg bg-red-600 p-2 text-center font-medium text-white transition-colors hover:bg-red-800"
                       onClick={() => handleAcceptTraining(event)}
                     >
                       Approve

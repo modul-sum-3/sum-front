@@ -273,7 +273,7 @@ const VisitEmployee = ({ clientID }) => {
           <button
             type="button"
             onClick={() => handleFinishVisitTraining()}
-            className="mt-3 w-full rounded-lg bg-red-600 px-4 text-center text-white hover:bg-red-800"
+            className="mt-3 w-full rounded-lg bg-red-600 p-3 text-center text-white hover:bg-red-800"
           >
             Finish Visit
           </button>

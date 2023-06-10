@@ -14,7 +14,9 @@ const Register = () => {
           <ArrowLeftIcon className="mb-10 h-10 w-10 text-white" />
         </button>
 
-        <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6" />
+        <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6">
+          <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Register</h3>
+        </div>
         <div className="bg-white p-12">
           <RegisterForm />
         </div>

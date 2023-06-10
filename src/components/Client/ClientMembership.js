@@ -49,7 +49,7 @@ const ClientMembership = () => {
   }, [membership]);
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex w-full flex-col font-medium">
       {membership.length !== 0 || carnet.length !== 0 ? (
         <div className="grid gap-4 text-center text-lg">
           <label className="col-span-3 grid text-xl font-semibold" htmlFor="name">
@@ -81,7 +81,7 @@ const ClientMembership = () => {
       ) : (
         <div className="block w-full text-center">
           <div className="mb-5 text-xl font-semibold">Your membership:</div>
-          You dont have membership yet, go to{' '}
+          You don't have membership yet, go to{' '}
           <Link to="/membership" className="underline">
             Membership
           </Link>{' '}

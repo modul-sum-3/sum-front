@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import MainTemplate from '../templates/MainTemplate';
 import ModalLogin from '../components/Site/ModalLogin';
 import user from '../data/store';
@@ -112,25 +113,26 @@ const ClubPage = () => {
 
   return (
     <MainTemplate>
-      <div className="mt-5 grid grid-cols-3">
-        <button
-          type="button"
-          onClick={() => navigate('/clubs')}
-          className="ml-3 mt-3 block w-1/2 rounded-lg border bg-slate-100 p-1 hover:bg-slate-300"
-        >
-          Get back to clubs
-        </button>
+      <div className="">
         {clubData.length !== 0 ? (
-          <div className="mt-3 flex justify-center p-1 text-white">
+          <div className="-600px my-3 flex justify-center p-1 text-2xl font-medium text-white">
             Calendar for {clubData.name}
           </div>
         ) : null}
       </div>
+      <button
+        type="button"
+        onClick={() => navigate('/clubs')}
+        className="flex w-fit gap-3 rounded-lg bg-primary p-3 font-semibold text-white transition-colors hover:bg-hover"
+      >
+        <ArrowLeftIcon className="h-6 w-6 self-center" />
+        <p className="self-center pr-1">Get back to clubs</p>
+      </button>
       <div className={`${isHidden} mt-3 h-[700px] w-[1200px] rounded-xl bg-white`}>
         <Kalend
           onEventClick={(e) => handleEventClick(e)}
           initialDate={new Date().toISOString()}
-          initialView={CalendarView.WEEK}
+          initialView={CalendarView.MONTH}
           events={events}
           timeFormat="24"
           autoScroll
@@ -159,7 +161,7 @@ const ClubPage = () => {
           <div>{final}</div>
         </div>
         {membership.length !== 0 && role === 'CLIENT' ? (
-          <div>
+          <div className="text-center">
             {membership.expireDate <= event.startAt ? (
               <div className="text-center font-medium">
                 In the day of the training your membership will be expired. Wait for your membership

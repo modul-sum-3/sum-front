@@ -106,11 +106,11 @@ const HomepageCoach = () => {
             </button>
           </div>
         ) : (
-          <div className="text-center">
-            <p>Unluckily this training has been already confirmed by one of our employees.</p>
+          <div className="text-center leading-8">
+            <p>Unluckily, this training has been already confirmed by one of our employees.</p>
             <p>
-              Contact one of our employees, we will try to find someone who can takeover this
-              training
+              If you want to cancel this training, contact one of our employees and we will try to
+              find someone, who can takeover this training.
             </p>
           </div>
         )}

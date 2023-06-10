@@ -192,7 +192,7 @@ const RegisterForm = ({ width, invert, display }) => {
           {role === '' ? (
             <Link
               to={routes.login}
-              className={` ${display} text-gray-900 hover:text-primary`}
+              className={` ${display} font-medium text-gray-900 hover:text-primary`}
               aria-current="page"
             >
               Already have an account? Log in

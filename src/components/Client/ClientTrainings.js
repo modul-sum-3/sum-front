@@ -46,7 +46,7 @@ const ClientTrainings = () => {
       <p className="mb-3 self-center text-xl font-semibold">Your trainings:</p>
       <div className="flex h-[340px] justify-center overflow-auto rounded-xl bg-gray-100 shadow-black">
         {trainings.length === 0 ? (
-          <div className="mt-5 block w-full p-6 text-center text-lg ">
+          <div className="mt-5 block w-full p-6 text-center text-lg font-medium">
             You haven't enrolled to any trainings, you can do it by openining your{' '}
             <Link to="/clubs" className="underline">
               Club
@@ -64,7 +64,7 @@ const ClientTrainings = () => {
                 const time = updatedDate.slice(11, 16);
                 const final = `${date} - ${time}`;
                 return (
-                  <div className="mt-4 grid rounded-lg p-6">
+                  <div className="mt-4 grid rounded-lg p-6 font-medium">
                     <div className="h-fit rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm">
                       {/* <div>Club name: {getClubName(training.club_id)}</div> */}
                       <div>Category: {training.category.name} </div>

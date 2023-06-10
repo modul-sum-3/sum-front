@@ -135,7 +135,7 @@ const LoginForm = () => {
 
         <Link
           to={routes.register}
-          className="text-gray-900 transition-colors hover:text-primary"
+          className="font-medium text-gray-900 transition-colors hover:text-primary"
           aria-current="page"
         >
           Don't have an account? Register

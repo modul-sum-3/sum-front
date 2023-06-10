@@ -46,12 +46,12 @@ const Contact = () => {
   return (
     <MainTemplate>
       <div className="absolute left-1/2 top-1/2 mt-8 flex w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 justify-between">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 font-medium">
           <article className="">
             <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6">
               <h2 className="font-semibold text-gray-800">Customer Service Department</h2>
             </div>
-            <div className="bg-white p-6 text-lg leading-8">
+            <div className="bg-white p-6 px-8 leading-8">
               <p className="text-gray-900">12 345 67 89 </p>
               <p>
                 <span className="font-semibold text-primary">contact@fitNest.bestrong.pl</span>
@@ -67,9 +67,9 @@ const Contact = () => {
             <div className="flex items-start justify-between rounded-t-lg border-b bg-white p-6">
               <h2 className="font-semibold text-gray-800">Contact For Companies</h2>
             </div>
-            <div className="bg-white p-6 text-lg leading-8">
+            <div className="bg-white p-6 px-8 leading-8">
               <p className="text-gray-900">
-                Interested companies can send offers to the following e-mail address:
+                Interested companies can send offers <br /> to the following e-mail address:
               </p>
               <p className="">
                 <span className="font-semibold text-primary">companies@fitNest.bestrong.pl</span>

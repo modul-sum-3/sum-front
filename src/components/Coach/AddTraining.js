@@ -152,97 +152,100 @@ const AddTraining = () => {
   };
 
   return (
-    <div className="flex h-full items-center justify-center">
-      <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit}>
-        <div className="flex flex-row gap-2">
-          <select
-            id="categorySelect"
-            onChange={handleCategoryChange}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <option value="">Select a category</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-          <select
-            id="clubSelect"
-            disabled={isSecondSelectDisabled}
-            onChange={handleClubChange}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <option value="">Select a club</option>
-            {clubs.map((club) => (
-              <option key={club.id} value={club.id}>
-                {club.name}
-              </option>
-            ))}
-          </select>
-          <select
-            id="roomSelect"
-            disabled={isThirdSelectDisabled}
-            onChange={(event) => setRoom(event.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <option value="">Select a room</option>
-            {rooms.map((room) => (
-              <option key={room.id} value={room.id}>
-                {room.type}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-row gap-2">
-          <input
-            placeholder="Time"
-            id="time"
-            type="time"
-            required
-            onBlur={(e) => setTime(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-center text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
-          />
-          <input
-            placeholder="Date"
-            id="dateInput"
-            type="date"
-            defaultValue="13-06-2023"
-            required
-            onBlur={(e) => {
-              setDate(e.target.value);
-            }}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
-          />
-        </div>
-        <div className="flex flex-row items-center gap-2">
-          <input
-            placeholder="Amount of people"
-            id="amount"
-            type="number"
-            min={5}
-            required
-            onChange={(e) => setAmount(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
-          />
+    <div className="relative h-full">
+      <p className="text-center text-2xl font-semibold">Enter training information:</p>
+      <div className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+        <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit}>
+          <div className="flex flex-row gap-2">
+            <select
+              id="categorySelect"
+              onChange={handleCategoryChange}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="">Select a category</option>
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+            <select
+              id="clubSelect"
+              disabled={isSecondSelectDisabled}
+              onChange={handleClubChange}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="">Select a club</option>
+              {clubs.map((club) => (
+                <option key={club.id} value={club.id}>
+                  {club.name}
+                </option>
+              ))}
+            </select>
+            <select
+              id="roomSelect"
+              disabled={isThirdSelectDisabled}
+              onChange={(event) => setRoom(event.target.value)}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="">Select a room</option>
+              {rooms.map((room) => (
+                <option key={room.id} value={room.id}>
+                  {room.type}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex flex-row gap-2">
+            <input
+              placeholder="Time"
+              id="time"
+              type="time"
+              required
+              onBlur={(e) => setTime(e.target.value)}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-center text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            />
+            <input
+              placeholder="Date"
+              id="dateInput"
+              type="date"
+              defaultValue="13-06-2023"
+              required
+              onBlur={(e) => {
+                setDate(e.target.value);
+              }}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            />
+          </div>
+          <div className="flex flex-row items-center gap-2">
+            <input
+              placeholder="Amount of people"
+              id="amount"
+              type="number"
+              min={5}
+              required
+              onChange={(e) => setAmount(e.target.value)}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            />
 
-          <input
-            placeholder="Duration"
-            id="duration"
-            type="number"
-            min={30}
-            required
-            onChange={(e) => setDuration(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
-          />
-        </div>
-        <button
-          type="submit"
-          className="rounded-lg bg-teal-400 px-5 py-2.5 text-center text-lg font-medium text-white transition-colors hover:bg-teal-700"
-        >
-          Send to approval
-        </button>
-      </form>
+            <input
+              placeholder="Duration"
+              id="duration"
+              type="number"
+              min={30}
+              required
+              onChange={(e) => setDuration(e.target.value)}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 focus:border-teal-700 focus:ring-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            />
+          </div>
+          <button
+            type="submit"
+            className="rounded-lg bg-teal-400 px-5 py-2.5 text-center text-lg font-medium text-white transition-colors hover:bg-teal-700"
+          >
+            Send to approval
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

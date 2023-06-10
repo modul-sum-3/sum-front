@@ -51,12 +51,12 @@ const TimetableCoach = () => {
   return (
     <div>
       <div className="mb-3 flex items-center justify-center">
-        Change club
+        <p className="text-2xl font-semibold">Timetable –</p>
         <select
           id="clubSelect"
           value={clubId}
           onChange={handleClubChange}
-          className="ml-5 rounded-xl border-gray-300 bg-white"
+          className="ml-2 rounded-xl border-gray-300 bg-white text-2xl font-semibold"
         >
           {clubs.map((club) => (
             <option key={club.id} value={club.id}>

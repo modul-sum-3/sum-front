@@ -36,7 +36,7 @@ const HomepageCoach = () => {
 
   return (
     <section className="">
-      <h2 className="text-center">My trainings:</h2>
+      <h2 className="text-center text-2xl font-semibold">My trainings:</h2>
       <div className="h-[85vh] overflow-auto">
         <div className="mx-16 mt-8 grid grid-cols-2 gap-4">
           {events.map((training) => {

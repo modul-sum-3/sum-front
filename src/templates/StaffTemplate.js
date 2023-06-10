@@ -46,8 +46,8 @@ const StaffTemplate = () => {
           className="absolute h-full w-64 -translate-x-full shadow-lg transition-transform sm:translate-x-0"
           aria-label="Sidebar"
         >
-          <div className="flex h-full overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800">
-            <ul className="flex h-full flex-col space-y-2 font-medium">
+          <div className="flex h-full w-64 overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800">
+            <ul className="flex h-full w-64 flex-col space-y-2 font-medium">
               <li>
                 <button
                   type="button"
@@ -56,7 +56,7 @@ const StaffTemplate = () => {
                     setPage('homepage');
                     setIsCenter('');
                   }}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  className="flex w-full items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
                     aria-hidden="true"
@@ -79,7 +79,7 @@ const StaffTemplate = () => {
                     setPage('timetable');
                     setIsCenter('');
                   }}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  className="flex w-full items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
                     aria-hidden="true"
@@ -90,7 +90,7 @@ const StaffTemplate = () => {
                   >
                     <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                   </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">Timetable</span>
+                  <span className="ml-3">Timetable</span>
                 </button>
               </li>
               <li>
@@ -101,7 +101,7 @@ const StaffTemplate = () => {
                     setPage('registerClient');
                     setIsCenter('items-center');
                   }}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  className="flex w-full items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
                     aria-hidden="true"
@@ -116,7 +116,7 @@ const StaffTemplate = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">Register Client</span>
+                  <span className="ml-3">Register Client</span>
                 </button>
               </li>
               <li className="grow">
@@ -127,7 +127,7 @@ const StaffTemplate = () => {
                     setPage('confirmTraninings');
                     setIsCenter('');
                   }}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  className="flex w-full items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
                     aria-hidden="true"
@@ -142,7 +142,7 @@ const StaffTemplate = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">Confirm trainings</span>
+                  <span className="ml-3">Confirm trainings</span>
                 </button>
               </li>
               <li className="">
@@ -150,7 +150,7 @@ const StaffTemplate = () => {
                   type="button"
                   id="logout"
                   onClick={handleLogout}
-                  className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  className="flex w-full items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
                   <svg
                     aria-hidden="true"
@@ -165,7 +165,7 @@ const StaffTemplate = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="ml-3 flex-1 whitespace-nowrap">Log out</span>
+                  <span className="ml-3">Log out</span>
                 </button>
               </li>
             </ul>

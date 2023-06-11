@@ -1,5 +1,5 @@
 import Kalend, { CalendarView } from 'kalend';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -28,7 +28,7 @@ const ClubPage = () => {
   useEffect(() => {
     if (role === 'CLIENT') {
       axios
-        .get(`http://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
+        .get(`https://springboot-385918.oa.r.appspot.com/api/training/client/${Userid}`)
         .then((res) => {
           const dataX = res.data;
           const onlyTrainingsIds = dataX.map((training) => training.id);
@@ -98,7 +98,7 @@ const ClubPage = () => {
   const handleTrainingEnroll = () => {
     axios
       .post(
-        `http://springboot-385918.oa.r.appspot.com/api/training/addClient?TrainingID=${event.id}`,
+        `https://springboot-385918.oa.r.appspot.com/api/training/addClient?TrainingID=${event.id}`,
         { id: Userid },
       )
       .then(() => {
@@ -166,18 +166,18 @@ const ClubPage = () => {
               <div className="text-center font-medium">
                 In the day of the training your membership will be expired. Wait for your membership
                 to expire and renew it or{' '}
-                <a href="/contact" className="underline">
-                  contact{' '}
-                </a>{' '}
+                <Link to="/contact" className="underline">
+                  contact
+                </Link>{' '}
                 one of our employees to deal with this problem
               </div>
             ) : null}
             {clientTrainingsIds.includes(event.id) && membership.expireDate >= event.startAt ? (
               <div className="font-medium">
                 You have already enrolled to this training. Go to{' '}
-                <a href="/client" className="underline">
+                <Link to="/client" className="underline">
                   Client
-                </a>{' '}
+                </Link>{' '}
                 page to sign off or check your trainings.
               </div>
             ) : null}
@@ -197,9 +197,9 @@ const ClubPage = () => {
         ) : (
           <div className="text-center font-medium">
             You need to have an active{' '}
-            <a href="/membership" className="underline">
+            <Link to="/membership" className="underline">
               membership
-            </a>{' '}
+            </Link>{' '}
             to enroll to this training.
           </div>
         )}
